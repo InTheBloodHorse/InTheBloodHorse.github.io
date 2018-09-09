@@ -409,7 +409,7 @@ height:50vh;
         <div class="container container-unloaded">
             <main class="main post-page">
     <article class="article-entry">
-        <p><a href="题目地址">题目地址</a><br>题意：说真的一开始看了老半天硬是没看懂，后面就看了Note，也是似懂非懂，后来瞎看就大致知道了。<br>就是给 n，k，给string s<br>求所有字母里出现次数最少的 * k<br>（这道题就是题意太坑了）</p>
+        <p><a href="http://codeforces.com/contest/1038/problem/A" target="_blank" rel="noopener">题目地址</a><br>题意：说真的一开始看了老半天硬是没看懂，后面就看了Note，也是似懂非懂，后来瞎看就大致知道了。<br>就是给 n，k，给string s<br>求所有字母里出现次数最少的 * k<br>（这道题就是题意太坑了）</p>
 <p>AC代码：<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">int</span> v[<span class="number">27</span>];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">string</span> s;</span><br><span class="line">	<span class="keyword">int</span> n,k;</span><br><span class="line">	<span class="built_in">cin</span> &gt;&gt; n &gt;&gt; k &gt;&gt; s;</span><br><span class="line">	<span class="keyword">int</span> min1 = <span class="number">1e9</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;s.size();i++)&#123;</span><br><span class="line">		v[s[i]-<span class="string">'A'</span>] ++;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;k;i++)&#123;</span><br><span class="line">		<span class="keyword">if</span>(v[i] &lt; min1) min1 = v[i];</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; min1*k &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 
     </article>
@@ -419,7 +419,7 @@ height:50vh;
             <p>原文作者：<a href="http://pyking.cn">1ni</a>
             <p>原文链接：<a href="http://pyking.cn/2018/09/09/每日一题-1-codeforces-1038A/">http://pyking.cn/2018/09/09/每日一题-1-codeforces-1038A/</a>
             <p>发表日期：<a href="http://pyking.cn/2018/09/09/每日一题-1-codeforces-1038A/">September 9th 2018, 4:27:42 pm</a>
-            <p>更新日期：<a href="http://pyking.cn/2018/09/09/每日一题-1-codeforces-1038A/">September 9th 2018, 4:32:21 pm</a>
+            <p>更新日期：<a href="http://pyking.cn/2018/09/09/每日一题-1-codeforces-1038A/">September 9th 2018, 4:35:39 pm</a>
             <p>版权声明：请随意转载！</p>
         </div>
     

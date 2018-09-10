@@ -354,26 +354,19 @@
     
     
     <article class="index-post">
-        <a class="abstract-title" href = "/2018/09/09/每日一题-1-codeforces-1038A/" >
+        <a class="abstract-title" href = "/2018/09/10/TensorFlow学习-1-变量/" >
             
-                <span>每日一题(1) codeforces 1038A</span>
+                <span>TensorFlow学习(1) 变量</span>
         </a>
         <div class="abstract-content">
-            题目地址题意：说真的一开始看了老半天硬是没看懂，后面就看了Note，也是似懂非懂，后来瞎看就大致知道了。就是给 n，k，给string s求所有字母里出现次数最少的 * k（这道题就是题意太坑了）
-AC代码：1234567891011121314151617#include&lt;bits/stdc++.h&gt;using namespace std;int v[27];int main()&#123;	string s;	int n,k;	cin &gt;&gt; n &gt;&gt; k &gt;&gt; s;	int min1 = 1e9;	for(int i=0;i&lt;s....
+            TensorFlow里面的变量和常规的不大一样，总结一下就是要先run一下。应该是执行计算图吧，返回结果。operation1234567891011121314151617import tensorflow as tfx = tf.Variable([1, 2])y = tf.Variable([3, 3])# 增添一个减法 op (x-y)sub = tf.subtract(x, y)# 添加一个加法 op(x+y)add = tf.add(x, sub)# 初始化变量（这是必须的）init = tf.global_variables_initializer()with tf.Ses...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
             <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/09/09</span>
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/09/10</span>
             </div>
             <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "思维">思维</a>
-    
-</div>
             
         </div>
     </article>

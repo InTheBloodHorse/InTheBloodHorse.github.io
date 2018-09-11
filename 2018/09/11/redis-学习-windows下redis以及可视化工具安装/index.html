@@ -15,7 +15,7 @@
     <meta name="description" content="">
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-    <title>1ni.blog</title>
+    <title>redis(学习) windows下redis以及可视化工具安装 · 1ni.blog</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -211,12 +211,23 @@
 </head>
 
     
+        <body class="post-body">
+    
     
 <header class="header">
 
     <div class="read-progress"></div>
     <div class="header-sidebar-menu">&#xe775;</div>
     <!-- post页的toggle banner  -->
+    
+    <div class="banner">
+            <div class="blog-title">
+                <a href="/" >1ni</a>
+            </div>
+            <div class="post-title">
+                <a href="#" class="post-name">redis(学习) windows下redis以及可视化工具安装</a>
+            </div>
+    </div>
     
     <a class="home-link" href=/>1ni</a>
 </header>
@@ -228,24 +239,68 @@
 
 
 
+
+height:50vh;
 ">
     
     <!-- 主页  -->
+    
+    
+    <!-- 404页  -->
             
     <div class="site-intro-placeholder"></div>
-    <div class="site-intro-img" style="background-image: url(/)"></div>
+    <div class="site-intro-img" style="background-image: url(/intro/bg.jpg)"></div>
     <div class="site-intro-meta">
         <!-- 标题  -->
         <h1 class="intro-title">
             <!-- 主页  -->
+            
+            redis(学习) windows下redis以及可视化工具安装
+            <!-- 404 -->
             
         </h1>
         <!-- 副标题 -->
         <p class="intro-subtitle">
             <!-- 主页副标题  -->
             
+            
+            <!-- 404 -->
+            
         </p>
         <!-- 文章页meta -->
+        
+            <div class="post-intros">
+                <!-- 文章页标签  -->
+                
+                
+                    <div class="post-intro-read">
+                        <span>字数统计: <span class="post-count word-count">269</span>阅读时长: <span class="post-count reading-time">1 min</span></span>
+                    </div>
+                
+                <div class="post-intro-meta">
+                    <span class="post-intro-calander iconfont-archer">&#xe676;</span>
+                    <span class="post-intro-time">2018/09/11</span>
+                    
+                    <span id="busuanzi_container_page_pv" class="busuanzi-pv">
+                        <span class="iconfont-archer">&#xe602;</span>
+                        <span id="busuanzi_value_page_pv"></span>
+                    </span>
+                    
+                    <span class="shareWrapper">
+                        <span class="iconfont-archer shareIcon">&#xe71d;</span>
+                        <span class="shareText">Share</span>
+                        <ul class="shareList">
+                            <li class="iconfont-archer share-qr" data-type="qr">&#xe75b;
+                                <div class="share-qrcode"></div>
+                            </li>
+                            <li class="iconfont-archer" data-type="weibo">&#xe619;</li>
+                            <li class="iconfont-archer" data-type="qzone">&#xe62e;</li>
+                            <li class="iconfont-archer" data-type="twitter">&#xe634;</li>
+                            <li class="iconfont-archer" data-type="facebook">&#xe67a;</li>
+                        </ul>
+                    </span>
+                </div>
+            </div>
         
     </div>
 </div>
@@ -346,104 +401,56 @@
 </script>        
         <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
         <div class="container container-unloaded">
-            <main class="main index-page">
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/09/11/每日一题-3-codeforces-1038C/" >
-            
-                <span>每日一题(3) codeforces 1038C</span>
-        </a>
-        <div class="abstract-content">
-            题目地址题意：A,B两人，分别有list，有n个元素，A，B轮流行动，每人有两种选择：1：移除对方的一个元素2：移除自己的一个元素，并且自己的分数加上那个元素的分值假设两个人都做出最优的前提下，A,B的分值之差（A-B）思路：一开始还以为是一道博弈题目，后面读题目就知道，只要先排序，然后轮流模拟A，B的操作，到最后就可以得出答案。坑点：1e5*1e6 = 1e11 分数定义成int的话 就爆掉了，留个心眼。AC代码：12345678910111213141516171819202122232425262728293031323334353637383940414243444546#inc...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/09/11</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "排序">排序</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "贪心">贪心</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "模拟">模拟</a>
-    
-</div>
-            
-        </div>
+            <main class="main post-page">
+    <article class="article-entry">
+        <h2 id="1-安装-redis"><a href="#1-安装-redis" class="headerlink" title="1.安装 redis"></a>1.安装 redis</h2><p><a href="https://github.com/MSOpenTech/redis/releases" target="_blank" rel="noopener">github下载地址</a><br>进去下载对应的文件就好，但是我下载的很慢，不知道为啥，可能是对方服务器的问题，所以我就去阿里云服务器上 wget下载了，速度还过得去，然后拉到本地。<br>接下来的安装和别的没差，记住勾选 添加到本地环境就好。<br>2.redis使用<br>cmd下面运行<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">redis-server.exe redis.windows.conf</span><br></pre></td></tr></table></figure></p>
+<p>假如没报错，说明就OK了。<br>报错的话可能是（因为我就遇到了这个）<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Creating Server TCP listening socket 127.0.0.1:6379: bind: No error</span></span><br></pre></td></tr></table></figure></p>
+<p>解决方法<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">redis-cli.exe</span><br><span class="line">shutdown</span><br><span class="line"><span class="built_in">exit</span></span><br></pre></td></tr></table></figure></p>
+<p>然后再运行启动的命令就好了，看到redis的logo就说明启动了<br>3.连接<br>接下来打开另一个窗口<br>cmd运行<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">redis-cli.exe</span><br></pre></td></tr></table></figure></p>
+<p>4.修改<br>下面就可以修改我们redis里面的东西了<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">set</span> username abc</span><br></pre></td></tr></table></figure></p>
+<p>shell 会打印 ok<br>说明修改成功</p>
+<h2 id="2-安装Redis-Desktop-Manager"><a href="#2-安装Redis-Desktop-Manager" class="headerlink" title="2.安装Redis Desktop Manager"></a>2.安装Redis Desktop Manager</h2><p><a href="https://pan.baidu.com/s/1kU8sY3P" target="_blank" rel="noopener">网盘地址</a></p>
+<p>下载安装就行<br>安装好后，左下角有个 connect<br>name:随意<br>host:127.0.0.1<br>port:默认<br>这样就配置好了。</p>
+
     </article>
+    <!-- license  -->
     
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/09/10/每日一题-2-codefroces-1038B/" >
-            
-                <span>每日一题(2) codefroces 1038B</span>
-        </a>
-        <div class="abstract-content">
-            题目地址今天的题目倒是很友好。题意：输入一个n，将1~n 分为两个集合，每个数字只能用一次，问能否找到两个区间，s1,s2gcd(sum(s1),sum(s2)) &gt; 1 ，换句话说就是 两个集合的总和 不能互质。解题思路：我是先打表，看到 sum 是有规律的，比如 1，3（1+2），6（1+2+3），10（1+2+3+4），15（1+2+3+4+5），四个一组，奇奇偶偶，这样子，偶数就很简单了，偶数-偶数，还是偶数，所有偶数的情况只要取出一个2，其他的是2的补集，就OK了。奇数的话，其实只要判断是不是素数就可以了，但是我这个素数的板子用反了，应该是用判断这个数是不是素数的板子，不...
+        <div class="license-wrapper">
+            <p>原文作者：<a href="http://pyking.cn">1ni</a>
+            <p>原文链接：<a href="http://pyking.cn/2018/09/11/redis-学习-windows下redis以及可视化工具安装/">http://pyking.cn/2018/09/11/redis-学习-windows下redis以及可视化工具安装/</a>
+            <p>发表日期：<a href="http://pyking.cn/2018/09/11/redis-学习-windows下redis以及可视化工具安装/">September 11th 2018, 9:31:10 pm</a>
+            <p>更新日期：<a href="http://pyking.cn/2018/09/11/redis-学习-windows下redis以及可视化工具安装/">September 11th 2018, 9:40:52 pm</a>
+            <p>版权声明：请随意转载！</p>
         </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/09/10</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "素数">素数</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "规律">规律</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/09/09/每日一题-1-codeforces-1038A/" >
-            
-                <span>每日一题(1) codeforces 1038A</span>
-        </a>
-        <div class="abstract-content">
-            题目地址题意：说真的一开始看了老半天硬是没看懂，后面就看了Note，也是似懂非懂，后来瞎看就大致知道了。就是给 n，k，给string s求所有字母里出现次数最少的 * k（这道题就是题意太坑了）
-AC代码：1234567891011121314151617#include&lt;bits/stdc++.h&gt;using namespace std;int v[27];int main()&#123;	string s;	int n,k;	cin &gt;&gt; n &gt;&gt; k &gt;&gt; s;	int min1 = 1e9;	for(int i=0;i&lt;s....
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/09/09</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "思维">思维</a>
-    
-</div>
-            
-        </div>
-    </article>
     
     <!-- paginator  -->
+    <ul class="post-paginator">
+        <li class="next">
+            
+        </li>
+        <li class="previous">
+            
+                <div class="prevSlogan">Previous Post</div>
+                <a href= "/2018/09/11/每日一题-3-codeforces-1038C/" title= "每日一题(3) codeforces 1038C">
+                    <div class="prevTitle">每日一题(3) codeforces 1038C</div>
+                </a>
+            
+        </li>
+    </ul>
+    <!-- 评论插件 -->
+    <!-- 来必力City版安装代码 -->
+
+<!-- City版安装代码已完成 -->
     
+    
+    <!-- partial('_partial/comment/changyan') -->
+    <!--PC版-->
+
+
+    
+    
+
+    <!-- 评论 -->
 </main>
             <!-- profile -->
             
@@ -524,6 +531,24 @@ AC代码：1234567891011121314151617#include&lt;bits/stdc++.h&gt;using namespace
 </footer>
     </div>
     <!-- toc -->
+    
+    <div class="toc-wrapper" style=
+    
+
+
+
+
+
+
+
+top:50vh;
+
+    >
+        <div class="toc-catalog">
+            <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
+        </div>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-安装-redis"><span class="toc-number">1.</span> <span class="toc-text">1.安装 redis</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-安装Redis-Desktop-Manager"><span class="toc-number">2.</span> <span class="toc-text">2.安装Redis Desktop Manager</span></a></li></ol>
+    </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
     <div class="sidebar sidebar-hide">
@@ -772,6 +797,8 @@ jsonContent:
     
     </div>
     <!-- async load share.js -->
+    
+        <script src="/scripts/share.js" async></script>    
      
     </body>
 </html>

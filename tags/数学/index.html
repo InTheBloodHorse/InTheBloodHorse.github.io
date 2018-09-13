@@ -354,25 +354,23 @@
     
     
     <article class="index-post">
-        <a class="abstract-title" href = "/2018/09/10/每日一题-2-codefroces-1038B/" >
+        <a class="abstract-title" href = "/2018/09/13/每日一题-5-codeforces-1036A/" >
             
-                <span>每日一题(2) codefroces 1038B</span>
+                <span>每日一题(5)codeforces 1036A</span>
         </a>
         <div class="abstract-content">
-            题目地址今天的题目倒是很友好。题意：输入一个n，将1~n 分为两个集合，每个数字只能用一次，问能否找到两个区间，s1,s2gcd(sum(s1),sum(s2)) &gt; 1 ，换句话说就是 两个集合的总和 不能互质。解题思路：我是先打表，看到 sum 是有规律的，比如 1，3（1+2），6（1+2+3），10（1+2+3+4），15（1+2+3+4+5），四个一组，奇奇偶偶，这样子，偶数就很简单了，偶数-偶数，还是偶数，所有偶数的情况只要取出一个2，其他的是2的补集，就OK了。奇数的话，其实只要判断是不是素数就可以了，但是我这个素数的板子用反了，应该是用判断这个数是不是素数的板子，不...
+            题目地址题意：（先看题目的图）给两个数字，n,k，要求图内（0~2n）组成的三角形面积之和等于k，的情况下，输出最小的高。思路：画个图就明白了。当h为1的时候，最大的面积为    底高 /2  =  （2n 1）/2 = nk在  (n  (h-1) , n * h]  (h &gt;= 1 )求 h 就可以了。AC代码：12345678#include&lt;bits/stdc++.h&gt;using namespace std;int main()&#123;	long long a,b;	cin &gt;&gt; a &gt;&gt; b;	cout &lt;&lt; (b-1)...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
             <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/09/10</span>
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/09/13</span>
             </div>
             <!-- tags  -->
             
             <div class= abstract-tags >
     
-        <a class="post-tag" href="javascript:void(0);" data-tags = "素数">素数</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "规律">规律</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags = "数学">数学</a>
     
 </div>
             

@@ -413,7 +413,7 @@ height:50vh;
 <h2 id="最大堆"><a href="#最大堆" class="headerlink" title="最大堆"></a>最大堆</h2><p>最大堆任何父节点的值，都大于等于它的左右子节点的值。</p>
 <h2 id="最小堆"><a href="#最小堆" class="headerlink" title="最小堆"></a>最小堆</h2><p>最小堆任何父节点的值，都小于等于它的左右子节点的值。</p>
 <p>二叉堆的根节点叫做堆顶，毫无疑问，就是二叉树的最大值或者最小值</p>
-<h3 id="插入节点"><a href="#插入节点" class="headerlink" title="插入节点"></a>插入节点</h3><p>假设我们已经有了一个最小堆，如图<img src="/2018/09/14/数据结构-1-二叉堆/TIM截图20180914102452.jpg" alt="TIM截图20180914102452.jpg"><br>1.我们插入一个节点为 0（绿色），我们需要把插入的节点追加到树的最后一个节点 如图<img src="/2018/09/14/数据结构-1-二叉堆/[TIM截图20180914102851.jpg" alt="TIM截图20180914102851.jpg"><br>2.将插入的节点与父节点比较，假如值小于父节点，使父节点下沉。得到<img src="/2018/09/14/数据结构-1-二叉堆/TIM截图20180914102914.jpg" alt="TIM截图20180914102914.jpg"><br>3.重复上述的操作，结果为<br><img src="/2018/09/14/数据结构-1-二叉堆/TIM截图20180914102934.jpg" alt="TIM截图20180914102934.jpg"><img src="/2018/09/14/数据结构-1-二叉堆/TIM截图20180914102950.jpg" alt="TIM截图20180914102950.jpg"></p>
+<h3 id="插入节点"><a href="#插入节点" class="headerlink" title="插入节点"></a>插入节点</h3><p>假设我们已经有了一个最小堆，如图<img src="/2018/09/14/数据结构-1-二叉堆/TIM截图20180914102452.jpg" alt="TIM截图20180914102452.jpg"><br>1.我们插入一个节点为 0（绿色），我们需要把插入的节点追加到树的最后一个节点 如图<img src="/2018/09/14/数据结构-1-二叉堆/TIM截图20180914102851.jpg" alt="TIM截图20180914102851.jpg"><br>2.将插入的节点与父节点比较，假如值小于父节点，使父节点下沉。得到<img src="/2018/09/14/数据结构-1-二叉堆/TIM截图20180914102914.jpg" alt="TIM截图20180914102914.jpg"><br>3.重复上述的操作，结果为<br><img src="/2018/09/14/数据结构-1-二叉堆/TIM截图20180914102934.jpg" alt="TIM截图20180914102934.jpg"><img src="/2018/09/14/数据结构-1-二叉堆/TIM截图20180914102950.jpg" alt="TIM截图20180914102950.jpg"></p>
 <h3 id="删除节点"><a href="#删除节点" class="headerlink" title="删除节点"></a>删除节点</h3><p>假设我们删除堆顶节点0，与插入相反，我们删除我们要删除的节点，把最后一个节点拿过来，补回去，这样才可以是一个完全二叉树。<img src="/2018/09/14/数据结构-1-二叉堆/TIM截图20180914103802.jpg" alt="TIM截图20180914103802.jpg"><br>1.父节点和左右子节点的最小值比较，假如父节点值大于最小值，交换两个节点，以此类推。<br><img src="/2018/09/14/数据结构-1-二叉堆/TIM截图20180914103840.jpg" alt="TIM截图20180914103840.jpg"><img src="/2018/09/14/数据结构-1-二叉堆/TIM截图20180914103906.jpg" alt="TIM截图20180914103906.jpg"><img src="/2018/09/14/数据结构-1-二叉堆/TIM截图20180914103932.jpg" alt="TIM截图20180914103932.jpg"><img src="/2018/09/14/数据结构-1-二叉堆/TIM截图20180914103949.jpg" alt="TIM截图20180914103949.jpg"></p>
 <h3 id="构建最小堆"><a href="#构建最小堆" class="headerlink" title="构建最小堆"></a>构建最小堆</h3><p>把一棵无序完全二叉树构建成最小堆，出发点，最后一个非叶子节点开始下沉。<br><img src="/2018/09/14/数据结构-1-二叉堆/TIM截图20180914100545.jpg" alt="TIM截图20180914100545.jpg"><br>1.在这里就是  2 节点 ，2 和 min（5，3）比较，因为 2 &lt; 3 所以没必要交换了</p>
 <ol start="2">
@@ -428,7 +428,7 @@ height:50vh;
             <p>原文作者：<a href="http://pyking.cn">1ni</a>
             <p>原文链接：<a href="http://pyking.cn/2018/09/14/数据结构-1-二叉堆/">http://pyking.cn/2018/09/14/数据结构-1-二叉堆/</a>
             <p>发表日期：<a href="http://pyking.cn/2018/09/14/数据结构-1-二叉堆/">September 14th 2018, 9:51:36 am</a>
-            <p>更新日期：<a href="http://pyking.cn/2018/09/14/数据结构-1-二叉堆/">September 14th 2018, 10:42:37 am</a>
+            <p>更新日期：<a href="http://pyking.cn/2018/09/14/数据结构-1-二叉堆/">September 14th 2018, 10:47:21 am</a>
             <p>版权声明：请随意转载！</p>
         </div>
     
@@ -687,6 +687,12 @@ top:50vh;
     
     
     
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
         Total : 10
@@ -766,6 +772,10 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="思维"><span class="iconfont-archer">&#xe606;</span>思维</span>
     
+        <span class="sidebar-tag-name" data-tags="素数"><span class="iconfont-archer">&#xe606;</span>素数</span>
+    
+        <span class="sidebar-tag-name" data-tags="规律"><span class="iconfont-archer">&#xe606;</span>规律</span>
+    
         <span class="sidebar-tag-name" data-tags="排序"><span class="iconfont-archer">&#xe606;</span>排序</span>
     
         <span class="sidebar-tag-name" data-tags="贪心"><span class="iconfont-archer">&#xe606;</span>贪心</span>
@@ -773,10 +783,6 @@ top:50vh;
         <span class="sidebar-tag-name" data-tags="模拟"><span class="iconfont-archer">&#xe606;</span>模拟</span>
     
         <span class="sidebar-tag-name" data-tags="数学"><span class="iconfont-archer">&#xe606;</span>数学</span>
-    
-        <span class="sidebar-tag-name" data-tags="素数"><span class="iconfont-archer">&#xe606;</span>素数</span>
-    
-        <span class="sidebar-tag-name" data-tags="规律"><span class="iconfont-archer">&#xe606;</span>规律</span>
     
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>

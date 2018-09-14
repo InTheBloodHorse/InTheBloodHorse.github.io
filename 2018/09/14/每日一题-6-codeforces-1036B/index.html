@@ -15,7 +15,7 @@
     <meta name="description" content="">
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-    <title>1ni.blog</title>
+    <title>每日一题(6) codeforces 1036B · 1ni.blog</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -211,12 +211,23 @@
 </head>
 
     
+        <body class="post-body">
+    
     
 <header class="header">
 
     <div class="read-progress"></div>
     <div class="header-sidebar-menu">&#xe775;</div>
     <!-- post页的toggle banner  -->
+    
+    <div class="banner">
+            <div class="blog-title">
+                <a href="/" >1ni</a>
+            </div>
+            <div class="post-title">
+                <a href="#" class="post-name">每日一题(6) codeforces 1036B</a>
+            </div>
+    </div>
     
     <a class="home-link" href=/>1ni</a>
 </header>
@@ -228,24 +239,74 @@
 
 
 
+
+height:50vh;
 ">
     
     <!-- 主页  -->
+    
+    
+    <!-- 404页  -->
             
     <div class="site-intro-placeholder"></div>
-    <div class="site-intro-img" style="background-image: url(/)"></div>
+    <div class="site-intro-img" style="background-image: url(/intro/bg.jpg)"></div>
     <div class="site-intro-meta">
         <!-- 标题  -->
         <h1 class="intro-title">
             <!-- 主页  -->
+            
+            每日一题(6) codeforces 1036B
+            <!-- 404 -->
             
         </h1>
         <!-- 副标题 -->
         <p class="intro-subtitle">
             <!-- 主页副标题  -->
             
+            
+            <!-- 404 -->
+            
         </p>
         <!-- 文章页meta -->
+        
+            <div class="post-intros">
+                <!-- 文章页标签  -->
+                
+                    <div class= post-intro-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "思维">思维</a>
+    
+</div>
+                
+                
+                    <div class="post-intro-read">
+                        <span>字数统计: <span class="post-count word-count">203</span>阅读时长: <span class="post-count reading-time">1 min</span></span>
+                    </div>
+                
+                <div class="post-intro-meta">
+                    <span class="post-intro-calander iconfont-archer">&#xe676;</span>
+                    <span class="post-intro-time">2018/09/14</span>
+                    
+                    <span id="busuanzi_container_page_pv" class="busuanzi-pv">
+                        <span class="iconfont-archer">&#xe602;</span>
+                        <span id="busuanzi_value_page_pv"></span>
+                    </span>
+                    
+                    <span class="shareWrapper">
+                        <span class="iconfont-archer shareIcon">&#xe71d;</span>
+                        <span class="shareText">Share</span>
+                        <ul class="shareList">
+                            <li class="iconfont-archer share-qr" data-type="qr">&#xe75b;
+                                <div class="share-qrcode"></div>
+                            </li>
+                            <li class="iconfont-archer" data-type="weibo">&#xe619;</li>
+                            <li class="iconfont-archer" data-type="qzone">&#xe62e;</li>
+                            <li class="iconfont-archer" data-type="twitter">&#xe634;</li>
+                            <li class="iconfont-archer" data-type="facebook">&#xe67a;</li>
+                        </ul>
+                    </span>
+                </div>
+            </div>
         
     </div>
 </div>
@@ -346,303 +407,49 @@
 </script>        
         <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
         <div class="container container-unloaded">
-            <main class="main index-page">
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/09/14/每日一题-6-codeforces-1036B/" >
-            
-                <span>每日一题(6) codeforces 1036B</span>
-        </a>
-        <div class="abstract-content">
-            题目地址题意：给三个数,x,y,k,代表从 (0,0)到(x,y)走k步(米字形走法)，问可以走的对角线最大步数有多少步。思路：想了很久，难受啊。abs(x-y)为奇数时，不能走对角线，需要多走一步k-1，当走对角线可以直接到达终点，如果剩余的步数是奇数则有两步不能走对角线所以k - 2AC代码：123456789101112131415161718192021222324#include&lt;bits/stdc++.h&gt;using namespace std;int main()&#123;	int t;	cin  &gt;&gt; t;	long long x,y,k;	wh...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/09/14</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "思维">思维</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/09/14/数据结构-1-二叉堆/" >
-            
-                <span>数据结构(1)-二叉堆</span>
-        </a>
-        <div class="abstract-content">
-            二叉堆1：什么是二叉堆？ans：二叉堆的本质是完全二叉树，可以分为最大堆和最小堆。
-最大堆最大堆任何父节点的值，都大于等于它的左右子节点的值。
-最小堆最小堆任何父节点的值，都小于等于它的左右子节点的值。
-二叉堆的根节点叫做堆顶，毫无疑问，就是二叉树的最大值或者最小值
-插入节点（复杂度 log(N)）假设我们已经有了一个最小堆，如图1.我们插入一个节点为 0（绿色），我们需要把插入的节点追加到树的最后一个节点 如图2.将插入的节点与父节点比较，假如值小于父节点，使父节点下沉。得到3.重复上述的操作，结果为
-删除节点（复杂度 log(N)）假设我们删除堆顶节点0，与插入相反，我们删除我们要删...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/09/14</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "树">树</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/09/13/每日一题-5-codeforces-1036A/" >
-            
-                <span>每日一题(5)codeforces 1036A</span>
-        </a>
-        <div class="abstract-content">
-            题目地址题意：（先看题目的图）给两个数字，n,k，要求图内（0~2n）组成的三角形面积之和等于k，的情况下，输出最小的高。思路：画个图就明白了。当h为1的时候，最大的面积为    底高 /2  =  （2n 1）/2 = nk在  (n  (h-1) , n * h]  (h &gt;= 1 )求 h 就可以了。AC代码：12345678#include&lt;bits/stdc++.h&gt;using namespace std;int main()&#123;	long long a,b;	cin &gt;&gt; a &gt;&gt; b;	cout &lt;&lt; (b-1)...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/09/13</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "数学">数学</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/09/12/每日一题-4-codeforces-1038D/" >
-            
-                <span>每日一题(4) codeforces 1038D</span>
-        </a>
-        <div class="abstract-content">
-            题目地址题意：有n个史莱姆，每个史莱姆有值为 x，史莱姆A可以吃掉任意一个相邻位置的史莱姆B（值为y），因此史莱姆B就消失了，史莱姆A的值变成了 x-y。问一直吃，吃到最后一个，留下来的史莱姆最大的值为多少。思路：一开始以为是dp题，被吓坏了，后来琢磨下可以得出1：最大的肯定是留到最后的，最小的必须去吃其余的，因为一个大的史莱姆去吃小的史莱姆，就亏了，因为大的史莱姆的值小了，但是他还是正数，最大的吃这个史莱姆，也会变小，所以要想办法得到负数的史莱姆2：所有值都大于0的话，答案就是 所有数字之和 - 2*min3：所有的值小于0的话，取个绝对值，和大于0的情况一样，自己在纸上写一下就知道为...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/09/12</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "思维">思维</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "排序">排序</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/09/11/Redis学习-2-Windows下安装和可视化工具安装/" >
-            
-                <span>Redis学习(2)Windows下安装和可视化工具安装</span>
-        </a>
-        <div class="abstract-content">
-            1.安装 redisgithub下载地址进去下载对应的文件就好，但是我下载的很慢，不知道为啥，可能是对方服务器的问题，所以我就去阿里云服务器上 wget下载了，速度还过得去，然后拉到本地。接下来的安装和别的没差，记住勾选 添加到本地环境就好。2.redis使用cmd下面运行1redis-server.exe redis.windows.conf
-假如没报错，说明就OK了。报错的话可能是（因为我就遇到了这个）1# Creating Server TCP listening socket 127.0.0.1:6379: bind: No error
-解决方法123redis-cli.exes...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/09/11</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/09/11/每日一题-3-codeforces-1038C/" >
-            
-                <span>每日一题(3) codeforces 1038C</span>
-        </a>
-        <div class="abstract-content">
-            题目地址题意：A,B两人，分别有list，有n个元素，A，B轮流行动，每人有两种选择：1：移除对方的一个元素2：移除自己的一个元素，并且自己的分数加上那个元素的分值假设两个人都做出最优的前提下，A,B的分值之差（A-B）思路：一开始还以为是一道博弈题目，后面读题目就知道，只要先排序，然后轮流模拟A，B的操作，到最后就可以得出答案。坑点：1e5*1e6 = 1e11 分数定义成int的话 就爆掉了，留个心眼。AC代码：12345678910111213141516171819202122232425262728293031323334353637383940414243444546#inc...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/09/11</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "排序">排序</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "贪心">贪心</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "模拟">模拟</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/09/11/Redis学习-1-Linux下安装/" >
-            
-                <span>Redis学习(1) Linux下安装</span>
-        </a>
-        <div class="abstract-content">
-            1.安装1sudo apt-get install redis-server
-2.卸载1sudo apt-get pruge --auto-remove redis-server
-3.启动：安装redis后，默认自动启动，通过以下查看1ps -ef|grep redis
-或者1sudo service redis-server start
-3.停止1sudo service redis-server stop
+            <main class="main post-page">
+    <article class="article-entry">
+        <p><a href="http://codeforces.com/contest/1036/problem/B" target="_blank" rel="noopener">题目地址</a><br>题意：<br>给三个数,x,y,k,代表从 (0,0)到(x,y)走k步(米字形走法)，问可以走的对角线最大步数有多少步。<br>思路：<br>想了很久，难受啊。<br>abs(x-y)为奇数时，不能走对角线，需要多走一步k-1，当走对角线可以直接到达终点，如果剩余的步数是奇数则有两步不能走对角线所以k - 2<br>AC代码：<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> t;</span><br><span class="line">	<span class="built_in">cin</span>  &gt;&gt; t;</span><br><span class="line">	<span class="keyword">long</span> <span class="keyword">long</span> x,y,k;</span><br><span class="line">	<span class="keyword">while</span>(t--)&#123;</span><br><span class="line">		<span class="built_in">cin</span> &gt;&gt;  x &gt;&gt; y &gt;&gt; k;</span><br><span class="line">		<span class="keyword">if</span>(max(x,y) &gt; k)&#123;</span><br><span class="line">			<span class="built_in">cout</span> &lt;&lt; <span class="number">-1</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">		&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">			<span class="keyword">long</span> <span class="keyword">long</span> ans = k;</span><br><span class="line">			<span class="keyword">if</span>(<span class="built_in">abs</span>(x-y)%<span class="number">2</span>==<span class="number">1</span>)&#123;</span><br><span class="line">				ans--;</span><br><span class="line">			&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">				<span class="keyword">if</span>((k-x)%<span class="number">2</span> == <span class="number">1</span>)&#123;</span><br><span class="line">					ans-=<span class="number">2</span>;</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="built_in">cout</span> &lt;&lt; ans &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/09/11</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
     </article>
+    <!-- license  -->
     
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/09/10/每日一题-2-codefroces-1038B/" >
-            
-                <span>每日一题(2) codefroces 1038B</span>
-        </a>
-        <div class="abstract-content">
-            题目地址今天的题目倒是很友好。题意：输入一个n，将1~n 分为两个集合，每个数字只能用一次，问能否找到两个区间，s1,s2gcd(sum(s1),sum(s2)) &gt; 1 ，换句话说就是 两个集合的总和 不能互质。解题思路：我是先打表，看到 sum 是有规律的，比如 1，3（1+2），6（1+2+3），10（1+2+3+4），15（1+2+3+4+5），四个一组，奇奇偶偶，这样子，偶数就很简单了，偶数-偶数，还是偶数，所有偶数的情况只要取出一个2，其他的是2的补集，就OK了。奇数的话，其实只要判断是不是素数就可以了，但是我这个素数的板子用反了，应该是用判断这个数是不是素数的板子，不...
+        <div class="license-wrapper">
+            <p>原文作者：<a href="http://pyking.cn">1ni</a>
+            <p>原文链接：<a href="http://pyking.cn/2018/09/14/每日一题-6-codeforces-1036B/">http://pyking.cn/2018/09/14/每日一题-6-codeforces-1036B/</a>
+            <p>发表日期：<a href="http://pyking.cn/2018/09/14/每日一题-6-codeforces-1036B/">September 14th 2018, 7:58:33 pm</a>
+            <p>更新日期：<a href="http://pyking.cn/2018/09/14/每日一题-6-codeforces-1036B/">September 14th 2018, 8:06:16 pm</a>
+            <p>版权声明：请随意转载！</p>
         </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/09/10</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "素数">素数</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "规律">规律</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/09/09/每日一题-1-codeforces-1038A/" >
-            
-                <span>每日一题(1) codeforces 1038A</span>
-        </a>
-        <div class="abstract-content">
-            题目地址题意：说真的一开始看了老半天硬是没看懂，后面就看了Note，也是似懂非懂，后来瞎看就大致知道了。就是给 n，k，给string s求所有字母里出现次数最少的 * k（这道题就是题意太坑了）
-AC代码：1234567891011121314151617#include&lt;bits/stdc++.h&gt;using namespace std;int v[27];int main()&#123;	string s;	int n,k;	cin &gt;&gt; n &gt;&gt; k &gt;&gt; s;	int min1 = 1e9;	for(int i=0;i&lt;s....
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/09/09</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "思维">思维</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/09/08/新站，也是最丧的一天！/" >
-            
-                <span>新站，也是最丧的一天！</span>
-        </a>
-        <div class="abstract-content">
-            今天竟然生病了！！！今早出去打印证书出去了，2018.9.8，主要是降温了，穿一条中裤和T 还是冷啊，然后开车出去，又快，那时候只是觉得阵阵凉意，哈哈（舒服的不得了）。工作干完，回到实验室，人就不行了，脑壳疼，后面就各种难受了，然后趴在桌上，后面硬撑着走回寝室，直接睡床上，拿了湿毛巾，就盖脸上了，我也不知道有没有用哇，后来受不了了，又硬生生爬起来，走到隔壁寝室，叫同学帮我去买药了，他应该是大学里最好的朋友了。买回来，吃药，结果就吐了，难受啊，吐出来的也都是水，自行脑补，默默说一句，那药有点厉害啊，我一吞进去，他就融化了，有点厉害。去厕所吐，吐完就没事了，好像我基本不会生病，一生病想办法吐...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/09/08</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
     
     <!-- paginator  -->
+    <ul class="post-paginator">
+        <li class="next">
+            
+        </li>
+        <li class="previous">
+            
+                <div class="prevSlogan">Previous Post</div>
+                <a href= "/2018/09/14/数据结构-1-二叉堆/" title= "数据结构(1)-二叉堆">
+                    <div class="prevTitle">数据结构(1)-二叉堆</div>
+                </a>
+            
+        </li>
+    </ul>
+    <!-- 评论插件 -->
+    <!-- 来必力City版安装代码 -->
+
+<!-- City版安装代码已完成 -->
     
+    
+    <!-- partial('_partial/comment/changyan') -->
+    <!--PC版-->
+
+
+    
+    
+
+    <!-- 评论 -->
 </main>
             <!-- profile -->
             
@@ -723,6 +530,24 @@ AC代码：1234567891011121314151617#include&lt;bits/stdc++.h&gt;using namespace
 </footer>
     </div>
     <!-- toc -->
+    
+    <div class="toc-wrapper" style=
+    
+
+
+
+
+
+
+
+top:50vh;
+
+    >
+        <div class="toc-catalog">
+            <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
+        </div>
+        
+    </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
     <div class="sidebar sidebar-hide">
@@ -1053,6 +878,8 @@ jsonContent:
     
     </div>
     <!-- async load share.js -->
+    
+        <script src="/scripts/share.js" async></script>    
      
     </body>
 </html>

@@ -15,7 +15,7 @@
     <meta name="description" content="">
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-    <title>1ni.blog</title>
+    <title>数据结构(1)-二叉堆 · 1ni.blog</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -211,12 +211,23 @@
 </head>
 
     
+        <body class="post-body">
+    
     
 <header class="header">
 
     <div class="read-progress"></div>
     <div class="header-sidebar-menu">&#xe775;</div>
     <!-- post页的toggle banner  -->
+    
+    <div class="banner">
+            <div class="blog-title">
+                <a href="/" >1ni</a>
+            </div>
+            <div class="post-title">
+                <a href="#" class="post-name">数据结构(1)-二叉堆</a>
+            </div>
+    </div>
     
     <a class="home-link" href=/>1ni</a>
 </header>
@@ -228,24 +239,74 @@
 
 
 
+
+height:50vh;
 ">
     
     <!-- 主页  -->
+    
+    
+    <!-- 404页  -->
             
     <div class="site-intro-placeholder"></div>
-    <div class="site-intro-img" style="background-image: url(/)"></div>
+    <div class="site-intro-img" style="background-image: url(/intro/bg.jpg)"></div>
     <div class="site-intro-meta">
         <!-- 标题  -->
         <h1 class="intro-title">
             <!-- 主页  -->
+            
+            数据结构(1)-二叉堆
+            <!-- 404 -->
             
         </h1>
         <!-- 副标题 -->
         <p class="intro-subtitle">
             <!-- 主页副标题  -->
             
+            
+            <!-- 404 -->
+            
         </p>
         <!-- 文章页meta -->
+        
+            <div class="post-intros">
+                <!-- 文章页标签  -->
+                
+                    <div class= post-intro-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "树">树</a>
+    
+</div>
+                
+                
+                    <div class="post-intro-read">
+                        <span>字数统计: <span class="post-count word-count">561</span>阅读时长: <span class="post-count reading-time">2 min</span></span>
+                    </div>
+                
+                <div class="post-intro-meta">
+                    <span class="post-intro-calander iconfont-archer">&#xe676;</span>
+                    <span class="post-intro-time">2018/09/14</span>
+                    
+                    <span id="busuanzi_container_page_pv" class="busuanzi-pv">
+                        <span class="iconfont-archer">&#xe602;</span>
+                        <span id="busuanzi_value_page_pv"></span>
+                    </span>
+                    
+                    <span class="shareWrapper">
+                        <span class="iconfont-archer shareIcon">&#xe71d;</span>
+                        <span class="shareText">Share</span>
+                        <ul class="shareList">
+                            <li class="iconfont-archer share-qr" data-type="qr">&#xe75b;
+                                <div class="share-qrcode"></div>
+                            </li>
+                            <li class="iconfont-archer" data-type="weibo">&#xe619;</li>
+                            <li class="iconfont-archer" data-type="qzone">&#xe62e;</li>
+                            <li class="iconfont-archer" data-type="twitter">&#xe634;</li>
+                            <li class="iconfont-archer" data-type="facebook">&#xe67a;</li>
+                        </ul>
+                    </span>
+                </div>
+            </div>
         
     </div>
 </div>
@@ -346,74 +407,59 @@
 </script>        
         <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
         <div class="container container-unloaded">
-            <main class="main index-page">
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/09/12/每日一题-4-codeforces-1038D/" >
-            
-                <span>每日一题(4) codeforces 1038D</span>
-        </a>
-        <div class="abstract-content">
-            题目地址题意：有n个史莱姆，每个史莱姆有值为 x，史莱姆A可以吃掉任意一个相邻位置的史莱姆B（值为y），因此史莱姆B就消失了，史莱姆A的值变成了 x-y。问一直吃，吃到最后一个，留下来的史莱姆最大的值为多少。思路：一开始以为是dp题，被吓坏了，后来琢磨下可以得出1：最大的肯定是留到最后的，最小的必须去吃其余的，因为一个大的史莱姆去吃小的史莱姆，就亏了，因为大的史莱姆的值小了，但是他还是正数，最大的吃这个史莱姆，也会变小，所以要想办法得到负数的史莱姆2：所有值都大于0的话，答案就是 所有数字之和 - 2*min3：所有的值小于0的话，取个绝对值，和大于0的情况一样，自己在纸上写一下就知道为...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/09/12</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "思维">思维</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "排序">排序</a>
-    
-</div>
-            
-        </div>
+            <main class="main post-page">
+    <article class="article-entry">
+        <h1 id="二叉堆"><a href="#二叉堆" class="headerlink" title="二叉堆"></a>二叉堆</h1><p>1：什么是二叉堆？<br>ans：二叉堆的本质是完全二叉树，可以分为最大堆和最小堆。</p>
+<h2 id="最大堆"><a href="#最大堆" class="headerlink" title="最大堆"></a>最大堆</h2><p>最大堆任何父节点的值，都大于等于它的左右子节点的值。</p>
+<h2 id="最小堆"><a href="#最小堆" class="headerlink" title="最小堆"></a>最小堆</h2><p>最小堆任何父节点的值，都小于等于它的左右子节点的值。</p>
+<p>二叉堆的根节点叫做堆顶，毫无疑问，就是二叉树的最大值或者最小值</p>
+<h3 id="插入节点"><a href="#插入节点" class="headerlink" title="插入节点"></a>插入节点</h3><p>假设我们已经有了一个最小堆，如图<img src="/2018/09/14/数据结构-1-二叉堆/TIM截图20180914102452.jpg" alt="TIM截图20180914102452.jpg"><br>1.我们插入一个节点为 0（绿色），我们需要把插入的节点追加到树的最后一个节点 如图<img src="/2018/09/14/数据结构-1-二叉堆/[TIM截图20180914102851.jpg" alt="TIM截图20180914102851.jpg"><br>2.将插入的节点与父节点比较，假如值小于父节点，使父节点下沉。得到<img src="/2018/09/14/数据结构-1-二叉堆/TIM截图20180914102914.jpg" alt="TIM截图20180914102914.jpg"><br>3.重复上述的操作，结果为<br><img src="/2018/09/14/数据结构-1-二叉堆/TIM截图20180914102934.jpg" alt="TIM截图20180914102934.jpg"><img src="/2018/09/14/数据结构-1-二叉堆/TIM截图20180914102950.jpg" alt="TIM截图20180914102950.jpg"></p>
+<h3 id="删除节点"><a href="#删除节点" class="headerlink" title="删除节点"></a>删除节点</h3><p>假设我们删除堆顶节点0，与插入相反，我们删除我们要删除的节点，把最后一个节点拿过来，补回去，这样才可以是一个完全二叉树。<img src="/2018/09/14/数据结构-1-二叉堆/TIM截图20180914103802.jpg" alt="TIM截图20180914103802.jpg"><br>1.父节点和左右子节点的最小值比较，假如父节点值大于最小值，交换两个节点，以此类推。<br><img src="/2018/09/14/数据结构-1-二叉堆/TIM截图20180914103840.jpg" alt="TIM截图20180914103840.jpg"><img src="/2018/09/14/数据结构-1-二叉堆/TIM截图20180914103906.jpg" alt="TIM截图20180914103906.jpg"><img src="/2018/09/14/数据结构-1-二叉堆/TIM截图20180914103932.jpg" alt="TIM截图20180914103932.jpg"><img src="/2018/09/14/数据结构-1-二叉堆/TIM截图20180914103949.jpg" alt="TIM截图20180914103949.jpg"></p>
+<h3 id="构建最小堆"><a href="#构建最小堆" class="headerlink" title="构建最小堆"></a>构建最小堆</h3><p>把一棵无序完全二叉树构建成最小堆，出发点，最后一个非叶子节点开始下沉。<br><img src="/2018/09/14/数据结构-1-二叉堆/TIM截图20180914100545.jpg" alt="TIM截图20180914100545.jpg"><br>1.在这里就是  2 节点 ，2 和 min（5，3）比较，因为 2 &lt; 3 所以没必要交换了</p>
+<ol start="2">
+<li>接下来是 9号节点，9 和 min（8，4）比较，因为 9 &gt; 4 所有要交换，得到<img src="/2018/09/14/数据结构-1-二叉堆/TIM截图20180914100833.jpg" alt="TIM截图20180914100833.jpg"><br>3.接下来是 7号节点，7 和 min（2，1）比较，因为 7 &gt; 1 所有要交换，得到<img src="/2018/09/14/数据结构-1-二叉堆/TIM截图20180914100930.jpg" alt="TIM截图20180914100930.jpg"><br>3.接下来是 6号节点，6 和 min（1，4）比较，因为 6 &gt; 1 所有要交换，得到<img src="/2018/09/14/数据结构-1-二叉堆/TIM截图20180914101941.jpg" alt="TIM截图20180914101941.jpg"><br>4.还没结束，因为 6号节点下沉了，所以我们还要判断6号能否继续下沉，6 和 min（2，7）比较，因为 6 &gt; 2 所有要交换，得到<img src="/2018/09/14/数据结构-1-二叉堆/TIM截图20180914101841.jpg）
+5.接下来还是是 6号节点，6 和 min（5，3）比较，因为 6 &gt; 3 所有要交换，得到![TIM截图20180914102123.jpg](TIM截图20180914102123.jpg" alt="TIM截图20180914101841.jpg"><br>好了，到底为止，我们就把无序的完全二叉树构建成了最小堆。<br>总结：从最后一个非叶子节点开始下沉，符合条件（当前节点 小于 min（left，right））下沉。</li>
+</ol>
+
     </article>
+    <!-- license  -->
     
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/09/11/每日一题-3-codeforces-1038C/" >
-            
-                <span>每日一题(3) codeforces 1038C</span>
-        </a>
-        <div class="abstract-content">
-            题目地址题意：A,B两人，分别有list，有n个元素，A，B轮流行动，每人有两种选择：1：移除对方的一个元素2：移除自己的一个元素，并且自己的分数加上那个元素的分值假设两个人都做出最优的前提下，A,B的分值之差（A-B）思路：一开始还以为是一道博弈题目，后面读题目就知道，只要先排序，然后轮流模拟A，B的操作，到最后就可以得出答案。坑点：1e5*1e6 = 1e11 分数定义成int的话 就爆掉了，留个心眼。AC代码：12345678910111213141516171819202122232425262728293031323334353637383940414243444546#inc...
+        <div class="license-wrapper">
+            <p>原文作者：<a href="http://pyking.cn">1ni</a>
+            <p>原文链接：<a href="http://pyking.cn/2018/09/14/数据结构-1-二叉堆/">http://pyking.cn/2018/09/14/数据结构-1-二叉堆/</a>
+            <p>发表日期：<a href="http://pyking.cn/2018/09/14/数据结构-1-二叉堆/">September 14th 2018, 9:51:36 am</a>
+            <p>更新日期：<a href="http://pyking.cn/2018/09/14/数据结构-1-二叉堆/">September 14th 2018, 10:42:37 am</a>
+            <p>版权声明：请随意转载！</p>
         </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/09/11</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "排序">排序</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "贪心">贪心</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "模拟">模拟</a>
-    
-</div>
-            
-        </div>
-    </article>
     
     <!-- paginator  -->
+    <ul class="post-paginator">
+        <li class="next">
+            
+        </li>
+        <li class="previous">
+            
+                <div class="prevSlogan">Previous Post</div>
+                <a href= "/2018/09/13/每日一题-5-codeforces-1036A/" title= "每日一题(5)codeforces 1036A">
+                    <div class="prevTitle">每日一题(5)codeforces 1036A</div>
+                </a>
+            
+        </li>
+    </ul>
+    <!-- 评论插件 -->
+    <!-- 来必力City版安装代码 -->
+
+<!-- City版安装代码已完成 -->
     
+    
+    <!-- partial('_partial/comment/changyan') -->
+    <!--PC版-->
+
+
+    
+    
+
+    <!-- 评论 -->
 </main>
             <!-- profile -->
             
@@ -494,6 +540,24 @@
 </footer>
     </div>
     <!-- toc -->
+    
+    <div class="toc-wrapper" style=
+    
+
+
+
+
+
+
+
+top:50vh;
+
+    >
+        <div class="toc-catalog">
+            <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
+        </div>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#二叉堆"><span class="toc-number">1.</span> <span class="toc-text">二叉堆</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#最大堆"><span class="toc-number">1.1.</span> <span class="toc-text">最大堆</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#最小堆"><span class="toc-number">1.2.</span> <span class="toc-text">最小堆</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#插入节点"><span class="toc-number">1.2.1.</span> <span class="toc-text">插入节点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#删除节点"><span class="toc-number">1.2.2.</span> <span class="toc-text">删除节点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#构建最小堆"><span class="toc-number">1.2.3.</span> <span class="toc-text">构建最小堆</span></a></li></ol></li></ol></li></ol>
+    </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
     <div class="sidebar sidebar-hide">
@@ -812,6 +876,8 @@ jsonContent:
     
     </div>
     <!-- async load share.js -->
+    
+        <script src="/scripts/share.js" async></script>    
      
     </body>
 </html>

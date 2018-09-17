@@ -354,23 +354,23 @@
     
     
     <article class="index-post">
-        <a class="abstract-title" href = "/2018/09/13/每日一题-5-codeforces-1036A/" >
+        <a class="abstract-title" href = "/2018/09/17/每日一题-7-codeforces-1036C/" >
             
-                <span>每日一题(5)codeforces 1036A</span>
+                <span>每日一题(7) codeforces 1036C</span>
         </a>
         <div class="abstract-content">
-            题目地址题意：（先看题目的图）给两个数字，n,k，要求图内（0~2n）组成的三角形面积之和等于k，的情况下，输出最小的高。思路：画个图就明白了。当h为1的时候，最大的面积为    底高 /2  =  （2n 1）/2 = nk在  (n  (h-1) , n * h]  (h &gt;= 1 )求 h 就可以了。AC代码：12345678#include&lt;bits/stdc++.h&gt;using namespace std;int main()&#123;	long long a,b;	cin &gt;&gt; a &gt;&gt; b;	cout &lt;&lt; (b-1)...
+            题目地址题意：找出区间 [A,B]内 非0的数字 不超过3的数字的个数。4，200000，10203     满足条件4231，102306，7277420000 不满足条件思路：可以用数位dp来做，我这里是用 dfs，找到的符合条件的数字 推到 vector里面，最后用差分的思想，用二分找到位置，相减就可以了。AC代码：1234567891011121314151617181920212223242526272829303132#include&lt;bits/stdc++.h&gt;using namespace std;vector&lt;long long&gt;v;			// ...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
             <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/09/13</span>
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/09/17</span>
             </div>
             <!-- tags  -->
             
             <div class= abstract-tags >
     
-        <a class="post-tag" href="javascript:void(0);" data-tags = "数学">数学</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags = "DFS">DFS</a>
     
 </div>
             

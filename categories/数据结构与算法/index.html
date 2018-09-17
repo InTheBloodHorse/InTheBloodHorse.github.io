@@ -15,7 +15,7 @@
     <meta name="description" content="">
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-    <title>tags · InTheBloodHorse</title>
+    <title>InTheBloodHorse</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -346,43 +346,70 @@
 </script>        
         <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
         <div class="container container-unloaded">
-            <main class="main post-page">
-    <article class="article-entry">
-        
-    </article>
-    <!-- license  -->
+            <main class="main index-page">
     
-        <div class="license-wrapper">
-            <p>原文作者：<a href="http://pyking.cn">InTheBloodHorse</a>
-            <p>原文链接：<a href="http://pyking.cn/tags/index.html">http://pyking.cn/tags/index.html</a>
-            <p>发表日期：<a href="http://pyking.cn/tags/index.html">September 8th 2018, 6:43:00 pm</a>
-            <p>更新日期：<a href="http://pyking.cn/tags/index.html">September 8th 2018, 6:43:35 pm</a>
-            <p>版权声明：请随意转载！</p>
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href = "/2018/09/17/数据结构与算法-2-加权随机算法的Python实现/" >
+            
+                <span>数据结构与算法(2) 加权随机算法的Python实现</span>
+        </a>
+        <div class="abstract-content">
+            随机抽奖算法1.随机抽取一个或者多个12345678import randomname = ['a', 'b', 'c', 'd', 'e', 'f']random_name = random.choice(name)print(random_name)random_names = random.sample(name, 3)print(random_names)
+结果：12d['a', 'b', 'f']
+考虑权重后随机抽取一个元素如果不用的成员有不用的权重，比如某个成员是会员，某个成员贡献度高等，可以自定义一个抽取函数，用来抽取一个元素算法的思路就是
+1. 拿到 0 ~ 权重之和之间...
         </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/09/17</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href = "/2018/09/14/数据结构与算法-1-二叉堆/" >
+            
+                <span>数据结构与算法(1)-二叉堆</span>
+        </a>
+        <div class="abstract-content">
+            二叉堆1：什么是二叉堆？ans：二叉堆的本质是完全二叉树，可以分为最大堆和最小堆。
+最大堆最大堆任何父节点的值，都大于等于它的左右子节点的值。
+最小堆最小堆任何父节点的值，都小于等于它的左右子节点的值。
+二叉堆的根节点叫做堆顶，毫无疑问，就是二叉树的最大值或者最小值
+插入节点（复杂度 log(N)）假设我们已经有了一个最小堆，如图1.我们插入一个节点为 0（绿色），我们需要把插入的节点追加到树的最后一个节点 如图2.将插入的节点与父节点比较，假如值小于父节点，使父节点下沉。得到3.重复上述的操作，结果为
+删除节点（复杂度 log(N)）假设我们删除堆顶节点0，与插入相反，我们删除我们要删...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/09/14</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "树">树</a>
+    
+</div>
+            
+        </div>
+    </article>
     
     <!-- paginator  -->
-    <ul class="post-paginator">
-        <li class="next">
-            
-        </li>
-        <li class="previous">
-            
-        </li>
-    </ul>
-    <!-- 评论插件 -->
-    <!-- 来必力City版安装代码 -->
-
-<!-- City版安装代码已完成 -->
     
-    
-    <!-- partial('_partial/comment/changyan') -->
-    <!--PC版-->
-
-
-    
-    
-
-    <!-- 评论 -->
 </main>
             <!-- profile -->
             

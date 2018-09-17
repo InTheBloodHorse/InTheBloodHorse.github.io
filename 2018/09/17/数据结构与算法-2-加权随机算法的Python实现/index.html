@@ -15,7 +15,7 @@
     <meta name="description" content="">
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-    <title>InTheBloodHorse</title>
+    <title>数据结构与算法(2) 加权随机算法的Python实现 · InTheBloodHorse</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -211,12 +211,23 @@
 </head>
 
     
+        <body class="post-body">
+    
     
 <header class="header">
 
     <div class="read-progress"></div>
     <div class="header-sidebar-menu">&#xe775;</div>
     <!-- post页的toggle banner  -->
+    
+    <div class="banner">
+            <div class="blog-title">
+                <a href="/" >InTheBloodHorse</a>
+            </div>
+            <div class="post-title">
+                <a href="#" class="post-name">数据结构与算法(2) 加权随机算法的Python实现</a>
+            </div>
+    </div>
     
     <a class="home-link" href=/>InTheBloodHorse</a>
 </header>
@@ -228,24 +239,68 @@
 
 
 
+
+height:50vh;
 ">
     
     <!-- 主页  -->
+    
+    
+    <!-- 404页  -->
             
     <div class="site-intro-placeholder"></div>
-    <div class="site-intro-img" style="background-image: url(/)"></div>
+    <div class="site-intro-img" style="background-image: url(/intro/bg.jpg)"></div>
     <div class="site-intro-meta">
         <!-- 标题  -->
         <h1 class="intro-title">
             <!-- 主页  -->
+            
+            数据结构与算法(2) 加权随机算法的Python实现
+            <!-- 404 -->
             
         </h1>
         <!-- 副标题 -->
         <p class="intro-subtitle">
             <!-- 主页副标题  -->
             
+            
+            <!-- 404 -->
+            
         </p>
         <!-- 文章页meta -->
+        
+            <div class="post-intros">
+                <!-- 文章页标签  -->
+                
+                
+                    <div class="post-intro-read">
+                        <span>字数统计: <span class="post-count word-count">369</span>阅读时长: <span class="post-count reading-time">1 min</span></span>
+                    </div>
+                
+                <div class="post-intro-meta">
+                    <span class="post-intro-calander iconfont-archer">&#xe676;</span>
+                    <span class="post-intro-time">2018/09/17</span>
+                    
+                    <span id="busuanzi_container_page_pv" class="busuanzi-pv">
+                        <span class="iconfont-archer">&#xe602;</span>
+                        <span id="busuanzi_value_page_pv"></span>
+                    </span>
+                    
+                    <span class="shareWrapper">
+                        <span class="iconfont-archer shareIcon">&#xe71d;</span>
+                        <span class="shareText">Share</span>
+                        <ul class="shareList">
+                            <li class="iconfont-archer share-qr" data-type="qr">&#xe75b;
+                                <div class="share-qrcode"></div>
+                            </li>
+                            <li class="iconfont-archer" data-type="weibo">&#xe619;</li>
+                            <li class="iconfont-archer" data-type="qzone">&#xe62e;</li>
+                            <li class="iconfont-archer" data-type="twitter">&#xe634;</li>
+                            <li class="iconfont-archer" data-type="facebook">&#xe67a;</li>
+                        </ul>
+                    </span>
+                </div>
+            </div>
         
     </div>
 </div>
@@ -346,44 +401,56 @@
 </script>        
         <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
         <div class="container container-unloaded">
-            <main class="main index-page">
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/09/14/数据结构-1-二叉堆/" >
-            
-                <span>数据结构(1)-二叉堆</span>
-        </a>
-        <div class="abstract-content">
-            二叉堆1：什么是二叉堆？ans：二叉堆的本质是完全二叉树，可以分为最大堆和最小堆。
-最大堆最大堆任何父节点的值，都大于等于它的左右子节点的值。
-最小堆最小堆任何父节点的值，都小于等于它的左右子节点的值。
-二叉堆的根节点叫做堆顶，毫无疑问，就是二叉树的最大值或者最小值
-插入节点（复杂度 log(N)）假设我们已经有了一个最小堆，如图1.我们插入一个节点为 0（绿色），我们需要把插入的节点追加到树的最后一个节点 如图2.将插入的节点与父节点比较，假如值小于父节点，使父节点下沉。得到3.重复上述的操作，结果为
-删除节点（复杂度 log(N)）假设我们删除堆顶节点0，与插入相反，我们删除我们要删...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/09/14</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "树">树</a>
-    
-</div>
-            
-        </div>
+            <main class="main post-page">
+    <article class="article-entry">
+        <h1 id="随机抽奖算法"><a href="#随机抽奖算法" class="headerlink" title="随机抽奖算法"></a>随机抽奖算法</h1><h2 id="1-随机抽取一个或者多个"><a href="#1-随机抽取一个或者多个" class="headerlink" title="1.随机抽取一个或者多个"></a>1.随机抽取一个或者多个</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> random</span><br><span class="line"></span><br><span class="line">name = [<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>, <span class="string">'d'</span>, <span class="string">'e'</span>, <span class="string">'f'</span>]</span><br><span class="line"></span><br><span class="line">random_name = random.choice(name)</span><br><span class="line">print(random_name)</span><br><span class="line">random_names = random.sample(name, <span class="number">3</span>)</span><br><span class="line">print(random_names)</span><br></pre></td></tr></table></figure>
+<p>结果：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">d</span><br><span class="line">[<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'f'</span>]</span><br></pre></td></tr></table></figure></p>
+<h2 id="考虑权重后随机抽取一个元素"><a href="#考虑权重后随机抽取一个元素" class="headerlink" title="考虑权重后随机抽取一个元素"></a>考虑权重后随机抽取一个元素</h2><p>如果不用的成员有不用的权重，比如某个成员是会员，某个成员贡献度高等，可以自定义一个抽取函数，用来抽取一个元素<br>算法的思路就是</p>
+<h3 id="1-拿到-0-权重之和之间的一个数字"><a href="#1-拿到-0-权重之和之间的一个数字" class="headerlink" title="1. 拿到 0 ~ 权重之和之间的一个数字"></a>1. 拿到 0 ~ 权重之和之间的一个数字</h3><p>这个数字作为判定的标准</p>
+<h3 id="2-累加计算"><a href="#2-累加计算" class="headerlink" title="2. 累加计算"></a>2. 累加计算</h3><p>定义初始值0 ，累加计算，假如变准值 小于等于 累加的值，返回结果</p>
+<h3 id="3-总结，说实话这个很绕，不过可以这样理解，把权值分段"><a href="#3-总结，说实话这个很绕，不过可以这样理解，把权值分段" class="headerlink" title="3.总结，说实话这个很绕，不过可以这样理解，把权值分段"></a>3.总结，说实话这个很绕，不过可以这样理解，把权值分段</h3><p>0 1<br>2 8<br>9 12<br>…<br>然后看我们random的标准值在那个区间里面<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> random</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">random_weight</span><span class="params">(data)</span>:</span></span><br><span class="line">    total = sum(data.values())</span><br><span class="line">    st = random.uniform(<span class="number">0</span>, total)</span><br><span class="line">    curr_sum = <span class="number">0</span></span><br><span class="line">    <span class="keyword">for</span> key <span class="keyword">in</span> data.keys():</span><br><span class="line">        curr_sum += data[key]</span><br><span class="line">        <span class="keyword">if</span> st &lt;= curr_sum:</span><br><span class="line">            ret = key</span><br><span class="line">            <span class="keyword">return</span> ret</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    data = &#123;</span><br><span class="line">        <span class="string">'老王'</span>: <span class="number">1</span>,</span><br><span class="line">        <span class="string">'阿汤哥'</span>: <span class="number">7</span>,</span><br><span class="line">        <span class="string">'伟哥'</span>: <span class="number">3</span>,</span><br><span class="line">        <span class="string">'阿黄'</span>: <span class="number">3</span>,</span><br><span class="line">        <span class="string">'阿绿'</span>: <span class="number">2</span>,</span><br><span class="line">        <span class="string">'王师傅'</span>: <span class="number">5</span>,</span><br><span class="line">        <span class="string">'狗贼'</span>: <span class="number">1</span></span><br><span class="line">    &#125;</span><br><span class="line">    print(random_weight(data))</span><br></pre></td></tr></table></figure></p>
+<p>大致的概率，和权重几乎符合<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">阿黄 0.1362605</span><br><span class="line">阿汤哥 0.3185684</span><br><span class="line">阿绿 0.0909506</span><br><span class="line">王师傅 0.2270081</span><br><span class="line">伟哥 0.136271</span><br><span class="line">老王 0.04555</span><br><span class="line">狗贼 0.0453914</span><br></pre></td></tr></table></figure></p>
+<h2 id="选择排序"><a href="#选择排序" class="headerlink" title="选择排序"></a>选择排序</h2><p>思路是在先从大到小排序，再去判断，因为我们权值大的话，随机的几率会大，所以可以在某种程度上，加快速度。</p>
+
     </article>
+    <!-- license  -->
+    
+        <div class="license-wrapper">
+            <p>原文作者：<a href="http://pyking.cn">InTheBloodHorse</a>
+            <p>原文链接：<a href="http://pyking.cn/2018/09/17/数据结构与算法-2-加权随机算法的Python实现/">http://pyking.cn/2018/09/17/数据结构与算法-2-加权随机算法的Python实现/</a>
+            <p>发表日期：<a href="http://pyking.cn/2018/09/17/数据结构与算法-2-加权随机算法的Python实现/">September 17th 2018, 5:20:22 pm</a>
+            <p>更新日期：<a href="http://pyking.cn/2018/09/17/数据结构与算法-2-加权随机算法的Python实现/">September 17th 2018, 6:17:37 pm</a>
+            <p>版权声明：请随意转载！</p>
+        </div>
     
     <!-- paginator  -->
+    <ul class="post-paginator">
+        <li class="next">
+            
+        </li>
+        <li class="previous">
+            
+                <div class="prevSlogan">Previous Post</div>
+                <a href= "/2018/09/17/每日一题-7-codeforces-1036C/" title= "每日一题(7) codeforces 1036C">
+                    <div class="prevTitle">每日一题(7) codeforces 1036C</div>
+                </a>
+            
+        </li>
+    </ul>
+    <!-- 评论插件 -->
+    <!-- 来必力City版安装代码 -->
+
+<!-- City版安装代码已完成 -->
     
+    
+    <!-- partial('_partial/comment/changyan') -->
+    <!--PC版-->
+
+
+    
+    
+
+    <!-- 评论 -->
 </main>
             <!-- profile -->
             
@@ -464,6 +531,24 @@
 </footer>
     </div>
     <!-- toc -->
+    
+    <div class="toc-wrapper" style=
+    
+
+
+
+
+
+
+
+top:50vh;
+
+    >
+        <div class="toc-catalog">
+            <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
+        </div>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#随机抽奖算法"><span class="toc-number">1.</span> <span class="toc-text">随机抽奖算法</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-随机抽取一个或者多个"><span class="toc-number">1.1.</span> <span class="toc-text">1.随机抽取一个或者多个</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#考虑权重后随机抽取一个元素"><span class="toc-number">1.2.</span> <span class="toc-text">考虑权重后随机抽取一个元素</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-拿到-0-权重之和之间的一个数字"><span class="toc-number">1.2.1.</span> <span class="toc-text">1. 拿到 0 ~ 权重之和之间的一个数字</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-累加计算"><span class="toc-number">1.2.2.</span> <span class="toc-text">2. 累加计算</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-总结，说实话这个很绕，不过可以这样理解，把权值分段"><span class="toc-number">1.2.3.</span> <span class="toc-text">3.总结，说实话这个很绕，不过可以这样理解，把权值分段</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#选择排序"><span class="toc-number">1.3.</span> <span class="toc-text">选择排序</span></a></li></ol></li></ol>
+    </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
     <div class="sidebar sidebar-hide">
@@ -597,9 +682,38 @@
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 12
+        Total : 13
         </div>
         <!-- search  -->
         
@@ -619,6 +733,11 @@
     
     
         <li class="archive-post-item">
+            <span class="archive-post-date">09/17</span><a class="archive-post-title" href= "/2018/09/17/数据结构与算法-2-加权随机算法的Python实现/" >数据结构与算法(2) 加权随机算法的Python实现</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
             <span class="archive-post-date">09/17</span><a class="archive-post-title" href= "/2018/09/17/每日一题-7-codeforces-1036C/" >每日一题(7) codeforces 1036C</a>
         </li>
     
@@ -634,7 +753,7 @@
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">09/14</span><a class="archive-post-title" href= "/2018/09/14/数据结构-1-二叉堆/" >数据结构(1)-二叉堆</a>
+            <span class="archive-post-date">09/14</span><a class="archive-post-title" href= "/2018/09/14/数据结构与算法-1-二叉堆/" >数据结构与算法(1)-二叉堆</a>
         </li>
     
     
@@ -682,6 +801,8 @@
         <div class="sidebar-panel-tags">
     <div class="sidebar-tags-name">
     
+        <span class="sidebar-tag-name" data-tags="树"><span class="iconfont-archer">&#xe606;</span>树</span>
+    
         <span class="sidebar-tag-name" data-tags="思维"><span class="iconfont-archer">&#xe606;</span>思维</span>
     
         <span class="sidebar-tag-name" data-tags="排序"><span class="iconfont-archer">&#xe606;</span>排序</span>
@@ -693,8 +814,6 @@
         <span class="sidebar-tag-name" data-tags="数学"><span class="iconfont-archer">&#xe606;</span>数学</span>
     
         <span class="sidebar-tag-name" data-tags="DFS"><span class="iconfont-archer">&#xe606;</span>DFS</span>
-    
-        <span class="sidebar-tag-name" data-tags="树"><span class="iconfont-archer">&#xe606;</span>树</span>
     
         <span class="sidebar-tag-name" data-tags="素数"><span class="iconfont-archer">&#xe606;</span>素数</span>
     
@@ -735,11 +854,11 @@ jsonContent:
     
         <span class="sidebar-category-name" data-categories="Redis"><span class="iconfont-archer">&#xe60a;</span>Redis</span>
     
+        <span class="sidebar-category-name" data-categories="数据结构与算法"><span class="iconfont-archer">&#xe60a;</span>数据结构与算法</span>
+    
         <span class="sidebar-category-name" data-categories="机器学习"><span class="iconfont-archer">&#xe60a;</span>机器学习</span>
     
         <span class="sidebar-category-name" data-categories="每日一题"><span class="iconfont-archer">&#xe60a;</span>每日一题</span>
-    
-        <span class="sidebar-category-name" data-categories="数据结构"><span class="iconfont-archer">&#xe60a;</span>数据结构</span>
     
         <span class="sidebar-category-name" data-categories="杂谈"><span class="iconfont-archer">&#xe60a;</span>杂谈</span>
     
@@ -798,6 +917,8 @@ jsonContent:
     
     </div>
     <!-- async load share.js -->
+    
+        <script src="/scripts/share.js" async></script>    
      
     </body>
 </html>

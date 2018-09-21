@@ -360,8 +360,8 @@
         </a>
         <div class="abstract-content">
             题目地址题意：找出i在[0,b]的f(i)小于等于f(a)的数的个数。思路：还是数位dp。关键点1：用dp[pos][sta]来保存位数为pos，f(number)为sta的个数思考：为什么只需要初始化一次dp数组答案：因为dp[pos][sta]和f(a)没有任何关系
-关键点2：尝试用 f(a) 减去 f(number)来判断比如：pos : n-1位数字是由n位数字推出来的,所以减去2^n^
-有点绕了AC代码：12345678910111213141516171819202122232425262728293031323334353637383940414243#include&lt...
+关键点2：尝试用 f(a) 减去 f(number)来判断比如：pos : n-1位数字是由n位数字推出来的,所以减去2的n次方
+有点绕了AC代码：12345678910111213141516171819202122232425262728293031323334353637383940414243#include&l...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -741,6 +741,10 @@ k-近邻算法称为kNN，它的工作原理是：存在一个样本数据集合
     <div class="sidebar-content sidebar-content-show-archive">
           <div class="sidebar-panel-archives">
     <!-- 在ejs中将archive按照时间排序 -->
+    
+    
+    
+    
     
     
     

@@ -6,7 +6,7 @@
 
 
 <head>
-    <meta charset="utf-8">
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" >
     <meta name="author" content="InTheBloodHorse">
     <meta name="renderer" content="webkit">
@@ -206,7 +206,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js" defer></script>
     <!-- 百度统计  -->
     
-    <!-- 谷歌统计  -->
+    <!-- 谷歌统计  --><!-- hexo-inject:begin --><!-- hexo-inject:end -->
     
 </head>
 
@@ -214,7 +214,7 @@
         <body class="post-body">
     
     
-<header class="header">
+<!-- hexo-inject:begin --><!-- hexo-inject:end --><header class="header">
 
     <div class="read-progress"></div>
     <div class="header-sidebar-menu">&#xe775;</div>
@@ -274,7 +274,7 @@ height:50vh;
                 
                 
                     <div class="post-intro-read">
-                        <span>字数统计: <span class="post-count word-count">583</span>阅读时长: <span class="post-count reading-time">2 min</span></span>
+                        <span>字数统计: <span class="post-count word-count">596</span>阅读时长: <span class="post-count reading-time">2 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
@@ -410,7 +410,7 @@ height:50vh;
 <p>k-近邻算法称为kNN，它的工作原理是：存在一个样本数据集合，也称作训练样本集，并且样本集中每个数据都存在标签，即我们知道样本集中每一数据与所属分类的对应关系。输入没有标签的新数据后，将新数据的每个特征与样本集中数据对应的特征进行比较，然后算法提取样本集中特征最相似数据（最近邻）的分类标签。一般来说，我们只选择样本数据集中前κ个最相似的数据，这就是k-近邻算法中κ的出处。通常κ是不大于20的整数。最后，选择κ个最相似数据出现次数最多的分类，作为新数据的分类。</p>
 <p>总结：就是输入数据，与样本数据之间进行计算（差值，比如两点之差），然后进行排序，拿到前K个距离最小的，输出前K个出现标签最多的。</p>
 <h2 id="代码流程"><a href="#代码流程" class="headerlink" title="代码流程"></a>代码流程</h2><p>1.计算已知类别数据集中的每个点依次执行以下操作<br>2.计算已知类别数据集中的点与当前点之间的距离<br>3.按照距离递增次序排序<br>4.选择与当前点距离最小的κ个点<br>5.确定前κ个点所在类别的出现概率<br>6.返回前κ个点出现频率最高的类别作为当前点的预测分类</p>
-<p>Python代码<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 创造数据</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">create_data_set</span><span class="params">()</span>:</span></span><br><span class="line">    group = np.array([</span><br><span class="line">        [<span class="number">1.0</span>, <span class="number">1.1</span>],</span><br><span class="line">        [<span class="number">1.0</span>, <span class="number">1.0</span>],</span><br><span class="line">        [<span class="number">0</span>, <span class="number">0</span>],</span><br><span class="line">        [<span class="number">0</span>, <span class="number">0.1</span>]</span><br><span class="line">    ])</span><br><span class="line">    labels = [<span class="string">'A'</span>, <span class="string">'A'</span>, <span class="string">'B'</span>, <span class="string">'B'</span>]</span><br><span class="line">    <span class="keyword">return</span> group, labels</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">classify0</span><span class="params">(input_data, data_set, labels, k)</span>:</span></span><br><span class="line">    data_size = data_set.shape[<span class="number">0</span>]</span><br><span class="line">    <span class="comment"># 转换成与训练数据相同的shape</span></span><br><span class="line">    diff_mat = np.tile(input_data, (data_size, <span class="number">1</span>))</span><br><span class="line">    dis = diff_mat - data_set</span><br><span class="line">    <span class="comment"># 平方</span></span><br><span class="line">    sqrt_dis = dis ** <span class="number">2</span></span><br><span class="line">    <span class="comment"># 求和</span></span><br><span class="line">    sum_row_dis = sqrt_dis.sum(axis=<span class="number">1</span>)</span><br><span class="line">    <span class="comment"># 开方</span></span><br><span class="line">    dis = sum_row_dis ** <span class="number">0.5</span></span><br><span class="line"></span><br><span class="line">    index = dis.argsort()</span><br><span class="line">    cnt = &#123;&#125;</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(k):</span><br><span class="line">        label = labels[index[i]]</span><br><span class="line">        cnt[label] = cnt.get(label, <span class="number">0</span>) + <span class="number">1</span></span><br><span class="line">    <span class="comment"># 返回频率最大的值</span></span><br><span class="line">    <span class="keyword">return</span> sorted(cnt.keys())[<span class="number">0</span>]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">data_set, labels = create_data_set()</span><br><span class="line">print(classify0([<span class="number">0</span>, <span class="number">0</span>], data_set, labels, <span class="number">3</span>))</span><br></pre></td></tr></table></figure></p>
+<p>Python代码<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 创造数据</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">create_data_set</span><span class="params">()</span>:</span></span><br><span class="line">    group = np.array([</span><br><span class="line">        [<span class="number">1.0</span>, <span class="number">1.1</span>],</span><br><span class="line">        [<span class="number">1.0</span>, <span class="number">1.0</span>],</span><br><span class="line">        [<span class="number">0</span>, <span class="number">0</span>],</span><br><span class="line">        [<span class="number">0</span>, <span class="number">0.1</span>]</span><br><span class="line">    ])</span><br><span class="line">    labels = [<span class="string">'A'</span>, <span class="string">'A'</span>, <span class="string">'B'</span>, <span class="string">'B'</span>]</span><br><span class="line">    <span class="keyword">return</span> group, labels</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">classify0</span><span class="params">(input_data, data_set, labels, k)</span>:</span></span><br><span class="line">    data_size = data_set.shape[<span class="number">0</span>]</span><br><span class="line">    <span class="comment"># 转换成与训练数据相同的shape</span></span><br><span class="line">    diff_mat = np.tile(input_data, (data_size, <span class="number">1</span>))</span><br><span class="line">    dis = diff_mat - data_set</span><br><span class="line">    <span class="comment"># 平方</span></span><br><span class="line">    sqrt_dis = dis ** <span class="number">2</span></span><br><span class="line">    <span class="comment"># 求和</span></span><br><span class="line">    sum_row_dis = sqrt_dis.sum(axis=<span class="number">1</span>)</span><br><span class="line">    <span class="comment"># 开方</span></span><br><span class="line">    dis = sum_row_dis ** <span class="number">0.5</span></span><br><span class="line"></span><br><span class="line">    index = dis.argsort()</span><br><span class="line">    cnt = &#123;&#125;</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(k):</span><br><span class="line">        label = labels[index[i]]</span><br><span class="line">        cnt[label] = cnt.get(label, <span class="number">0</span>) + <span class="number">1</span></span><br><span class="line">    <span class="comment"># 返回频率最大的值的key</span></span><br><span class="line">    <span class="keyword">return</span> sorted(cnt.items(), key=<span class="keyword">lambda</span> x: x[<span class="number">1</span>], reverse=<span class="keyword">True</span>)[<span class="number">0</span>][<span class="number">0</span>]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">data_set, labels = create_data_set()</span><br><span class="line">print(<span class="string">"分类为:"</span> + classify0([<span class="number">0</span>, <span class="number">0</span>], data_set, labels, <span class="number">3</span>))</span><br></pre></td></tr></table></figure></p>
 
     </article>
     <!-- license  -->
@@ -419,7 +419,7 @@ height:50vh;
             <p>原文作者：<a href="http://pyking.cn">InTheBloodHorse</a>
             <p>原文链接：<a href="http://pyking.cn/2018/09/15/机器学习-1-k-近邻算法-KNN/">http://pyking.cn/2018/09/15/机器学习-1-k-近邻算法-KNN/</a>
             <p>发表日期：<a href="http://pyking.cn/2018/09/15/机器学习-1-k-近邻算法-KNN/">September 15th 2018, 3:10:24 pm</a>
-            <p>更新日期：<a href="http://pyking.cn/2018/09/15/机器学习-1-k-近邻算法-KNN/">September 15th 2018, 3:15:29 pm</a>
+            <p>更新日期：<a href="http://pyking.cn/2018/09/15/机器学习-1-k-近邻算法-KNN/">September 22nd 2018, 2:38:12 pm</a>
             <p>版权声明：请随意转载！</p>
         </div>
     
@@ -803,10 +803,9 @@ top:50vh;
     
     
     
-    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 19
+        Total : 20
         </div>
         <!-- search  -->
         
@@ -823,6 +822,11 @@ top:50vh;
     
     <div class="archive-year"> 2018 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/22</span><a class="archive-post-title" href= "/2018/09/22/机器学习-2-决策树-ID3算法实现/" >机器学习(2) 决策树(ID3算法实现)</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -924,9 +928,9 @@ top:50vh;
         <div class="sidebar-panel-tags">
     <div class="sidebar-tags-name">
     
-        <span class="sidebar-tag-name" data-tags="树"><span class="iconfont-archer">&#xe606;</span>树</span>
-    
         <span class="sidebar-tag-name" data-tags="排序"><span class="iconfont-archer">&#xe606;</span>排序</span>
+    
+        <span class="sidebar-tag-name" data-tags="树"><span class="iconfont-archer">&#xe606;</span>树</span>
     
         <span class="sidebar-tag-name" data-tags="思维"><span class="iconfont-archer">&#xe606;</span>思维</span>
     
@@ -1043,7 +1047,24 @@ jsonContent:
     </div>
     <!-- async load share.js -->
     
-        <script src="/scripts/share.js" async></script>    
+        <script src="/scripts/share.js" async></script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js">
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end -->    
      
     </body>
 </html>

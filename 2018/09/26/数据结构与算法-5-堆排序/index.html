@@ -15,7 +15,7 @@
     <meta name="description" content="">
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-    <title>新站，也是最丧的一天！ · InTheBloodHorse</title>
+    <title>数据结构与算法(5) 堆排序 · InTheBloodHorse</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -225,7 +225,7 @@
                 <a href="/" >InTheBloodHorse</a>
             </div>
             <div class="post-title">
-                <a href="#" class="post-name">新站，也是最丧的一天！</a>
+                <a href="#" class="post-name">数据结构与算法(5) 堆排序</a>
             </div>
     </div>
     
@@ -255,7 +255,7 @@ height:50vh;
         <h1 class="intro-title">
             <!-- 主页  -->
             
-            新站，也是最丧的一天！
+            数据结构与算法(5) 堆排序
             <!-- 404 -->
             
         </h1>
@@ -272,14 +272,20 @@ height:50vh;
             <div class="post-intros">
                 <!-- 文章页标签  -->
                 
+                    <div class= post-intro-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "排序">排序</a>
+    
+</div>
+                
                 
                     <div class="post-intro-read">
-                        <span>字数统计: <span class="post-count word-count">301</span>阅读时长: <span class="post-count reading-time">1 min</span></span>
+                        <span>字数统计: <span class="post-count word-count">197</span>阅读时长: <span class="post-count reading-time">1 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
                     <span class="post-intro-calander iconfont-archer">&#xe676;</span>
-                    <span class="post-intro-time">2018/09/08</span>
+                    <span class="post-intro-time">2018/09/26</span>
                     
                     <span id="busuanzi_container_page_pv" class="busuanzi-pv">
                         <span class="iconfont-archer">&#xe602;</span>
@@ -403,17 +409,16 @@ height:50vh;
         <div class="container container-unloaded">
             <main class="main post-page">
     <article class="article-entry">
-        <h1 id="今天竟然生病了！！！"><a href="#今天竟然生病了！！！" class="headerlink" title="今天竟然生病了！！！"></a>今天竟然生病了！！！</h1><p>今早出去打印证书出去了，2018.9.8，主要是降温了，穿一条中裤和T 还是冷啊，然后开车出去，又快，那时候只是觉得阵阵凉意，哈哈（舒服的不得了）。<br>工作干完，回到实验室，人就不行了，脑壳疼，后面就各种难受了，然后趴在桌上，后面硬撑着走回寝室，直接睡床上，拿了湿毛巾，就盖脸上了，我也不知道有没有用哇，后来受不了了，又硬生生爬起来，走到隔壁寝室，叫同学帮我去买药了，他应该是大学里最好的朋友了。买回来，吃药，结果就吐了，难受啊，吐出来的也都是水，自行脑补，默默说一句，那药有点厉害啊，我一吞进去，他就融化了，有点厉害。去厕所吐，吐完就没事了，好像我基本不会生病，一生病想办法吐出来就好了，以前都不带吃药的，今天吃了。可能老了吧，现在晚上，基本是恢复了，问题不大，药不能停，现在是没当年那个劲了。</p>
-<p><center>祝好运</center><br><img src="4a6972e24aa21fb2.jpg" alt="4a6972e24aa21fb2.jpg"></p>
+        <p>之前讲到过<a href="http://pyking.cn/2018/09/14/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95-1-%E4%BA%8C%E5%8F%89%E5%A0%86/">二叉堆</a>，二叉堆可以实现优先队列和堆排序，今天就来讲讲堆排序。<br>其实只要理解了二叉堆，堆排序就很简单了。<br>无论是最大堆最小堆，堆顶元素肯定是最大|最小的，所以我们每次pop出堆顶的元素，记录。删除堆顶的元素，二叉堆会自动维护，所以堆顶的元素又是当前最大|最小的。<br>加上之前的代码就行了。<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">case</span> <span class="number">4</span>:&#123;</span><br><span class="line">	<span class="keyword">if</span>(is_small_heap == <span class="literal">false</span>)&#123;</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; <span class="string">"先生成最小堆"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">		<span class="keyword">break</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;ans;</span><br><span class="line">	<span class="keyword">int</span> length = v.size();</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;length;i++)&#123;</span><br><span class="line">		ans.push_back(v[<span class="number">0</span>]);</span><br><span class="line">		delete_node(<span class="number">0</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;ans.size();i++)&#123;</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; ans[i] &lt;&lt; <span class="string">" "</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	<span class="keyword">break</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 
     </article>
     <!-- license  -->
     
         <div class="license-wrapper">
             <p>原文作者：<a href="http://pyking.cn">InTheBloodHorse</a>
-            <p>原文链接：<a href="http://pyking.cn/2018/09/08/新站，也是最丧的一天！/">http://pyking.cn/2018/09/08/新站，也是最丧的一天！/</a>
-            <p>发表日期：<a href="http://pyking.cn/2018/09/08/新站，也是最丧的一天！/">September 8th 2018, 6:55:54 pm</a>
-            <p>更新日期：<a href="http://pyking.cn/2018/09/08/新站，也是最丧的一天！/">September 8th 2018, 7:08:02 pm</a>
+            <p>原文链接：<a href="http://pyking.cn/2018/09/26/数据结构与算法-5-堆排序/">http://pyking.cn/2018/09/26/数据结构与算法-5-堆排序/</a>
+            <p>发表日期：<a href="http://pyking.cn/2018/09/26/数据结构与算法-5-堆排序/">September 26th 2018, 12:33:06 pm</a>
+            <p>更新日期：<a href="http://pyking.cn/2018/09/26/数据结构与算法-5-堆排序/">September 26th 2018, 12:50:47 pm</a>
             <p>版权声明：请随意转载！</p>
         </div>
     
@@ -421,13 +426,13 @@ height:50vh;
     <ul class="post-paginator">
         <li class="next">
             
-                <div class="nextSlogan">Next Post</div>
-                <a href= "/2018/09/09/每日一题-1-codeforces-1038A/" title= "每日一题(1) codeforces 1038A">
-                    <div class="nextTitle">每日一题(1) codeforces 1038A</div>
-                </a>
-            
         </li>
         <li class="previous">
+            
+                <div class="prevSlogan">Previous Post</div>
+                <a href= "/2018/09/25/每日一题-14-codeforces1036D/" title= "每日一题(14) codeforces1036D">
+                    <div class="prevTitle">每日一题(14) codeforces1036D</div>
+                </a>
             
         </li>
     </ul>
@@ -541,7 +546,7 @@ top:50vh;
         <div class="toc-catalog">
             <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
         </div>
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#今天竟然生病了！！！"><span class="toc-number">1.</span> <span class="toc-text">今天竟然生病了！！！</span></a></li></ol>
+        
     </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>

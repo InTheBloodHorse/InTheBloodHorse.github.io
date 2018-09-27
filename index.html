@@ -367,6 +367,31 @@ height:50vh;
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2018/09/26/Flask-笔记/" >
+            
+                <span>Flask 笔记</span>
+        </a>
+        <div class="abstract-content">
+            随机查询模型12条数据12from sqlalchemy.sql.expression import funcphotos = Photo.query.order_by(func.rand()).limit(12)
+python内置的random模块提供的choice()方法进行随机排序的性能远不及数据库引擎提供的随机函数。
+查询使用次数最多的前十个标签12from sqlalchemy.sql.expression import functags = Tag.query.join(Tag.photos).group_by(Tag.id).order_by(func.count(Phot...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/09/26</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2018/09/26/每日一题-15-codeforces-1041A/" >
             
                 <span>每日一题(15) codeforces 1041A</span>
@@ -617,35 +642,6 @@ height:50vh;
             <div class= abstract-tags >
     
         <a class="post-tag" href="javascript:void(0);" data-tags = "树">树</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/09/19/每日一题-9-HDU3652/" >
-            
-                <span>每日一题(9) HDU3652</span>
-        </a>
-        <div class="abstract-content">
-            题目地址题意：输入n，问在区间[1,n]里面有数字13且能被13整除的数字有多少个。思路：数位dp模版题，pos代表位数，mod 代表当前数字对13取余数，done表示是否已经有数字13，pre代表上一个数字AC代码：12345678910111213141516171819202122232425262728293031#include&lt;bits/stdc++.h&gt;using namespace std;int a[20];int dp[20][20][3][15];		//	位数   %13    是否有13  上一位  int dfs(int pos,int mod,i...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/09/19</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "数位dp">数位dp</a>
     
 </div>
             
@@ -1149,6 +1145,18 @@ height:50vh;
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
         Total : 25
@@ -1168,6 +1176,11 @@ height:50vh;
     
     <div class="archive-year"> 2018 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/26</span><a class="archive-post-title" href= "/2018/09/26/Flask-笔记/" >Flask 笔记</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -1289,11 +1302,6 @@ height:50vh;
             <span class="archive-post-date">09/09</span><a class="archive-post-title" href= "/2018/09/09/每日一题-1-codeforces-1038A/" >每日一题(1) codeforces 1038A</a>
         </li>
     
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">09/08</span><a class="archive-post-title" href= "/2018/09/08/新站，也是最丧的一天！/" >新站，也是最丧的一天！</a>
-        </li>
-    
     </div>
   </div>
         <div class="sidebar-panel-tags">
@@ -1303,9 +1311,9 @@ height:50vh;
     
         <span class="sidebar-tag-name" data-tags="排序"><span class="iconfont-archer">&#xe606;</span>排序</span>
     
-        <span class="sidebar-tag-name" data-tags="思维"><span class="iconfont-archer">&#xe606;</span>思维</span>
-    
         <span class="sidebar-tag-name" data-tags="数位dp"><span class="iconfont-archer">&#xe606;</span>数位dp</span>
+    
+        <span class="sidebar-tag-name" data-tags="思维"><span class="iconfont-archer">&#xe606;</span>思维</span>
     
         <span class="sidebar-tag-name" data-tags="贪心"><span class="iconfont-archer">&#xe606;</span>贪心</span>
     
@@ -1354,9 +1362,9 @@ jsonContent:
     
         <span class="sidebar-category-name" data-categories="Redis"><span class="iconfont-archer">&#xe60a;</span>Redis</span>
     
-        <span class="sidebar-category-name" data-categories="数据结构与算法"><span class="iconfont-archer">&#xe60a;</span>数据结构与算法</span>
+        <span class="sidebar-category-name" data-categories="Flask"><span class="iconfont-archer">&#xe60a;</span>Flask</span>
     
-        <span class="sidebar-category-name" data-categories="杂谈"><span class="iconfont-archer">&#xe60a;</span>杂谈</span>
+        <span class="sidebar-category-name" data-categories="数据结构与算法"><span class="iconfont-archer">&#xe60a;</span>数据结构与算法</span>
     
         <span class="sidebar-category-name" data-categories="机器学习"><span class="iconfont-archer">&#xe60a;</span>机器学习</span>
     

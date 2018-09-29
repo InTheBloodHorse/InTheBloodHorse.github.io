@@ -354,6 +354,37 @@
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2018/09/21/每日一题-11-HDU4734/" >
+            
+                <span>每日一题(11) HDU4734</span>
+        </a>
+        <div class="abstract-content">
+            题目地址题意：找出i在[0,b]的f(i)小于等于f(a)的数的个数。思路：还是数位dp。关键点1：用dp[pos][sta]来保存位数为pos，f(number)为sta的个数思考：为什么只需要初始化一次dp数组答案：因为dp[pos][sta]和f(a)没有任何关系
+关键点2：尝试用 f(a) 减去 f(number)来判断比如：pos : n-1位数字是由n位数字推出来的,所以减去2的n次方
+有点绕了AC代码：12345678910111213141516171819202122232425262728293031323334353637383940414243#include&l...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/09/21</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "数位dp">数位dp</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2018/09/20/每日一题-10-POJ3252/" >
             
                 <span>每日一题(10) POJ3252</span>
@@ -607,39 +638,6 @@ k-近邻算法称为kNN，它的工作原理是：存在一个样本数据集合
             <div class= abstract-tags >
     
         <a class="post-tag" href="javascript:void(0);" data-tags = "思维">思维</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/09/14/数据结构与算法-1-二叉堆/" >
-            
-                <span>数据结构与算法(1)-二叉堆</span>
-        </a>
-        <div class="abstract-content">
-            二叉堆1：什么是二叉堆？ans：二叉堆的本质是完全二叉树，可以分为最大堆和最小堆。二叉堆可以实现优先队列，插入和删除的复杂度都为O(logN)用堆实现的优先队列 数据结构与算法(4) 堆(优先队列)
-最大堆最大堆任何父节点的值，都大于等于它的左右子节点的值。
-最小堆最小堆任何父节点的值，都小于等于它的左右子节点的值。
-二叉堆的根节点叫做堆顶，毫无疑问，就是二叉树的最大值或者最小值
-插入节点（复杂度 log(N)）假设我们已经有了一个最小堆，如图1.我们插入一个节点为 0（绿色），我们需要把插入的节点追加到树的最后一个节点 如图2.将插入的节点与父节点比较，假如值小于父节点，使父节点下沉。...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/09/14</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "树">树</a>
     
 </div>
             
@@ -1092,9 +1090,12 @@ k-近邻算法称为kNN，它的工作原理是：存在一个样本数据集合
     
     
     
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 27
+        Total : 28
         </div>
         <!-- search  -->
         
@@ -1111,6 +1112,11 @@ k-近邻算法称为kNN，它的工作原理是：存在一个样本数据集合
     
     <div class="archive-year"> 2018 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/29</span><a class="archive-post-title" href= "/2018/09/29/每日一题-18-codeforces-1041D/" >每日一题(18) codeforces 1041D</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -1260,9 +1266,9 @@ k-近邻算法称为kNN，它的工作原理是：存在一个样本数据集合
     
         <span class="sidebar-tag-name" data-tags="数位dp"><span class="iconfont-archer">&#xe606;</span>数位dp</span>
     
-        <span class="sidebar-tag-name" data-tags="贪心"><span class="iconfont-archer">&#xe606;</span>贪心</span>
-    
         <span class="sidebar-tag-name" data-tags="gcd"><span class="iconfont-archer">&#xe606;</span>gcd</span>
+    
+        <span class="sidebar-tag-name" data-tags="贪心"><span class="iconfont-archer">&#xe606;</span>贪心</span>
     
         <span class="sidebar-tag-name" data-tags="优先队列"><span class="iconfont-archer">&#xe606;</span>优先队列</span>
     
@@ -1309,11 +1315,11 @@ jsonContent:
         <div class="sidebar-panel-categories">
     <div class="sidebar-categories-name">
     
-        <span class="sidebar-category-name" data-categories="Flask"><span class="iconfont-archer">&#xe60a;</span>Flask</span>
-    
         <span class="sidebar-category-name" data-categories="Redis"><span class="iconfont-archer">&#xe60a;</span>Redis</span>
     
         <span class="sidebar-category-name" data-categories="数据结构与算法"><span class="iconfont-archer">&#xe60a;</span>数据结构与算法</span>
+    
+        <span class="sidebar-category-name" data-categories="Flask"><span class="iconfont-archer">&#xe60a;</span>Flask</span>
     
         <span class="sidebar-category-name" data-categories="机器学习"><span class="iconfont-archer">&#xe60a;</span>机器学习</span>
     

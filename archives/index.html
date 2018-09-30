@@ -354,6 +354,35 @@
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2018/09/30/数据结构与算法-6-你可能不知道的斐波那契数列/" >
+            
+                <span>数据结构与算法(6) 你可能不知道的斐波那契数列</span>
+        </a>
+        <div class="abstract-content">
+            每个程序员对斐波那契数列应该都是知道的，这里就不介绍我们熟知的求斐波那契的方法。在这里我们用 通项公式法 来解。
+知道了公式，问题就简单了。但是这里的复杂度还是 O(n)，因为我们还要算这个 n次方呢。大多数人都会说，简单！遍历一遍不就行了？的确可以，假如这么简单，我也就不会来写这个了。在这里a^n 我们可以用减治的思想。
+
+当 n 是偶数时，先求出 r = a^(n/2)，所以 r * r 就是 a^n
+当 n 是奇数时，n-1为偶数，先求出 r = a ^((n-1)/2)，再计算 r  r  a，就得到了a^n
+
+这样我们的复杂度就降到了 O(log(n))。代码：12345678...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/09/30</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2018/09/29/每日一题-18-codeforces-1041D/" >
             
                 <span>每日一题(18) codeforces 1041D</span>
@@ -605,31 +634,6 @@ python内置的random模块提供的choice()方法进行随机排序的性能远
         <a class="post-tag" href="javascript:void(0);" data-tags = "数位dp">数位dp</a>
     
 </div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/09/22/机器学习-2-决策树-ID3算法实现/" >
-            
-                <span>机器学习(2) 决策树(ID3算法实现)</span>
-        </a>
-        <div class="abstract-content">
-            决策树简介概念决策树，顾名思义就是选择，通过问答的形式，针对每一次问答，来推断分解，逐步缩小待猜测事物的范围。即：问问题，回答，每回答一次，根据答案走到下一层，当没得走了，就是得到了结果了。下图为决策树的流程。
-决策树的构造优点：计算复杂度不高，输出结果易于理解，对中间值的缺失不敏感，可以处理不相关特征数据缺点：可能会产生过度匹配问题使用数据类型：数值型和标称型
-构造细节在构造决策树时，我们需要解决的第一个问题就是，当前数据集上哪个特征在划分数据分类时起决定性作用。为了寻找决定性的特征，划分出最好的结果，我们就必须评估每个特征。然后对数据进行划分，直到某个分支下的数据属于同一个类型，表明...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/09/22</span>
-            </div>
-            <!-- tags  -->
             
         </div>
     </article>
@@ -1083,9 +1087,30 @@ python内置的random模块提供的choice()方法进行随机排序的性能远
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 28
+        Total : 29
         </div>
         <!-- search  -->
         
@@ -1102,6 +1127,11 @@ python内置的random模块提供的choice()方法进行随机排序的性能远
     
     <div class="archive-year"> 2018 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/30</span><a class="archive-post-title" href= "/2018/09/30/数据结构与算法-6-你可能不知道的斐波那契数列/" >数据结构与算法(6) 你可能不知道的斐波那契数列</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -1256,11 +1286,11 @@ python内置的random模块提供的choice()方法进行随机排序的性能远
     
         <span class="sidebar-tag-name" data-tags="数位dp"><span class="iconfont-archer">&#xe606;</span>数位dp</span>
     
-        <span class="sidebar-tag-name" data-tags="gcd"><span class="iconfont-archer">&#xe606;</span>gcd</span>
-    
         <span class="sidebar-tag-name" data-tags="贪心"><span class="iconfont-archer">&#xe606;</span>贪心</span>
     
         <span class="sidebar-tag-name" data-tags="优先队列"><span class="iconfont-archer">&#xe606;</span>优先队列</span>
+    
+        <span class="sidebar-tag-name" data-tags="gcd"><span class="iconfont-archer">&#xe606;</span>gcd</span>
     
         <span class="sidebar-tag-name" data-tags="素数"><span class="iconfont-archer">&#xe606;</span>素数</span>
     
@@ -1307,9 +1337,9 @@ jsonContent:
     
         <span class="sidebar-category-name" data-categories="Redis"><span class="iconfont-archer">&#xe60a;</span>Redis</span>
     
-        <span class="sidebar-category-name" data-categories="数据结构与算法"><span class="iconfont-archer">&#xe60a;</span>数据结构与算法</span>
-    
         <span class="sidebar-category-name" data-categories="Flask"><span class="iconfont-archer">&#xe60a;</span>Flask</span>
+    
+        <span class="sidebar-category-name" data-categories="数据结构与算法"><span class="iconfont-archer">&#xe60a;</span>数据结构与算法</span>
     
         <span class="sidebar-category-name" data-categories="机器学习"><span class="iconfont-archer">&#xe60a;</span>机器学习</span>
     

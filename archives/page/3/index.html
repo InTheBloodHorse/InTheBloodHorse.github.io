@@ -354,6 +354,36 @@
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2018/09/20/数据结构与算法-4-堆-优先队列/" >
+            
+                <span>数据结构与算法(4) 堆(优先队列)</span>
+        </a>
+        <div class="abstract-content">
+            今天看到堆（Heap）这个概念，可以用来实现优先队列。之前写过一篇关于二叉堆的)数据结构与算法(1)-二叉堆那个二叉堆已经写的很详细了。对于优先队列的删除，插入操作都是O(logN)的复杂度向堆中插入数据，首先将数据项存放到叶节点中（即存到数组的最后一项），然后从该节点开始，逐级向上调整，直到满足堆中节点关键字的条件为止。
+从堆中删除数据与插入不同，删除时永远删除根节点的数据，因为根节点的数据最大，删除完后，将最后一个叶节点移到根的位置，然后从根开始，逐级向下调整，直到满足堆中节点关键字的条件为止。关于代码实现的话，在二叉堆里面已经实现了，只是删除的优先队列肯定是删除最大或者最小的节点，...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/09/20</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "树">树</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2018/09/19/每日一题-9-HDU3652/" >
             
                 <span>每日一题(9) HDU3652</span>
@@ -610,37 +640,6 @@ k-近邻算法称为kNN，它的工作原理是：存在一个样本数据集合
             <div class= abstract-tags >
     
         <a class="post-tag" href="javascript:void(0);" data-tags = "数学">数学</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/09/12/每日一题-4-codeforces-1038D/" >
-            
-                <span>每日一题(4) codeforces 1038D</span>
-        </a>
-        <div class="abstract-content">
-            题目地址题意：有n个史莱姆，每个史莱姆有值为 x，史莱姆A可以吃掉任意一个相邻位置的史莱姆B（值为y），因此史莱姆B就消失了，史莱姆A的值变成了 x-y。问一直吃，吃到最后一个，留下来的史莱姆最大的值为多少。思路：一开始以为是dp题，被吓坏了，后来琢磨下可以得出1：最大的肯定是留到最后的，最小的必须去吃其余的，因为一个大的史莱姆去吃小的史莱姆，就亏了，因为大的史莱姆的值小了，但是他还是正数，最大的吃这个史莱姆，也会变小，所以要想办法得到负数的史莱姆2：所有值都大于0的话，答案就是 所有数字之和 - 2*min3：所有的值小于0的话，取个绝对值，和大于0的情况一样，自己在纸上写一下就知道为...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/09/12</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "排序">排序</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "思维">思维</a>
     
 </div>
             
@@ -1211,9 +1210,24 @@ k-近邻算法称为kNN，它的工作原理是：存在一个样本数据集合
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 35
+        Total : 36
         </div>
         <!-- search  -->
         
@@ -1230,6 +1244,11 @@ k-近邻算法称为kNN，它的工作原理是：存在一个样本数据集合
     
     <div class="archive-year"> 2018 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/06</span><a class="archive-post-title" href= "/2018/10/06/SpringBoot笔记/" >SpringBoot笔记</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -1411,6 +1430,8 @@ k-近邻算法称为kNN，它的工作原理是：存在一个样本数据集合
         <div class="sidebar-panel-tags">
     <div class="sidebar-tags-name">
     
+        <span class="sidebar-tag-name" data-tags="Maven"><span class="iconfont-archer">&#xe606;</span>Maven</span>
+    
         <span class="sidebar-tag-name" data-tags="树"><span class="iconfont-archer">&#xe606;</span>树</span>
     
         <span class="sidebar-tag-name" data-tags="排序"><span class="iconfont-archer">&#xe606;</span>排序</span>
@@ -1477,6 +1498,8 @@ jsonContent:
         <span class="sidebar-category-name" data-categories="Flask"><span class="iconfont-archer">&#xe60a;</span>Flask</span>
     
         <span class="sidebar-category-name" data-categories="Redis"><span class="iconfont-archer">&#xe60a;</span>Redis</span>
+    
+        <span class="sidebar-category-name" data-categories="Java"><span class="iconfont-archer">&#xe60a;</span>Java</span>
     
         <span class="sidebar-category-name" data-categories="数据结构与算法"><span class="iconfont-archer">&#xe60a;</span>数据结构与算法</span>
     

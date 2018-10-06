@@ -6,7 +6,7 @@
 
 
 <head>
-    <meta charset="utf-8">
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" >
     <meta name="author" content="InTheBloodHorse">
     <meta name="renderer" content="webkit">
@@ -15,7 +15,7 @@
     <meta name="description" content="">
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-    <title>InTheBloodHorse&#39;blog</title>
+    <title>SpringBoot笔记 · InTheBloodHorse&#39;blog</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -206,17 +206,28 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js" defer></script>
     <!-- 百度统计  -->
     
-    <!-- 谷歌统计  -->
+    <!-- 谷歌统计  --><!-- hexo-inject:begin --><!-- hexo-inject:end -->
     
 </head>
 
     
+        <body class="post-body">
     
-<header class="header">
+    
+<!-- hexo-inject:begin --><!-- hexo-inject:end --><header class="header">
 
     <div class="read-progress"></div>
     <div class="header-sidebar-menu">&#xe775;</div>
     <!-- post页的toggle banner  -->
+    
+    <div class="banner">
+            <div class="blog-title">
+                <a href="/" >InTheBloodHorse</a>
+            </div>
+            <div class="post-title">
+                <a href="#" class="post-name">SpringBoot笔记</a>
+            </div>
+    </div>
     
     <a class="home-link" href=/>InTheBloodHorse</a>
 </header>
@@ -228,24 +239,74 @@
 
 
 
+
+height:50vh;
 ">
     
     <!-- 主页  -->
+    
+    
+    <!-- 404页  -->
             
     <div class="site-intro-placeholder"></div>
-    <div class="site-intro-img" style="background-image: url(/)"></div>
+    <div class="site-intro-img" style="background-image: url(/intro/bg.jpg)"></div>
     <div class="site-intro-meta">
         <!-- 标题  -->
         <h1 class="intro-title">
             <!-- 主页  -->
+            
+            SpringBoot笔记
+            <!-- 404 -->
             
         </h1>
         <!-- 副标题 -->
         <p class="intro-subtitle">
             <!-- 主页副标题  -->
             
+            
+            <!-- 404 -->
+            
         </p>
         <!-- 文章页meta -->
+        
+            <div class="post-intros">
+                <!-- 文章页标签  -->
+                
+                    <div class= post-intro-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "Maven">Maven</a>
+    
+</div>
+                
+                
+                    <div class="post-intro-read">
+                        <span>字数统计: <span class="post-count word-count">156</span>阅读时长: <span class="post-count reading-time">1 min</span></span>
+                    </div>
+                
+                <div class="post-intro-meta">
+                    <span class="post-intro-calander iconfont-archer">&#xe676;</span>
+                    <span class="post-intro-time">2018/10/06</span>
+                    
+                    <span id="busuanzi_container_page_pv" class="busuanzi-pv">
+                        <span class="iconfont-archer">&#xe602;</span>
+                        <span id="busuanzi_value_page_pv"></span>
+                    </span>
+                    
+                    <span class="shareWrapper">
+                        <span class="iconfont-archer shareIcon">&#xe71d;</span>
+                        <span class="shareText">Share</span>
+                        <ul class="shareList">
+                            <li class="iconfont-archer share-qr" data-type="qr">&#xe75b;
+                                <div class="share-qrcode"></div>
+                            </li>
+                            <li class="iconfont-archer" data-type="weibo">&#xe619;</li>
+                            <li class="iconfont-archer" data-type="qzone">&#xe62e;</li>
+                            <li class="iconfont-archer" data-type="twitter">&#xe634;</li>
+                            <li class="iconfont-archer" data-type="facebook">&#xe67a;</li>
+                        </ul>
+                    </span>
+                </div>
+            </div>
         
     </div>
 </div>
@@ -346,312 +407,52 @@
 </script>        
         <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
         <div class="container container-unloaded">
-            <main class="main index-page">
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/09/20/数据结构与算法-4-堆-优先队列/" >
-            
-                <span>数据结构与算法(4) 堆(优先队列)</span>
-        </a>
-        <div class="abstract-content">
-            今天看到堆（Heap）这个概念，可以用来实现优先队列。之前写过一篇关于二叉堆的)数据结构与算法(1)-二叉堆那个二叉堆已经写的很详细了。对于优先队列的删除，插入操作都是O(logN)的复杂度向堆中插入数据，首先将数据项存放到叶节点中（即存到数组的最后一项），然后从该节点开始，逐级向上调整，直到满足堆中节点关键字的条件为止。
-从堆中删除数据与插入不同，删除时永远删除根节点的数据，因为根节点的数据最大，删除完后，将最后一个叶节点移到根的位置，然后从根开始，逐级向下调整，直到满足堆中节点关键字的条件为止。关于代码实现的话，在二叉堆里面已经实现了，只是删除的优先队列肯定是删除最大或者最小的节点，...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/09/20</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "树">树</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/09/19/每日一题-9-HDU3652/" >
-            
-                <span>每日一题(9) HDU3652</span>
-        </a>
-        <div class="abstract-content">
-            题目地址题意：输入n，问在区间[1,n]里面有数字13且能被13整除的数字有多少个。思路：数位dp模版题，pos代表位数，mod 代表当前数字对13取余数，done表示是否已经有数字13，pre代表上一个数字AC代码：12345678910111213141516171819202122232425262728293031#include&lt;bits/stdc++.h&gt;using namespace std;int a[20];int dp[20][20][3][15];		//	位数   %13    是否有13  上一位  int dfs(int pos,int mod,i...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/09/19</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "数位dp">数位dp</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/09/18/每日一题-8-HDU2089/" >
-            
-                <span>每日一题(8) HDU2089不要62</span>
-        </a>
-        <div class="abstract-content">
-            题目地址题意：给一个区间 [a,b],问这个区间里面不包含 (4)(62)的数字有几个。思路：用简单的思想也可以写，这里用数位dp方法来写。简单的模版题目。AC代码：1234567891011121314151617181920212223242526272829303132#include&lt;bits/stdc++.h&gt;using namespace std;int a[10]; // 存储位数 int dp[20][2];int dfs(int pos,int sta,bool lim)&#123;	if(pos&lt;0) return 1;	if(!lim &amp;&...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/09/18</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "数位dp">数位dp</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/09/18/数据结构与算法-3-稳定排序与非稳定排序/" >
-            
-                <span>数据结构与算法(3) 稳定排序与非稳定排序</span>
-        </a>
-        <div class="abstract-content">
-            图解
-解释顾名思义，稳定排序是稳定的，具体什么是稳定的，那就是index，也就是位置的是稳定，比如在两个值相同的情况下，排序之后的顺序还是不变
-哪些是稳定的？哪些不是稳定排序冒泡排序和归并排序是稳定的
-非稳定排序快速排序和选择排序是非稳定的
-应用，什么时候需要在乎是否稳定在排序学生成绩的时候，假如两个学生成绩相同，那么肯定是学号小的在前面，这就是一个经典的应用。还有就是之前提到的加权随机算法假如我们选择排序的方案，先进行排序，假如成员A,B权重相同，那么顺序就很重要了，所以我们可以让注册时间早的排在前面(当然这个第二关键字很多，这里不一一举例)
+            <main class="main post-page">
+    <article class="article-entry">
+        <h2 id="Maven中解决下载超时问题"><a href="#Maven中解决下载超时问题" class="headerlink" title="Maven中解决下载超时问题"></a>Maven中解决下载超时问题</h2><p>Maven默认使用的是 开源中国的镜像，在cmd下面<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mvn spring-boot:run</span><br></pre></td></tr></table></figure></p>
+<p>会出现time out，这时候我们需要更换阿里镜像，在maven安装目录的下的settings.xml修改mirror<br>把<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;mirror&gt;</span><br><span class="line">        &lt;id&gt;nexus-osc&lt;/id&gt;</span><br><span class="line">        &lt;mirrorOf&gt;*&lt;/mirrorOf&gt;</span><br><span class="line">        &lt;name&gt;Nexus osc&lt;/name&gt;</span><br><span class="line">        &lt;url&gt;http://maven.oschina.net/content/groups/public/&lt;/url&gt;</span><br><span class="line">&lt;/mirror&gt;</span><br></pre></td></tr></table></figure></p>
+<p>改成<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;mirror&gt;</span><br><span class="line">        &lt;id&gt;nexuss&lt;/id&gt;</span><br><span class="line">     &lt;mirrorOf&gt;*&lt;/mirrorOf&gt;</span><br><span class="line">     &lt;name&gt;Nexus aliyun&lt;/name&gt;</span><br><span class="line">     &lt;url&gt;http://maven.aliyun.com/nexus/content/groups/public/&lt;/url&gt;</span><br><span class="line">&lt;/mirror&gt;</span><br></pre></td></tr></table></figure></p>
+<p>这样就可以正常创建了</p>
 
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/09/18</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "排序">排序</a>
-    
-</div>
-            
-        </div>
     </article>
+    <!-- license  -->
     
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/09/17/数据结构与算法-2-加权随机算法的Python实现/" >
-            
-                <span>数据结构与算法(2) 加权随机算法的Python实现</span>
-        </a>
-        <div class="abstract-content">
-            随机抽奖算法1.随机抽取一个或者多个12345678import randomname = ['a', 'b', 'c', 'd', 'e', 'f']random_name = random.choice(name)print(random_name)random_names = random.sample(name, 3)print(random_names)
-结果：12d['a', 'b', 'f']
-考虑权重后随机抽取一个元素如果不同的成员有不用的权重，比如某个成员是会员，某个成员贡献度高等，可以自定义一个抽取函数，用来抽取一个元素算法的思路就是
-1. 拿到 0 ~ 权重之和之间...
+        <div class="license-wrapper">
+            <p>原文作者：<a href="http://pyking.cn">InTheBloodHorse</a>
+            <p>原文链接：<a href="http://pyking.cn/2018/10/06/SpringBoot笔记/">http://pyking.cn/2018/10/06/SpringBoot笔记/</a>
+            <p>发表日期：<a href="http://pyking.cn/2018/10/06/SpringBoot笔记/">October 6th 2018, 9:57:32 pm</a>
+            <p>更新日期：<a href="http://pyking.cn/2018/10/06/SpringBoot笔记/">October 6th 2018, 10:02:12 pm</a>
+            <p>版权声明：请随意转载！</p>
         </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/09/17</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/09/17/每日一题-7-codeforces-1036C/" >
-            
-                <span>每日一题(7) codeforces 1036C</span>
-        </a>
-        <div class="abstract-content">
-            题目地址题意：找出区间 [A,B]内 非0的数字 不超过3的数字的个数。4，200000，10203     满足条件4231，102306，7277420000 不满足条件
-思路：dfs可以用数位dp来做，我这里是用 dfs，找到的符合条件的数字 推到 vector里面，最后用差分的思想，用二分找到位置，相减就可以了。AC代码：1234567891011121314151617181920212223242526272829303132#include&lt;bits/stdc++.h&gt;using namespace std;vector&lt;long long&gt;v;		...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/09/17</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "数位dp">数位dp</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "DFS">DFS</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/09/15/机器学习-1-k-近邻算法-KNN/" >
-            
-                <span>机器学习(1) k-近邻算法(KNN)</span>
-        </a>
-        <div class="abstract-content">
-            简单地说，k-近邻算法采用测量不同特征值之间的距离方法进来分类 
-特点：优点：精度高、对异常值不敏感、无数据输入假定
-缺点：计算复杂度高、空间复杂度高
-适用数据范围：数值型和标称型
-k-近邻算法称为kNN，它的工作原理是：存在一个样本数据集合，也称作训练样本集，并且样本集中每个数据都存在标签，即我们知道样本集中每一数据与所属分类的对应关系。输入没有标签的新数据后，将新数据的每个特征与样本集中数据对应的特征进行比较，然后算法提取样本集中特征最相似数据（最近邻）的分类标签。一般来说，我们只选择样本数据集中前κ个最相似的数据，这就是k-近邻算法中κ的出处。通常κ是不大于20的整数。最后，选择κ...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/09/15</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/09/14/每日一题-6-codeforces-1036B/" >
-            
-                <span>每日一题(6) codeforces 1036B</span>
-        </a>
-        <div class="abstract-content">
-            题目地址题意：给三个数,x,y,k,代表从 (0,0)到(x,y)走k步(米字形走法)，问可以走的对角线最大步数有多少步。思路：想了很久，难受啊。abs(x-y)为奇数时，不能走对角线，需要多走一步k-1，当走对角线可以直接到达终点，如果剩余的步数是奇数则有两步不能走对角线所以k - 2AC代码：123456789101112131415161718192021222324#include&lt;bits/stdc++.h&gt;using namespace std;int main()&#123;	int t;	cin  &gt;&gt; t;	long long x,y,k;	wh...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/09/14</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "思维">思维</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/09/14/数据结构与算法-1-二叉堆/" >
-            
-                <span>数据结构与算法(1)-二叉堆</span>
-        </a>
-        <div class="abstract-content">
-            二叉堆1：什么是二叉堆？ans：二叉堆的本质是完全二叉树，可以分为最大堆和最小堆。二叉堆可以实现优先队列，插入和删除的复杂度都为O(logN)用堆实现的优先队列 数据结构与算法(4) 堆(优先队列)
-最大堆最大堆任何父节点的值，都大于等于它的左右子节点的值。
-最小堆最小堆任何父节点的值，都小于等于它的左右子节点的值。
-二叉堆的根节点叫做堆顶，毫无疑问，就是二叉树的最大值或者最小值
-插入节点（复杂度 log(N)）假设我们已经有了一个最小堆，如图1.我们插入一个节点为 0（绿色），我们需要把插入的节点追加到树的最后一个节点 如图2.将插入的节点与父节点比较，假如值小于父节点，使父节点下沉。...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/09/14</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "树">树</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/09/13/每日一题-5-codeforces-1036A/" >
-            
-                <span>每日一题(5)codeforces 1036A</span>
-        </a>
-        <div class="abstract-content">
-            题目地址题意：（先看题目的图）给两个数字，n,k，要求图内（0~2n）组成的三角形面积之和等于k，的情况下，输出最小的高。思路：画个图就明白了。当h为1的时候，最大的面积为    底高 /2  =  （2n 1）/2 = nk在  (n  (h-1) , n * h]  (h &gt;= 1 )求 h 就可以了。AC代码：12345678#include&lt;bits/stdc++.h&gt;using namespace std;int main()&#123;	long long a,b;	cin &gt;&gt; a &gt;&gt; b;	cout &lt;&lt; (b-1)...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/09/13</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "数学">数学</a>
-    
-</div>
-            
-        </div>
-    </article>
     
     <!-- paginator  -->
+    <ul class="post-paginator">
+        <li class="next">
+            
+        </li>
+        <li class="previous">
+            
+                <div class="prevSlogan">Previous Post</div>
+                <a href= "/2018/10/06/每日一题-23-codeforces1047C/" title= "每日一题(23) codeforces1047C">
+                    <div class="prevTitle">每日一题(23) codeforces1047C</div>
+                </a>
+            
+        </li>
+    </ul>
+    <!-- 评论插件 -->
+    <!-- 来必力City版安装代码 -->
+
+<!-- City版安装代码已完成 -->
     
-    <nav class="page-nav">
-        <a class="extend prev" rel="prev" href="/archives/2018/page/2/">&#60; PREV</a><a class="page-number" href="/archives/2018/">1</a><a class="page-number" href="/archives/2018/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/archives/2018/page/4/">4</a><a class="extend next" rel="next" href="/archives/2018/page/4/">NEXT &#62;</a>
-    </nav>
     
+    <!-- partial('_partial/comment/changyan') -->
+    <!--PC版-->
+
+
+    
+    
+
+    <!-- 评论 -->
 </main>
             <!-- profile -->
             
@@ -732,6 +533,24 @@ k-近邻算法称为kNN，它的工作原理是：存在一个样本数据集合
 </footer>
     </div>
     <!-- toc -->
+    
+    <div class="toc-wrapper" style=
+    
+
+
+
+
+
+
+
+top:50vh;
+
+    >
+        <div class="toc-catalog">
+            <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
+        </div>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Maven中解决下载超时问题"><span class="toc-number">1.</span> <span class="toc-text">Maven中解决下载超时问题</span></a></li></ol>
+    </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
     <div class="sidebar sidebar-hide">
@@ -1562,6 +1381,25 @@ jsonContent:
     
     </div>
     <!-- async load share.js -->
+    
+        <script src="/scripts/share.js" async></script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js">
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end -->    
      
     </body>
 </html>

@@ -15,7 +15,7 @@
     <meta name="description" content="">
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-    <title>每日一题(6) codeforces 1036B · InTheBloodHorse&#39;blog</title>
+    <title>每日一题(24) codeforces 1051A · InTheBloodHorse&#39;blog</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -225,7 +225,7 @@
                 <a href="/" >InTheBloodHorse</a>
             </div>
             <div class="post-title">
-                <a href="#" class="post-name">每日一题(6) codeforces 1036B</a>
+                <a href="#" class="post-name">每日一题(24) codeforces 1051A</a>
             </div>
     </div>
     
@@ -255,7 +255,7 @@ height:50vh;
         <h1 class="intro-title">
             <!-- 主页  -->
             
-            每日一题(6) codeforces 1036B
+            每日一题(24) codeforces 1051A
             <!-- 404 -->
             
         </h1>
@@ -274,18 +274,18 @@ height:50vh;
                 
                     <div class= post-intro-tags >
     
-        <a class="post-tag" href="javascript:void(0);" data-tags = "思维">思维</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags = "构造">构造</a>
     
 </div>
                 
                 
                     <div class="post-intro-read">
-                        <span>字数统计: <span class="post-count word-count">203</span>阅读时长: <span class="post-count reading-time">1 min</span></span>
+                        <span>字数统计: <span class="post-count word-count">414</span>阅读时长: <span class="post-count reading-time">1 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
                     <span class="post-intro-calander iconfont-archer">&#xe676;</span>
-                    <span class="post-intro-time">2018/09/14</span>
+                    <span class="post-intro-time">2018/10/07</span>
                     
                     <span id="busuanzi_container_page_pv" class="busuanzi-pv">
                         <span class="iconfont-archer">&#xe602;</span>
@@ -409,16 +409,23 @@ height:50vh;
         <div class="container container-unloaded">
             <main class="main post-page">
     <article class="article-entry">
-        <p><a href="http://codeforces.com/contest/1036/problem/B" target="_blank" rel="noopener">题目地址</a><br>题意：<br>给三个数,x,y,k,代表从 (0,0)到(x,y)走k步(米字形走法)，问可以走的对角线最大步数有多少步。<br>思路：<br>想了很久，难受啊。<br>abs(x-y)为奇数时，不能走对角线，需要多走一步k-1，当走对角线可以直接到达终点，如果剩余的步数是奇数则有两步不能走对角线所以k - 2<br>AC代码：<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> t;</span><br><span class="line">	<span class="built_in">cin</span>  &gt;&gt; t;</span><br><span class="line">	<span class="keyword">long</span> <span class="keyword">long</span> x,y,k;</span><br><span class="line">	<span class="keyword">while</span>(t--)&#123;</span><br><span class="line">		<span class="built_in">cin</span> &gt;&gt;  x &gt;&gt; y &gt;&gt; k;</span><br><span class="line">		<span class="keyword">if</span>(max(x,y) &gt; k)&#123;</span><br><span class="line">			<span class="built_in">cout</span> &lt;&lt; <span class="number">-1</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">		&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">			<span class="keyword">long</span> <span class="keyword">long</span> ans = k;</span><br><span class="line">			<span class="keyword">if</span>(<span class="built_in">abs</span>(x-y)%<span class="number">2</span>==<span class="number">1</span>)&#123;</span><br><span class="line">				ans--;</span><br><span class="line">			&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">				<span class="keyword">if</span>((k-x)%<span class="number">2</span> == <span class="number">1</span>)&#123;</span><br><span class="line">					ans-=<span class="number">2</span>;</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="built_in">cout</span> &lt;&lt; ans &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+        <p><a href="http://codeforces.com/contest/1051/problem/A" target="_blank" rel="noopener">题目地址</a></p>
+<h2 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h2><p>给出一个字符串，如何修改某些字符可以达到要求，即这些字符串里必须有大写小写数字。输入也只有大写小写数字。输出修改后的字符串，但是要求修改的位置的长度为最小。例如 从 abcdef-&gt;a7cdEf，的长度为（5-2）+1=4。</p>
+<h2 id="思路："><a href="#思路：" class="headerlink" title="思路："></a>思路：</h2><p>首先只会出现大写，小写，数字，所以只会出现三中情况。<br>1.大写，小写，数字都有了，直接输出</p>
+<ol>
+<li>少了一个（大写|小写|数字），只要随便找个不是唯一类别的修改成数字就行了。因为长度永远为1。</li>
+<li>少了两个，说明这个字符串要么全都是数字，要么全都是大写的，或者小写的。只要相邻的一起改了就行了。<br>AC代码<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">int</span> d[<span class="number">1000</span>],u[<span class="number">1000</span>],l[<span class="number">1000</span>];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> n;</span><br><span class="line">	<span class="built_in">cin</span> &gt;&gt; n;	</span><br><span class="line">	<span class="built_in">string</span> s;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++)&#123;</span><br><span class="line">		<span class="keyword">int</span> low=<span class="number">-1</span>,upp=<span class="number">-1</span>,dig=<span class="number">-1</span>;</span><br><span class="line">		<span class="keyword">int</span> cnt_d=<span class="number">0</span>;</span><br><span class="line">		<span class="keyword">int</span> cnt_lower=<span class="number">0</span>;</span><br><span class="line">		<span class="keyword">int</span> cnt_upper=<span class="number">0</span>;</span><br><span class="line">		<span class="built_in">memset</span>(d,<span class="number">0</span>,<span class="keyword">sizeof</span>(d));</span><br><span class="line">		<span class="built_in">memset</span>(l,<span class="number">0</span>,<span class="keyword">sizeof</span>(l));</span><br><span class="line">		<span class="built_in">memset</span>(u,<span class="number">0</span>,<span class="keyword">sizeof</span>(u));</span><br><span class="line">		<span class="built_in">cin</span> &gt;&gt; s;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;s.size();j++)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">if</span>(s[j]&gt;=<span class="string">'0'</span> &amp;&amp; s[j]&lt;=<span class="string">'9'</span>)&#123;</span><br><span class="line">				dig=j;</span><br><span class="line">				d[++cnt_d]=j;	</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">if</span>(s[j]&gt;=<span class="string">'a'</span> &amp;&amp; s[j]&lt;=<span class="string">'z'</span>)&#123;</span><br><span class="line">				low=j;</span><br><span class="line">				l[++cnt_lower]=j;		</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">if</span>(s[j]&gt;=<span class="string">'A'</span> &amp;&amp; s[j]&lt;=<span class="string">'Z'</span>)&#123;</span><br><span class="line">				upp=j;</span><br><span class="line">				u[++cnt_upper]=j;	</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">if</span>(low == <span class="number">-1</span>) &#123;</span><br><span class="line">			<span class="keyword">if</span>(cnt_upper &gt;= <span class="number">2</span>) s[u[cnt_upper--]]=<span class="string">'a'</span>;			</span><br><span class="line">			<span class="keyword">else</span> s[d[cnt_d--]] = <span class="string">'a'</span>;		</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">if</span>(upp == <span class="number">-1</span>) &#123;		</span><br><span class="line">			<span class="keyword">if</span>(cnt_lower&gt;=<span class="number">2</span>) s[l[cnt_lower--]] = <span class="string">'A'</span>;			</span><br><span class="line">			<span class="keyword">else</span> s[d[cnt_d--]] = <span class="string">'A'</span>;		</span><br><span class="line">		&#125;		</span><br><span class="line">		<span class="keyword">if</span>(dig == <span class="number">-1</span>) &#123;			</span><br><span class="line">			<span class="keyword">if</span>(cnt_lower&gt;=<span class="number">2</span>) s[l[cnt_lower--]] = <span class="string">'1'</span>;			</span><br><span class="line">			<span class="keyword">else</span> s[u[cnt_upper--]] = <span class="string">'1'</span>;		</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; s &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
 
     </article>
     <!-- license  -->
     
         <div class="license-wrapper">
             <p>原文作者：<a href="http://pyking.cn">InTheBloodHorse</a>
-            <p>原文链接：<a href="http://pyking.cn/2018/09/14/每日一题-6-codeforces-1036B/">http://pyking.cn/2018/09/14/每日一题-6-codeforces-1036B/</a>
-            <p>发表日期：<a href="http://pyking.cn/2018/09/14/每日一题-6-codeforces-1036B/">September 14th 2018, 7:58:33 pm</a>
-            <p>更新日期：<a href="http://pyking.cn/2018/09/14/每日一题-6-codeforces-1036B/">September 14th 2018, 8:06:16 pm</a>
+            <p>原文链接：<a href="http://pyking.cn/2018/10/07/每日一题-24-codeforces-1051A/">http://pyking.cn/2018/10/07/每日一题-24-codeforces-1051A/</a>
+            <p>发表日期：<a href="http://pyking.cn/2018/10/07/每日一题-24-codeforces-1051A/">October 7th 2018, 8:01:10 pm</a>
+            <p>更新日期：<a href="http://pyking.cn/2018/10/07/每日一题-24-codeforces-1051A/">October 7th 2018, 8:14:56 pm</a>
             <p>版权声明：请随意转载！</p>
         </div>
     
@@ -426,17 +433,12 @@ height:50vh;
     <ul class="post-paginator">
         <li class="next">
             
-                <div class="nextSlogan">Next Post</div>
-                <a href= "/2018/09/15/机器学习-1-k-近邻算法-KNN/" title= "机器学习(1) k-近邻算法(KNN)">
-                    <div class="nextTitle">机器学习(1) k-近邻算法(KNN)</div>
-                </a>
-            
         </li>
         <li class="previous">
             
                 <div class="prevSlogan">Previous Post</div>
-                <a href= "/2018/09/14/数据结构与算法-1-二叉堆/" title= "数据结构与算法(1)-二叉堆">
-                    <div class="prevTitle">数据结构与算法(1)-二叉堆</div>
+                <a href= "/2018/10/06/SpringBoot笔记/" title= "SpringBoot笔记">
+                    <div class="prevTitle">SpringBoot笔记</div>
                 </a>
             
         </li>
@@ -551,7 +553,7 @@ top:50vh;
         <div class="toc-catalog">
             <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
         </div>
-        
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#题意"><span class="toc-number">1.</span> <span class="toc-text">题意</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#思路："><span class="toc-number">2.</span> <span class="toc-text">思路：</span></a></li></ol>
     </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>

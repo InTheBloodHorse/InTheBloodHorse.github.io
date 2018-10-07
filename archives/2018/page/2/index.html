@@ -354,6 +354,35 @@
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2018/09/28/每日一题-17-codeforces-1041C/" >
+            
+                <span>每日一题(17) codeforces 1041C</span>
+        </a>
+        <div class="abstract-content">
+            题目地址题意：给三个数字，n,m,dn：给n个数字m：表示这n个数字在[1,m]内(说实话我也没发现m是干嘛用的)d：差值(差值的意思后面会讲)要求给这n个数字分组，分组的个数尽可能的少。每组个数从小到大 相邻的位置差值不能 &lt;= d输出分组的个数以及这n个数字在哪个分组里面思路：先对n个值进行排序，然后从小到大，模拟排队，符合条件的话，就插入队列，假如不符合，就新开一个队列，到最后，输出队列的个数，其中记录下每个数字所在的队列的坐标。但是！超时了，因为我暴力去找是否符合能插入队列，这里应该用优先队列来维护，这样查找的复杂度就从 O(m) 降低到了 O(log m) m为当前队伍的...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/09/28</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "优先队列">优先队列</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2018/09/27/每日一题-16-codeforces-1041B/" >
             
                 <span>每日一题(16) codeforces 1041B</span>
@@ -593,35 +622,6 @@ python内置的random模块提供的choice()方法进行随机排序的性能远
             <!-- date  -->
             <div class="abstract-date">
                 <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/09/21</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "数位dp">数位dp</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/09/20/每日一题-10-POJ3252/" >
-            
-                <span>每日一题(10) POJ3252</span>
-        </a>
-        <div class="abstract-content">
-            题目地址题意：问区间内[a,b]中满足二进制数的 数字0个数 &gt;= 数字1个数的 数字个数思路：还是数位dp模版题!就是二进制的,所以位数拆出来是二进制的 要 %2 了pos 位数zero 0的个数one 1的个数done 代表是否有1，因为二进制里头 00000 00001的前导0是没意义的,所以要判断一下假如done为0的话，zero和one的个数都是0AC代码：1234567891011121314151617181920212223242526272829303132#include&lt;stdio.h&gt; #include&lt;string.h&gt;int a[...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/09/20</span>
             </div>
             <!-- tags  -->
             
@@ -1232,10 +1232,9 @@ python内置的random模块提供的choice()方法进行随机排序的性能远
     
     
     
-    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 36
+        Total : 37
         </div>
         <!-- search  -->
         
@@ -1252,6 +1251,11 @@ python内置的random模块提供的choice()方法进行随机排序的性能远
     
     <div class="archive-year"> 2018 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/07</span><a class="archive-post-title" href= "/2018/10/07/每日一题-24-codeforces-1051A/" >每日一题(24) codeforces 1051A</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -1440,9 +1444,9 @@ python内置的random模块提供的choice()方法进行随机排序的性能远
     
         <span class="sidebar-tag-name" data-tags="Maven"><span class="iconfont-archer">&#xe606;</span>Maven</span>
     
-        <span class="sidebar-tag-name" data-tags="排序"><span class="iconfont-archer">&#xe606;</span>排序</span>
-    
         <span class="sidebar-tag-name" data-tags="树"><span class="iconfont-archer">&#xe606;</span>树</span>
+    
+        <span class="sidebar-tag-name" data-tags="排序"><span class="iconfont-archer">&#xe606;</span>排序</span>
     
         <span class="sidebar-tag-name" data-tags="树状数组"><span class="iconfont-archer">&#xe606;</span>树状数组</span>
     
@@ -1458,17 +1462,19 @@ python内置的random模块提供的choice()方法进行随机排序的性能远
     
         <span class="sidebar-tag-name" data-tags="素数"><span class="iconfont-archer">&#xe606;</span>素数</span>
     
-        <span class="sidebar-tag-name" data-tags="数学"><span class="iconfont-archer">&#xe606;</span>数学</span>
-    
         <span class="sidebar-tag-name" data-tags="规律"><span class="iconfont-archer">&#xe606;</span>规律</span>
     
         <span class="sidebar-tag-name" data-tags="STL"><span class="iconfont-archer">&#xe606;</span>STL</span>
     
         <span class="sidebar-tag-name" data-tags="Map"><span class="iconfont-archer">&#xe606;</span>Map</span>
     
-        <span class="sidebar-tag-name" data-tags="DFS"><span class="iconfont-archer">&#xe606;</span>DFS</span>
+        <span class="sidebar-tag-name" data-tags="构造"><span class="iconfont-archer">&#xe606;</span>构造</span>
     
         <span class="sidebar-tag-name" data-tags="模拟"><span class="iconfont-archer">&#xe606;</span>模拟</span>
+    
+        <span class="sidebar-tag-name" data-tags="数学"><span class="iconfont-archer">&#xe606;</span>数学</span>
+    
+        <span class="sidebar-tag-name" data-tags="DFS"><span class="iconfont-archer">&#xe606;</span>DFS</span>
     
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
@@ -1505,9 +1511,9 @@ jsonContent:
     
         <span class="sidebar-category-name" data-categories="Redis"><span class="iconfont-archer">&#xe60a;</span>Redis</span>
     
-        <span class="sidebar-category-name" data-categories="Java"><span class="iconfont-archer">&#xe60a;</span>Java</span>
-    
         <span class="sidebar-category-name" data-categories="Flask"><span class="iconfont-archer">&#xe60a;</span>Flask</span>
+    
+        <span class="sidebar-category-name" data-categories="Java"><span class="iconfont-archer">&#xe60a;</span>Java</span>
     
         <span class="sidebar-category-name" data-categories="数据结构与算法"><span class="iconfont-archer">&#xe60a;</span>数据结构与算法</span>
     

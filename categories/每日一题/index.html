@@ -354,6 +354,40 @@
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2018/10/07/每日一题-24-codeforces-1051A/" >
+            
+                <span>每日一题(24) codeforces 1051A</span>
+        </a>
+        <div class="abstract-content">
+            题目地址
+题意给出一个字符串，如何修改某些字符可以达到要求，即这些字符串里必须有大写小写数字。输入也只有大写小写数字。输出修改后的字符串，但是要求修改的位置的长度为最小。例如 从 abcdef-&gt;a7cdEf，的长度为（5-2）+1=4。
+思路：首先只会出现大写，小写，数字，所以只会出现三中情况。1.大写，小写，数字都有了，直接输出
+
+少了一个（大写|小写|数字），只要随便找个不是唯一类别的修改成数字就行了。因为长度永远为1。
+少了两个，说明这个字符串要么全都是数字，要么全都是大写的，或者小写的。只要相邻的一起改了就行了。AC代码12345678910111213141516171...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/10/07</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "构造">构造</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2018/10/06/每日一题-23-codeforces1047C/" >
             
                 <span>每日一题(23) codeforces1047C</span>
@@ -615,35 +649,6 @@
             <div class= abstract-tags >
     
         <a class="post-tag" href="javascript:void(0);" data-tags = "排序">排序</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "贪心">贪心</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/09/25/每日一题-14-codeforces1036D/" >
-            
-                <span>每日一题(14) codeforces1036D</span>
-        </a>
-        <div class="abstract-content">
-            题目地址题意：给两串数字，每个数字可以和相邻的合并，问合并到最后，两串数字相同时候的最大长度为多少思路：从左到右匹配就好了，没有想的那么难，因为假如两串数字的sum不同的话 肯定是-1，所以答案最少为1，即所有加起来。AC代码：1234567891011121314151617181920212223242526272829303132333435363738#include&lt;bits/stdc++.h&gt;using namespace std;long long a[300005],b[300005];int main()&#123;	int n,m;	long long s...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/09/25</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
     
         <a class="post-tag" href="javascript:void(0);" data-tags = "贪心">贪心</a>
     
@@ -1250,10 +1255,9 @@
     
     
     
-    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 36
+        Total : 37
         </div>
         <!-- search  -->
         
@@ -1270,6 +1274,11 @@
     
     <div class="archive-year"> 2018 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/07</span><a class="archive-post-title" href= "/2018/10/07/每日一题-24-codeforces-1051A/" >每日一题(24) codeforces 1051A</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -1458,9 +1467,9 @@
     
         <span class="sidebar-tag-name" data-tags="Maven"><span class="iconfont-archer">&#xe606;</span>Maven</span>
     
-        <span class="sidebar-tag-name" data-tags="排序"><span class="iconfont-archer">&#xe606;</span>排序</span>
-    
         <span class="sidebar-tag-name" data-tags="树"><span class="iconfont-archer">&#xe606;</span>树</span>
+    
+        <span class="sidebar-tag-name" data-tags="排序"><span class="iconfont-archer">&#xe606;</span>排序</span>
     
         <span class="sidebar-tag-name" data-tags="树状数组"><span class="iconfont-archer">&#xe606;</span>树状数组</span>
     
@@ -1476,17 +1485,19 @@
     
         <span class="sidebar-tag-name" data-tags="素数"><span class="iconfont-archer">&#xe606;</span>素数</span>
     
-        <span class="sidebar-tag-name" data-tags="数学"><span class="iconfont-archer">&#xe606;</span>数学</span>
-    
         <span class="sidebar-tag-name" data-tags="规律"><span class="iconfont-archer">&#xe606;</span>规律</span>
     
         <span class="sidebar-tag-name" data-tags="STL"><span class="iconfont-archer">&#xe606;</span>STL</span>
     
         <span class="sidebar-tag-name" data-tags="Map"><span class="iconfont-archer">&#xe606;</span>Map</span>
     
-        <span class="sidebar-tag-name" data-tags="DFS"><span class="iconfont-archer">&#xe606;</span>DFS</span>
+        <span class="sidebar-tag-name" data-tags="构造"><span class="iconfont-archer">&#xe606;</span>构造</span>
     
         <span class="sidebar-tag-name" data-tags="模拟"><span class="iconfont-archer">&#xe606;</span>模拟</span>
+    
+        <span class="sidebar-tag-name" data-tags="数学"><span class="iconfont-archer">&#xe606;</span>数学</span>
+    
+        <span class="sidebar-tag-name" data-tags="DFS"><span class="iconfont-archer">&#xe606;</span>DFS</span>
     
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
@@ -1523,9 +1534,9 @@ jsonContent:
     
         <span class="sidebar-category-name" data-categories="Redis"><span class="iconfont-archer">&#xe60a;</span>Redis</span>
     
-        <span class="sidebar-category-name" data-categories="Java"><span class="iconfont-archer">&#xe60a;</span>Java</span>
-    
         <span class="sidebar-category-name" data-categories="Flask"><span class="iconfont-archer">&#xe60a;</span>Flask</span>
+    
+        <span class="sidebar-category-name" data-categories="Java"><span class="iconfont-archer">&#xe60a;</span>Java</span>
     
         <span class="sidebar-category-name" data-categories="数据结构与算法"><span class="iconfont-archer">&#xe60a;</span>数据结构与算法</span>
     

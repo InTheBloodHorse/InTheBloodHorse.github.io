@@ -374,10 +374,11 @@ height:50vh;
         <div class="abstract-content">
             题目地址
 题意给出一个字符串，如何修改某些字符可以达到要求，即这些字符串里必须有大写小写数字。输入也只有大写小写数字。输出修改后的字符串，但是要求修改的位置的长度为最小。例如 从 abcdef-&gt;a7cdEf，的长度为（5-2）+1=4。
-思路：首先只会出现大写，小写，数字，所以只会出现三中情况。1.大写，小写，数字都有了，直接输出
+思路：首先只会出现大写，小写，数字，所以只会出现三中情况。
 
+大写，小写，数字都有了，直接输出
 少了一个（大写|小写|数字），只要随便找个不是唯一类别的修改成数字就行了。因为长度永远为1。
-少了两个，说明这个字符串要么全都是数字，要么全都是大写的，或者小写的。只要相邻的一起改了就行了。AC代码12345678910111213141516171...
+少了两个，说明这个字符串要么全都是数字，要么全都是大写的，或者小写的。只要相邻的一起改了就行了。AC代码123456789101112131415161718...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -1357,6 +1358,10 @@ height:50vh;
     
     
     
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
         Total : 37
@@ -1634,9 +1639,9 @@ jsonContent:
         <div class="sidebar-panel-categories">
     <div class="sidebar-categories-name">
     
-        <span class="sidebar-category-name" data-categories="Redis"><span class="iconfont-archer">&#xe60a;</span>Redis</span>
-    
         <span class="sidebar-category-name" data-categories="Flask"><span class="iconfont-archer">&#xe60a;</span>Flask</span>
+    
+        <span class="sidebar-category-name" data-categories="Redis"><span class="iconfont-archer">&#xe60a;</span>Redis</span>
     
         <span class="sidebar-category-name" data-categories="Java"><span class="iconfont-archer">&#xe60a;</span>Java</span>
     

@@ -354,6 +354,35 @@
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2018/09/27/每日一题-16-codeforces-1041B/" >
+            
+                <span>每日一题(16) codeforces 1041B</span>
+        </a>
+        <div class="abstract-content">
+            题目地址题意：问 在[1,x],[1,y]，比例 等于 a:b的个数思路：把a:b的比例约分，这样就能保证最小，其实就是除以 gcd(a,b)。然后除以比例就好了，找出最小的。AC代码：1234567891011121314#include&lt;bits/stdc++.h&gt;using namespace std;long long gcd(long long a, long long b) &#123;  return b == 0 ? a : gcd(b, a % b);&#125;int main()&#123;	long long x,y,a,b;	cin &gt;&gt;...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/09/27</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "gcd">gcd</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2018/09/26/每日一题-15-codeforces-1041A/" >
             
                 <span>每日一题(15) codeforces 1041A</span>
@@ -610,35 +639,6 @@
         <a class="post-tag" href="javascript:void(0);" data-tags = "数位dp">数位dp</a>
     
         <a class="post-tag" href="javascript:void(0);" data-tags = "DFS">DFS</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/09/14/每日一题-6-codeforces-1036B/" >
-            
-                <span>每日一题(6) codeforces 1036B</span>
-        </a>
-        <div class="abstract-content">
-            题目地址题意：给三个数,x,y,k,代表从 (0,0)到(x,y)走k步(米字形走法)，问可以走的对角线最大步数有多少步。思路：想了很久，难受啊。abs(x-y)为奇数时，不能走对角线，需要多走一步k-1，当走对角线可以直接到达终点，如果剩余的步数是奇数则有两步不能走对角线所以k - 2AC代码：123456789101112131415161718192021222324#include&lt;bits/stdc++.h&gt;using namespace std;int main()&#123;	int t;	cin  &gt;&gt; t;	long long x,y,k;	wh...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/09/14</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "思维">思维</a>
     
 </div>
             
@@ -1250,9 +1250,34 @@
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 38
+        Total : 39
         </div>
         <!-- search  -->
         
@@ -1269,6 +1294,11 @@
     
     <div class="archive-year"> 2018 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/09</span><a class="archive-post-title" href= "/2018/10/09/每日一题-26-codeforces-1051C/" >每日一题(26) codeforces 1051C</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -1465,9 +1495,9 @@
         <div class="sidebar-panel-tags">
     <div class="sidebar-tags-name">
     
-        <span class="sidebar-tag-name" data-tags="树"><span class="iconfont-archer">&#xe606;</span>树</span>
-    
         <span class="sidebar-tag-name" data-tags="Maven"><span class="iconfont-archer">&#xe606;</span>Maven</span>
+    
+        <span class="sidebar-tag-name" data-tags="树"><span class="iconfont-archer">&#xe606;</span>树</span>
     
         <span class="sidebar-tag-name" data-tags="排序"><span class="iconfont-archer">&#xe606;</span>排序</span>
     
@@ -1493,9 +1523,9 @@
     
         <span class="sidebar-tag-name" data-tags="构造"><span class="iconfont-archer">&#xe606;</span>构造</span>
     
-        <span class="sidebar-tag-name" data-tags="模拟"><span class="iconfont-archer">&#xe606;</span>模拟</span>
-    
         <span class="sidebar-tag-name" data-tags="数论"><span class="iconfont-archer">&#xe606;</span>数论</span>
+    
+        <span class="sidebar-tag-name" data-tags="模拟"><span class="iconfont-archer">&#xe606;</span>模拟</span>
     
         <span class="sidebar-tag-name" data-tags="数学"><span class="iconfont-archer">&#xe606;</span>数学</span>
     
@@ -1534,13 +1564,13 @@ jsonContent:
         <div class="sidebar-panel-categories">
     <div class="sidebar-categories-name">
     
-        <span class="sidebar-category-name" data-categories="Redis"><span class="iconfont-archer">&#xe60a;</span>Redis</span>
-    
         <span class="sidebar-category-name" data-categories="Flask"><span class="iconfont-archer">&#xe60a;</span>Flask</span>
     
-        <span class="sidebar-category-name" data-categories="数据结构与算法"><span class="iconfont-archer">&#xe60a;</span>数据结构与算法</span>
+        <span class="sidebar-category-name" data-categories="Redis"><span class="iconfont-archer">&#xe60a;</span>Redis</span>
     
         <span class="sidebar-category-name" data-categories="Java"><span class="iconfont-archer">&#xe60a;</span>Java</span>
+    
+        <span class="sidebar-category-name" data-categories="数据结构与算法"><span class="iconfont-archer">&#xe60a;</span>数据结构与算法</span>
     
         <span class="sidebar-category-name" data-categories="机器学习"><span class="iconfont-archer">&#xe60a;</span>机器学习</span>
     

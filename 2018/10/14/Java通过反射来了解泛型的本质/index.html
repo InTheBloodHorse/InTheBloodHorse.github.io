@@ -6,7 +6,7 @@
 
 
 <head>
-    <meta charset="utf-8">
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" >
     <meta name="author" content="InTheBloodHorse">
     <meta name="renderer" content="webkit">
@@ -15,7 +15,7 @@
     <meta name="description" content="">
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-    <title>InTheBloodHorse&#39;blog</title>
+    <title>Java通过反射来了解泛型的本质 · InTheBloodHorse&#39;blog</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -206,17 +206,28 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js" defer></script>
     <!-- 百度统计  -->
     
-    <!-- 谷歌统计  -->
+    <!-- 谷歌统计  --><!-- hexo-inject:begin --><!-- hexo-inject:end -->
     
 </head>
 
     
+        <body class="post-body">
     
-<header class="header">
+    
+<!-- hexo-inject:begin --><!-- hexo-inject:end --><header class="header">
 
     <div class="read-progress"></div>
     <div class="header-sidebar-menu">&#xe775;</div>
     <!-- post页的toggle banner  -->
+    
+    <div class="banner">
+            <div class="blog-title">
+                <a href="/" >InTheBloodHorse</a>
+            </div>
+            <div class="post-title">
+                <a href="#" class="post-name">Java通过反射来了解泛型的本质</a>
+            </div>
+    </div>
     
     <a class="home-link" href=/>InTheBloodHorse</a>
 </header>
@@ -228,24 +239,68 @@
 
 
 
+
+height:50vh;
 ">
     
     <!-- 主页  -->
+    
+    
+    <!-- 404页  -->
             
     <div class="site-intro-placeholder"></div>
-    <div class="site-intro-img" style="background-image: url(/)"></div>
+    <div class="site-intro-img" style="background-image: url(/intro/bg.jpg)"></div>
     <div class="site-intro-meta">
         <!-- 标题  -->
         <h1 class="intro-title">
             <!-- 主页  -->
+            
+            Java通过反射来了解泛型的本质
+            <!-- 404 -->
             
         </h1>
         <!-- 副标题 -->
         <p class="intro-subtitle">
             <!-- 主页副标题  -->
             
+            
+            <!-- 404 -->
+            
         </p>
         <!-- 文章页meta -->
+        
+            <div class="post-intros">
+                <!-- 文章页标签  -->
+                
+                
+                    <div class="post-intro-read">
+                        <span>字数统计: <span class="post-count word-count">762</span>阅读时长: <span class="post-count reading-time">3 min</span></span>
+                    </div>
+                
+                <div class="post-intro-meta">
+                    <span class="post-intro-calander iconfont-archer">&#xe676;</span>
+                    <span class="post-intro-time">2018/10/14</span>
+                    
+                    <span id="busuanzi_container_page_pv" class="busuanzi-pv">
+                        <span class="iconfont-archer">&#xe602;</span>
+                        <span id="busuanzi_value_page_pv"></span>
+                    </span>
+                    
+                    <span class="shareWrapper">
+                        <span class="iconfont-archer shareIcon">&#xe71d;</span>
+                        <span class="shareText">Share</span>
+                        <ul class="shareList">
+                            <li class="iconfont-archer share-qr" data-type="qr">&#xe75b;
+                                <div class="share-qrcode"></div>
+                            </li>
+                            <li class="iconfont-archer" data-type="weibo">&#xe619;</li>
+                            <li class="iconfont-archer" data-type="qzone">&#xe62e;</li>
+                            <li class="iconfont-archer" data-type="twitter">&#xe634;</li>
+                            <li class="iconfont-archer" data-type="facebook">&#xe67a;</li>
+                        </ul>
+                    </span>
+                </div>
+            </div>
         
     </div>
 </div>
@@ -346,168 +401,59 @@
 </script>        
         <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
         <div class="container container-unloaded">
-            <main class="main index-page">
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/09/26/每日一题-15-codeforces-1041A/" >
-            
-                <span>每日一题(15) codeforces 1041A</span>
-        </a>
-        <div class="abstract-content">
-            题目地址题意：给N个数字，找出还要最少插入几个数字可以让这些数字连续思路：排序，贪心就好了123456789101112131415#include&lt;bits/stdc++.h&gt;using namespace std;int a[2000];int main()&#123;	int n;	cin &gt;&gt; n;	for(int i=0;i&lt;n;i++) cin &gt;&gt; a[i];	sort(a,a+n);	int ans=0;	for(int i=1;i&lt;n;i++)&#123;		ans+=a[i]-a[i-1];	&#125;	cout &l...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/09/26</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "排序">排序</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "贪心">贪心</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/09/26/数据结构与算法-5-堆排序/" >
-            
-                <span>数据结构与算法(5) 堆排序</span>
-        </a>
-        <div class="abstract-content">
-            之前讲到过二叉堆，二叉堆可以实现优先队列和堆排序，今天就来讲讲堆排序。其实只要理解了二叉堆，堆排序就很简单了。无论是最大堆最小堆，堆顶元素肯定是最大|最小的，所以我们每次pop出堆顶的元素，记录。删除堆顶的元素，二叉堆会自动维护，所以堆顶的元素又是当前最大|最小的。加上之前的代码就行了。1234567891011121314151617case 4:&#123;	if(is_small_heap == false)&#123;		cout &lt;&lt; "先生成最小堆" &lt;&lt; endl;		break;	&#125;	vector&lt;int&gt;ans;	int l...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/09/26</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "排序">排序</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/09/18/数据结构与算法-3-稳定排序与非稳定排序/" >
-            
-                <span>数据结构与算法(3) 稳定排序与非稳定排序</span>
-        </a>
-        <div class="abstract-content">
-            图解
-解释顾名思义，稳定排序是稳定的，具体什么是稳定的，那就是index，也就是位置的是稳定，比如在两个值相同的情况下，排序之后的顺序还是不变
-哪些是稳定的？哪些不是稳定排序冒泡排序和归并排序是稳定的
-非稳定排序快速排序和选择排序是非稳定的
-应用，什么时候需要在乎是否稳定在排序学生成绩的时候，假如两个学生成绩相同，那么肯定是学号小的在前面，这就是一个经典的应用。还有就是之前提到的加权随机算法假如我们选择排序的方案，先进行排序，假如成员A,B权重相同，那么顺序就很重要了，所以我们可以让注册时间早的排在前面(当然这个第二关键字很多，这里不一一举例)
+            <main class="main post-page">
+    <article class="article-entry">
+        <h2 id="什么是反射"><a href="#什么是反射" class="headerlink" title="什么是反射"></a>什么是反射</h2><p>Java的反射机制是在运行状态中，对于任何一个类，都能知道这个类的所有属性和方法，对于任意一个对象，都能够调用他的任意一个方法和属性；这种动态获取的信息以及动态调用对象的方法的功能称之为java语言的反射机制。反射的操作都是编译之后的操作。</p>
+<h2 id="创建类的三种方式"><a href="#创建类的三种方式" class="headerlink" title="创建类的三种方式"></a>创建类的三种方式</h2><p>先定义一个类，方便测试<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> cn.pyking;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">print</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"hello"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="A-class"><a href="#A-class" class="headerlink" title="A.class"></a>A.class</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Class class1 = A.class;</span><br><span class="line">System.out.println(class1.getName());</span><br></pre></td></tr></table></figure>
+<h3 id="A-getClass"><a href="#A-getClass" class="headerlink" title="A.getClass()"></a>A.getClass()</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Class class2 = a.getClass();</span><br><span class="line">System.out.println(class2.getName());</span><br></pre></td></tr></table></figure>
+<h3 id="Class-forName"><a href="#Class-forName" class="headerlink" title="Class.forName()"></a>Class.forName()</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Class class3  = <span class="keyword">null</span>;</span><br><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line">	class3 = Class.forName(<span class="string">"cn.pyking.A"</span>);</span><br><span class="line">&#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">	e.printStackTrace();</span><br><span class="line">&#125;</span><br><span class="line">System.out.println(class3.getName());</span><br></pre></td></tr></table></figure>
+<p>一般用第三种方法，传入字符串即可，可以在配置中设置，通用性好。</p>
+<h3 id="如何使用"><a href="#如何使用" class="headerlink" title="如何使用"></a>如何使用</h3><p>创建了类之后，我们就可以用newInstance()方法来创建该对象。（注意强制类型转换）<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line">	A a1 = (A)class3.newInstance();</span><br><span class="line">	a1.print();</span><br><span class="line">&#125;<span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">	e.printStackTrace();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>总代码<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> cn.pyking;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Reflect</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="comment">// TODO Auto-generated method stub</span></span><br><span class="line">		A a = <span class="keyword">new</span> A();</span><br><span class="line">		System.out.println(a.getClass());</span><br><span class="line">		</span><br><span class="line">		<span class="comment">//1</span></span><br><span class="line">		Class class1 = A.class;</span><br><span class="line">		System.out.println(class1.getName());</span><br><span class="line">		<span class="comment">//2</span></span><br><span class="line">		Class class2 = a.getClass();</span><br><span class="line">		System.out.println(class2.getName());</span><br><span class="line">		<span class="comment">//3</span></span><br><span class="line">		Class class3  = <span class="keyword">null</span>;</span><br><span class="line">		<span class="keyword">try</span> &#123;</span><br><span class="line">			class3 = Class.forName(<span class="string">"cn.pyking.A"</span>);</span><br><span class="line">		&#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">			e.printStackTrace();</span><br><span class="line">		&#125;</span><br><span class="line">		System.out.println(class3.getName());</span><br><span class="line">		</span><br><span class="line">		<span class="keyword">try</span> &#123;</span><br><span class="line">			A a1 = (A)class3.newInstance();</span><br><span class="line">			a1.print();</span><br><span class="line">		&#125;<span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">			e.printStackTrace();</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">print</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"hello"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="泛型"><a href="#泛型" class="headerlink" title="泛型"></a>泛型</h2><p>重点来了。那就是泛型，了解过java的都知道泛型，即”参数化类型”。<br>先看下面的代码，我们先新建两个ArrayList，一个没有指定类型。一个指定了String类型。然后获取他们的类类型，比较<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">ArrayList list = <span class="keyword">new</span> ArrayList();</span><br><span class="line">ArrayList&lt;String&gt; sList = <span class="keyword">new</span> ArrayList&lt;String&gt;();</span><br><span class="line"><span class="comment">//		sList.add(20); //wrong</span></span><br><span class="line">Class class1 = list.getClass();</span><br><span class="line">Class class2 = sList.getClass();</span><br><span class="line">System.out.println(class1 == class2);</span><br></pre></td></tr></table></figure></p>
+<p>正常想法应该是打印false，因为我一个指定了泛型String，而另一个没有，肯定是不一样的。但是我们错了，两者是一样的，什么概念？就是其实编译结束之后并没有String不String的操作，编译之后集合是去泛型化的。既然这样，那么我们就可以通过反射绕过编译，给ArrayList添加一个原本并不期待的元素。<br>这里要提到 getMethod，invoke方法，找下相关资料即可。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line">	Method method = class2.getMethod(<span class="string">"add"</span>, Object.class);</span><br><span class="line">	method.invoke(sList,<span class="number">100</span>);</span><br><span class="line">	System.out.println(sList.size());</span><br><span class="line">	System.out.println(sList);</span><br><span class="line">&#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">	e.printStackTrace();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>顺便提一下，我们还是不能把它输出出来了。因为还是要输出String类型的。<br>总代码<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> cn.pyking;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.lang.reflect.Method;</span><br><span class="line"><span class="keyword">import</span> java.util.ArrayList;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ArrList</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		ArrayList list = <span class="keyword">new</span> ArrayList();</span><br><span class="line">		ArrayList&lt;String&gt; sList = <span class="keyword">new</span> ArrayList&lt;String&gt;();</span><br><span class="line"><span class="comment">//		sList.add(20); //wrong</span></span><br><span class="line">		Class class1 = list.getClass();</span><br><span class="line">		Class class2 = sList.getClass();</span><br><span class="line">		sList.add(<span class="string">"hello"</span>);</span><br><span class="line">		System.out.println(class1 == class2);</span><br><span class="line">		</span><br><span class="line">		<span class="keyword">try</span> &#123;</span><br><span class="line">			Method method = class2.getMethod(<span class="string">"add"</span>, Object.class);</span><br><span class="line">			method.invoke(sList,<span class="number">100</span>);</span><br><span class="line">			System.out.println(sList.size());</span><br><span class="line">			System.out.println(sList.get(<span class="number">1</span>));</span><br><span class="line">		&#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">			e.printStackTrace();</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/09/18</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "排序">排序</a>
-    
-</div>
-            
-        </div>
     </article>
+    <!-- license  -->
     
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/09/12/每日一题-4-codeforces-1038D/" >
-            
-                <span>每日一题(4) codeforces 1038D</span>
-        </a>
-        <div class="abstract-content">
-            题目地址题意：有n个史莱姆，每个史莱姆有值为 x，史莱姆A可以吃掉任意一个相邻位置的史莱姆B（值为y），因此史莱姆B就消失了，史莱姆A的值变成了 x-y。问一直吃，吃到最后一个，留下来的史莱姆最大的值为多少。思路：一开始以为是dp题，被吓坏了，后来琢磨下可以得出1：最大的肯定是留到最后的，最小的必须去吃其余的，因为一个大的史莱姆去吃小的史莱姆，就亏了，因为大的史莱姆的值小了，但是他还是正数，最大的吃这个史莱姆，也会变小，所以要想办法得到负数的史莱姆2：所有值都大于0的话，答案就是 所有数字之和 - 2*min3：所有的值小于0的话，取个绝对值，和大于0的情况一样，自己在纸上写一下就知道为...
+        <div class="license-wrapper">
+            <p>原文作者：<a href="http://pyking.cn">InTheBloodHorse</a>
+            <p>原文链接：<a href="http://pyking.cn/2018/10/14/Java通过反射来了解泛型的本质/">http://pyking.cn/2018/10/14/Java通过反射来了解泛型的本质/</a>
+            <p>发表日期：<a href="http://pyking.cn/2018/10/14/Java通过反射来了解泛型的本质/">October 14th 2018, 12:02:44 pm</a>
+            <p>更新日期：<a href="http://pyking.cn/2018/10/14/Java通过反射来了解泛型的本质/">October 14th 2018, 1:43:19 pm</a>
+            <p>版权声明：请随意转载！</p>
         </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/09/12</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "排序">排序</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "思维">思维</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/09/11/每日一题-3-codeforces-1038C/" >
-            
-                <span>每日一题(3) codeforces 1038C</span>
-        </a>
-        <div class="abstract-content">
-            题目地址题意：A,B两人，分别有list，有n个元素，A，B轮流行动，每人有两种选择：1：移除对方的一个元素2：移除自己的一个元素，并且自己的分数加上那个元素的分值假设两个人都做出最优的前提下，A,B的分值之差（A-B）思路：一开始还以为是一道博弈题目，后面读题目就知道，只要先排序，然后轮流模拟A，B的操作，到最后就可以得出答案。坑点：1e5*1e6 = 1e11 分数定义成int的话 就爆掉了，留个心眼。AC代码：12345678910111213141516171819202122232425262728293031323334353637383940414243444546#inc...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/09/11</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "排序">排序</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "贪心">贪心</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "模拟">模拟</a>
-    
-</div>
-            
-        </div>
-    </article>
     
     <!-- paginator  -->
+    <ul class="post-paginator">
+        <li class="next">
+            
+        </li>
+        <li class="previous">
+            
+                <div class="prevSlogan">Previous Post</div>
+                <a href= "/2018/10/13/每日一题-30-codeforces-515训练赛/" title= "每日一题(30) codeforces #515训练赛">
+                    <div class="prevTitle">每日一题(30) codeforces #515训练赛</div>
+                </a>
+            
+        </li>
+    </ul>
+    <!-- 评论插件 -->
+    <!-- 来必力City版安装代码 -->
+
+<!-- City版安装代码已完成 -->
     
+    
+    <!-- partial('_partial/comment/changyan') -->
+    <!--PC版-->
+
+
+    
+    
+
+    <!-- 评论 -->
 </main>
             <!-- profile -->
             
@@ -588,6 +534,24 @@
 </footer>
     </div>
     <!-- toc -->
+    
+    <div class="toc-wrapper" style=
+    
+
+
+
+
+
+
+
+top:50vh;
+
+    >
+        <div class="toc-catalog">
+            <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
+        </div>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#什么是反射"><span class="toc-number">1.</span> <span class="toc-text">什么是反射</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#创建类的三种方式"><span class="toc-number">2.</span> <span class="toc-text">创建类的三种方式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#A-class"><span class="toc-number">2.1.</span> <span class="toc-text">A.class</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#A-getClass"><span class="toc-number">2.2.</span> <span class="toc-text">A.getClass()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Class-forName"><span class="toc-number">2.3.</span> <span class="toc-text">Class.forName()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#如何使用"><span class="toc-number">2.4.</span> <span class="toc-text">如何使用</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#泛型"><span class="toc-number">3.</span> <span class="toc-text">泛型</span></a></li></ol>
+    </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
     <div class="sidebar sidebar-hide">
@@ -1630,6 +1594,25 @@ jsonContent:
     
     </div>
     <!-- async load share.js -->
+    
+        <script src="/scripts/share.js" async></script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js">
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end -->    
      
     </body>
 </html>

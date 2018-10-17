@@ -354,6 +354,37 @@
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2018/10/17/每日一题-34-codeforces1059C/" >
+            
+                <span>每日一题(34) codeforces1059C</span>
+        </a>
+        <div class="abstract-content">
+            题目地址
+题意给一个数字n，每次从这n中删除一个数字，删除前计算数字里面的gcd，问如何删除，可以使得gcd最大。
+思路因为相邻的两个数字是互质的，所以我们要删除奇数，因为当所有的奇数删完之后，每次计算的gcd肯定是大于等于2的。奇数删完后，把奇数位置的数字当奇数，再筛选，输出，直到没有。AC代码123456789101112131415161718#include&lt;bits/stdc++.h&gt;using namespace std;int main()&#123;	int n;	cin &gt;&gt; n;	int ans=1;	while(n&gt;3)&#123;		...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/10/17</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "构造">构造</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2018/10/16/每日一题-33-codeforces1059B/" >
             
                 <span>每日一题(33) codeforces1059B</span>
@@ -631,41 +662,6 @@ A题目地址
             <div class= abstract-tags >
     
         <a class="post-tag" href="javascript:void(0);" data-tags = "数论">数论</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/10/07/每日一题-24-codeforces-1051A/" >
-            
-                <span>每日一题(24) codeforces 1051A</span>
-        </a>
-        <div class="abstract-content">
-            题目地址
-题意给出一个字符串，如何修改某些字符可以达到要求，即这些字符串里必须有大写小写数字。输入也只有大写小写数字。输出修改后的字符串，但是要求修改的位置的长度为最小。例如 从 abcdef-&gt;a7cdEf，的长度为（5-2）+1=4。
-思路：首先只会出现大写，小写，数字，所以只会出现三中情况。
-
-大写，小写，数字都有了，直接输出
-少了一个（大写|小写|数字），只要随便找个不是唯一类别的修改成数字就行了。因为长度永远为1。
-少了两个，说明这个字符串要么全都是数字，要么全都是大写的，或者小写的。只要相邻的一起改了就行了。AC代码123456789101112131415161718...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/10/07</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "构造">构造</a>
     
 </div>
             
@@ -1489,9 +1485,44 @@ A题目地址
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 48
+        Total : 49
         </div>
         <!-- search  -->
         
@@ -1508,6 +1539,11 @@ A题目地址
     
     <div class="archive-year"> 2018 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/17</span><a class="archive-post-title" href= "/2018/10/17/每日一题-34-codeforces1059C/" >每日一题(34) codeforces1059C</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -1756,11 +1792,11 @@ A题目地址
     
         <span class="sidebar-tag-name" data-tags="爬虫"><span class="iconfont-archer">&#xe606;</span>爬虫</span>
     
+        <span class="sidebar-tag-name" data-tags="排序"><span class="iconfont-archer">&#xe606;</span>排序</span>
+    
         <span class="sidebar-tag-name" data-tags="Maven"><span class="iconfont-archer">&#xe606;</span>Maven</span>
     
         <span class="sidebar-tag-name" data-tags="树"><span class="iconfont-archer">&#xe606;</span>树</span>
-    
-        <span class="sidebar-tag-name" data-tags="排序"><span class="iconfont-archer">&#xe606;</span>排序</span>
     
         <span class="sidebar-tag-name" data-tags="树状数组"><span class="iconfont-archer">&#xe606;</span>树状数组</span>
     
@@ -1768,9 +1804,9 @@ A题目地址
     
         <span class="sidebar-tag-name" data-tags="思维"><span class="iconfont-archer">&#xe606;</span>思维</span>
     
-        <span class="sidebar-tag-name" data-tags="贪心"><span class="iconfont-archer">&#xe606;</span>贪心</span>
-    
         <span class="sidebar-tag-name" data-tags="gcd"><span class="iconfont-archer">&#xe606;</span>gcd</span>
+    
+        <span class="sidebar-tag-name" data-tags="贪心"><span class="iconfont-archer">&#xe606;</span>贪心</span>
     
         <span class="sidebar-tag-name" data-tags="优先队列"><span class="iconfont-archer">&#xe606;</span>优先队列</span>
     
@@ -1786,9 +1822,9 @@ A题目地址
     
         <span class="sidebar-tag-name" data-tags="构造"><span class="iconfont-archer">&#xe606;</span>构造</span>
     
-        <span class="sidebar-tag-name" data-tags="模拟"><span class="iconfont-archer">&#xe606;</span>模拟</span>
-    
         <span class="sidebar-tag-name" data-tags="数学"><span class="iconfont-archer">&#xe606;</span>数学</span>
+    
+        <span class="sidebar-tag-name" data-tags="模拟"><span class="iconfont-archer">&#xe606;</span>模拟</span>
     
         <span class="sidebar-tag-name" data-tags="暴力"><span class="iconfont-archer">&#xe606;</span>暴力</span>
     
@@ -1827,13 +1863,13 @@ jsonContent:
         <div class="sidebar-panel-categories">
     <div class="sidebar-categories-name">
     
-        <span class="sidebar-category-name" data-categories="Python"><span class="iconfont-archer">&#xe60a;</span>Python</span>
-    
         <span class="sidebar-category-name" data-categories="Redis"><span class="iconfont-archer">&#xe60a;</span>Redis</span>
     
-        <span class="sidebar-category-name" data-categories="Flask"><span class="iconfont-archer">&#xe60a;</span>Flask</span>
+        <span class="sidebar-category-name" data-categories="Python"><span class="iconfont-archer">&#xe60a;</span>Python</span>
     
         <span class="sidebar-category-name" data-categories="Java"><span class="iconfont-archer">&#xe60a;</span>Java</span>
+    
+        <span class="sidebar-category-name" data-categories="Flask"><span class="iconfont-archer">&#xe60a;</span>Flask</span>
     
         <span class="sidebar-category-name" data-categories="数据结构与算法"><span class="iconfont-archer">&#xe60a;</span>数据结构与算法</span>
     

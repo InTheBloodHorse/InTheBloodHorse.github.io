@@ -188,5 +188,13 @@ public class ProductVO {
     private List<ProductInfoVO> productInfoVOList;
 }
 ```
-
-
+## 配置返回时间戳
+springboot2.0后，spring会将时间自动给转成UTC字符串。
+springboot1.x的版本返回的是时间戳。
+在配置文件里配置一下就好了。
+```Bash
+spring
+  jackson:
+    serialization:
+      write-dates-as-timestamps: true
+```

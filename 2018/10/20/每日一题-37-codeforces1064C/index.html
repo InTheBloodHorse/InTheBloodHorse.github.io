@@ -15,7 +15,7 @@
     <meta name="description" content="">
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-    <title>每日一题(31) codeforces 1066B · InTheBloodHorse&#39;blog</title>
+    <title>每日一题(37) codeforces1064C · InTheBloodHorse&#39;blog</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -225,7 +225,7 @@
                 <a href="/" >InTheBloodHorse</a>
             </div>
             <div class="post-title">
-                <a href="#" class="post-name">每日一题(31) codeforces 1066B</a>
+                <a href="#" class="post-name">每日一题(37) codeforces1064C</a>
             </div>
     </div>
     
@@ -255,7 +255,7 @@ height:50vh;
         <h1 class="intro-title">
             <!-- 主页  -->
             
-            每日一题(31) codeforces 1066B
+            每日一题(37) codeforces1064C
             <!-- 404 -->
             
         </h1>
@@ -274,18 +274,18 @@ height:50vh;
                 
                     <div class= post-intro-tags >
     
-        <a class="post-tag" href="javascript:void(0);" data-tags = "贪心">贪心</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags = "构造">构造</a>
     
 </div>
                 
                 
                     <div class="post-intro-read">
-                        <span>字数统计: <span class="post-count word-count">335</span>阅读时长: <span class="post-count reading-time">1 min</span></span>
+                        <span>字数统计: <span class="post-count word-count">86</span>阅读时长: <span class="post-count reading-time">1 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
                     <span class="post-intro-calander iconfont-archer">&#xe676;</span>
-                    <span class="post-intro-time">2018/10/14</span>
+                    <span class="post-intro-time">2018/10/20</span>
                     
                     <span id="busuanzi_container_page_pv" class="busuanzi-pv">
                         <span class="iconfont-archer">&#xe602;</span>
@@ -409,18 +409,18 @@ height:50vh;
         <div class="container container-unloaded">
             <main class="main post-page">
     <article class="article-entry">
-        <p><a href="http://codeforces.com/contest/1066/problem/B" target="_blank" rel="noopener">题目地址</a><br>比赛的时候，我1Wa了，然后给黄佬切了。今天补回来。</p>
-<h2 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h2><p>有n个房间，1代表有暖炉，0代表没有。问至少点亮多少暖炉，使得每个房间都温暖，每个暖炉都有范围m。</p>
-<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>贪心，找到每次点亮暖炉之后，从最近一个没有点亮的房间跳m，跳到下一个最远的位置，然后从最远的位置从右往左找，找到第一个暖壶，因为这样可以使暖壶的温暖位置尽量不会重叠。假如没找到。真的太难描述了。哭了。<br>AC代码：<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">int</span> a[<span class="number">1005</span>];</span><br><span class="line"><span class="keyword">int</span> vis[<span class="number">1005</span>];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> n,m;</span><br><span class="line">	<span class="built_in">cin</span> &gt;&gt; n &gt;&gt; m;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++) <span class="built_in">cin</span> &gt;&gt; a[i];</span><br><span class="line">	<span class="keyword">int</span> pos=<span class="number">-1</span>;</span><br><span class="line">	<span class="keyword">int</span> ans=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">int</span> pre=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">int</span> sum=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">while</span>(<span class="number">1</span>)&#123;</span><br><span class="line">		<span class="keyword">int</span> next = pos+m;</span><br><span class="line">		next = min(next,n<span class="number">-1</span>);</span><br><span class="line">		<span class="keyword">int</span> flag=<span class="number">1</span>;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=next;i&gt;=pre;i--)&#123;</span><br><span class="line">			</span><br><span class="line">			<span class="keyword">if</span>(a[i]==<span class="number">1</span>)&#123;</span><br><span class="line">				a[i]=<span class="number">2</span>;</span><br><span class="line">				flag=<span class="number">0</span>;</span><br><span class="line">				ans++;</span><br><span class="line">				<span class="keyword">for</span>(<span class="keyword">int</span> j=max(<span class="number">0</span>,i-(m<span class="number">-1</span>));j&lt;=min(i+(m<span class="number">-1</span>),n<span class="number">-1</span>);j++)&#123;</span><br><span class="line">					<span class="keyword">if</span>(vis[j]==<span class="number">0</span>)&#123;</span><br><span class="line">						vis[j]=<span class="number">1</span>;</span><br><span class="line">						sum++;	</span><br><span class="line">					&#125;</span><br><span class="line">					<span class="keyword">if</span>(sum==n)&#123;</span><br><span class="line">						<span class="built_in">cout</span> &lt;&lt; ans &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">						<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">					&#125;</span><br><span class="line">				&#125; </span><br><span class="line">				pos=i+m<span class="number">-1</span>;</span><br><span class="line">				pre=i;</span><br><span class="line">				<span class="keyword">break</span>;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">if</span>(flag)&#123;</span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++) <span class="keyword">if</span>(vis[i]==<span class="number">0</span>)&#123;</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; <span class="number">-1</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">		<span class="keyword">return</span> <span class="number">0</span>;	</span><br><span class="line">	&#125; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+        <p><a href="http://codeforces.com/contest/1064/problem/C" target="_blank" rel="noopener">题目地址</a></p>
+<h2 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h2><p>给你一个字符串，元素不变，构造成新的字符串，使得字符串的子串中是回文串的数量最多。</p>
+<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>排序一下就行了。<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">char</span> s[<span class="number">100005</span>];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> n;</span><br><span class="line">	<span class="built_in">cin</span> &gt;&gt; n;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%s"</span>,&amp;s);</span><br><span class="line">	sort(s,s+n);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%s"</span>,s);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 
     </article>
     <!-- license  -->
     
         <div class="license-wrapper">
             <p>原文作者：<a href="http://pyking.cn">InTheBloodHorse</a>
-            <p>原文链接：<a href="http://pyking.cn/2018/10/14/每日一题-31-codeforces-1066B/">http://pyking.cn/2018/10/14/每日一题-31-codeforces-1066B/</a>
-            <p>发表日期：<a href="http://pyking.cn/2018/10/14/每日一题-31-codeforces-1066B/">October 14th 2018, 7:45:31 pm</a>
-            <p>更新日期：<a href="http://pyking.cn/2018/10/14/每日一题-31-codeforces-1066B/">October 14th 2018, 8:03:19 pm</a>
+            <p>原文链接：<a href="http://pyking.cn/2018/10/20/每日一题-37-codeforces1064C/">http://pyking.cn/2018/10/20/每日一题-37-codeforces1064C/</a>
+            <p>发表日期：<a href="http://pyking.cn/2018/10/20/每日一题-37-codeforces1064C/">October 20th 2018, 8:08:20 pm</a>
+            <p>更新日期：<a href="http://pyking.cn/2018/10/20/每日一题-37-codeforces1064C/">October 20th 2018, 8:23:38 pm</a>
             <p>版权声明：请随意转载！</p>
         </div>
     
@@ -428,17 +428,12 @@ height:50vh;
     <ul class="post-paginator">
         <li class="next">
             
-                <div class="nextSlogan">Next Post</div>
-                <a href= "/2018/10/15/每日一题-32-codeforces1059A/" title= "每日一题(32) codeforces1059A">
-                    <div class="nextTitle">每日一题(32) codeforces1059A</div>
-                </a>
-            
         </li>
         <li class="previous">
             
                 <div class="prevSlogan">Previous Post</div>
-                <a href= "/2018/10/14/Java通过反射来了解泛型的本质/" title= "Java通过反射来了解泛型的本质">
-                    <div class="prevTitle">Java通过反射来了解泛型的本质</div>
+                <a href= "/2018/10/19/每日一题-36-codeforces1064B/" title= "每日一题(36) codeforces1064B">
+                    <div class="prevTitle">每日一题(36) codeforces1064B</div>
                 </a>
             
         </li>

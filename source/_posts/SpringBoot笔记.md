@@ -198,3 +198,24 @@ spring
     serialization:
       write-dates-as-timestamps: true
 ```
+## Swagger自动生成文档 返回404
+哭死，被这个搞死了。返回错误
+```Bash
+No mapping found for HTTP request with URI [/swagger-ui.html] in DispatcherServlet with name 'dispatcherServlet'
+```
+说明资源没有映射上去。Spring Boot自动配置本身不会自动把/swagger-ui.html这个路径映射到对应的目录META-INF/resources/下面。我们加上这个映射即可。代码如下：
+```Java
+@Configuration
+public class WebConfig extends WebMvcConfigurationSupport {
+
+
+    @Override
+    public void addResourceHandlers(ResourceHandlerRegistry registry) {
+        registry.addResourceHandler("swagger-ui.html")
+                .addResourceLocations("classpath:/META-INF/resources/");
+
+        registry.addResourceHandler("/webjars/**")
+                .addResourceLocations("classpath:/META-INF/resources/webjars/");
+    }
+｝
+```

@@ -354,6 +354,37 @@
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2018/09/21/每日一题-11-HDU4734/" >
+            
+                <span>每日一题(11) HDU4734</span>
+        </a>
+        <div class="abstract-content">
+            题目地址题意：找出i在[0,b]的f(i)小于等于f(a)的数的个数。思路：还是数位dp。关键点1：用dp[pos][sta]来保存位数为pos，f(number)为sta的个数思考：为什么只需要初始化一次dp数组答案：因为dp[pos][sta]和f(a)没有任何关系
+关键点2：尝试用 f(a) 减去 f(number)来判断比如：pos : n-1位数字是由n位数字推出来的,所以减去2的n次方
+有点绕了AC代码：12345678910111213141516171819202122232425262728293031323334353637383940414243#include&l...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/09/21</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "数位dp">数位dp</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2018/09/20/每日一题-10-POJ3252/" >
             
                 <span>每日一题(10) POJ3252</span>
@@ -620,40 +651,10 @@
         </div>
     </article>
     
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/09/09/每日一题-1-codeforces-1038A/" >
-            
-                <span>每日一题(1) codeforces 1038A</span>
-        </a>
-        <div class="abstract-content">
-            题目地址题意：说真的一开始看了老半天硬是没看懂，后面就看了Note，也是似懂非懂，后来瞎看就大致知道了。就是给 n，k，给string s求所有字母里出现次数最少的 * k（这道题就是题意太坑了）
-AC代码：1234567891011121314151617#include&lt;bits/stdc++.h&gt;using namespace std;int v[27];int main()&#123;	string s;	int n,k;	cin &gt;&gt; n &gt;&gt; k &gt;&gt; s;	int min1 = 1e9;	for(int i=0;i&lt;s....
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/09/09</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "思维">思维</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
     <!-- paginator  -->
     
     <nav class="page-nav">
-        <a class="extend prev" rel="prev" href="/categories/每日一题/page/3/">&#60; PREV</a><a class="page-number" href="/categories/每日一题/">1</a><a class="page-number" href="/categories/每日一题/page/2/">2</a><a class="page-number" href="/categories/每日一题/page/3/">3</a><span class="page-number current">4</span>
+        <a class="extend prev" rel="prev" href="/categories/每日一题/page/3/">&#60; PREV</a><a class="page-number" href="/categories/每日一题/">1</a><a class="page-number" href="/categories/每日一题/page/2/">2</a><a class="page-number" href="/categories/每日一题/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/categories/每日一题/page/5/">5</a><a class="extend next" rel="next" href="/categories/每日一题/page/5/">NEXT &#62;</a>
     </nav>
     
 </main>
@@ -1552,9 +1553,34 @@ AC代码：1234567891011121314151617#include&lt;bits/stdc++.h&gt;using namespace
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 55
+        Total : 56
         </div>
         <!-- search  -->
         
@@ -1571,6 +1597,11 @@ AC代码：1234567891011121314151617#include&lt;bits/stdc++.h&gt;using namespace
     
     <div class="archive-year"> 2018 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/22</span><a class="archive-post-title" href= "/2018/11/22/每日一题-41-codeforces-1054C/" >每日一题(41) codeforces 1054C</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -1856,9 +1887,9 @@ AC代码：1234567891011121314151617#include&lt;bits/stdc++.h&gt;using namespace
     
         <span class="sidebar-tag-name" data-tags="Maven"><span class="iconfont-archer">&#xe606;</span>Maven</span>
     
-        <span class="sidebar-tag-name" data-tags="树"><span class="iconfont-archer">&#xe606;</span>树</span>
-    
         <span class="sidebar-tag-name" data-tags="排序"><span class="iconfont-archer">&#xe606;</span>排序</span>
+    
+        <span class="sidebar-tag-name" data-tags="树"><span class="iconfont-archer">&#xe606;</span>树</span>
     
         <span class="sidebar-tag-name" data-tags="树状数组"><span class="iconfont-archer">&#xe606;</span>树状数组</span>
     
@@ -1870,23 +1901,23 @@ AC代码：1234567891011121314151617#include&lt;bits/stdc++.h&gt;using namespace
     
         <span class="sidebar-tag-name" data-tags="gcd"><span class="iconfont-archer">&#xe606;</span>gcd</span>
     
-        <span class="sidebar-tag-name" data-tags="优先队列"><span class="iconfont-archer">&#xe606;</span>优先队列</span>
-    
         <span class="sidebar-tag-name" data-tags="素数"><span class="iconfont-archer">&#xe606;</span>素数</span>
     
         <span class="sidebar-tag-name" data-tags="规律"><span class="iconfont-archer">&#xe606;</span>规律</span>
+    
+        <span class="sidebar-tag-name" data-tags="优先队列"><span class="iconfont-archer">&#xe606;</span>优先队列</span>
     
         <span class="sidebar-tag-name" data-tags="STL"><span class="iconfont-archer">&#xe606;</span>STL</span>
     
         <span class="sidebar-tag-name" data-tags="Map"><span class="iconfont-archer">&#xe606;</span>Map</span>
     
-        <span class="sidebar-tag-name" data-tags="构造"><span class="iconfont-archer">&#xe606;</span>构造</span>
-    
         <span class="sidebar-tag-name" data-tags="数论"><span class="iconfont-archer">&#xe606;</span>数论</span>
     
-        <span class="sidebar-tag-name" data-tags="数学"><span class="iconfont-archer">&#xe606;</span>数学</span>
+        <span class="sidebar-tag-name" data-tags="构造"><span class="iconfont-archer">&#xe606;</span>构造</span>
     
         <span class="sidebar-tag-name" data-tags="模拟"><span class="iconfont-archer">&#xe606;</span>模拟</span>
+    
+        <span class="sidebar-tag-name" data-tags="数学"><span class="iconfont-archer">&#xe606;</span>数学</span>
     
         <span class="sidebar-tag-name" data-tags="暴力"><span class="iconfont-archer">&#xe606;</span>暴力</span>
     
@@ -1927,13 +1958,13 @@ jsonContent:
         <div class="sidebar-panel-categories">
     <div class="sidebar-categories-name">
     
-        <span class="sidebar-category-name" data-categories="Flask"><span class="iconfont-archer">&#xe60a;</span>Flask</span>
+        <span class="sidebar-category-name" data-categories="Python"><span class="iconfont-archer">&#xe60a;</span>Python</span>
     
-        <span class="sidebar-category-name" data-categories="Redis"><span class="iconfont-archer">&#xe60a;</span>Redis</span>
+        <span class="sidebar-category-name" data-categories="Flask"><span class="iconfont-archer">&#xe60a;</span>Flask</span>
     
         <span class="sidebar-category-name" data-categories="Java"><span class="iconfont-archer">&#xe60a;</span>Java</span>
     
-        <span class="sidebar-category-name" data-categories="Python"><span class="iconfont-archer">&#xe60a;</span>Python</span>
+        <span class="sidebar-category-name" data-categories="Redis"><span class="iconfont-archer">&#xe60a;</span>Redis</span>
     
         <span class="sidebar-category-name" data-categories="数据结构与算法"><span class="iconfont-archer">&#xe60a;</span>数据结构与算法</span>
     

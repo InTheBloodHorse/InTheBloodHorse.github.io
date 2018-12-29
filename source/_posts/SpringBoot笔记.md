@@ -219,3 +219,17 @@ public class WebConfig extends WebMvcConfigurationSupport {
     }
 ｝
 ```
+## 整合websocket后测试类报错，无法注入bean
+因为测试类运行的与Application运行的环境不同，所以需要在运行测试类的时候指明环境
+***您可以使用@SpringBootTest的webEnvironment属性来进一步优化测试的运行方式：
+
+MOCK ： 加载一个WebApplicationContext并提供一个模拟servlet环境。嵌入式servlet容器在使用此注释时不会启动。如果servlet API不在你的类路径上，这个模式将透明地回退到创建一个常规的非web应用程序上下文。可以与@AutoConfigureMockMvc结合使用，用于基于MockMvc的应用程序测试。
+RANDOM_PORT ： 加载一个EmbeddedWebApplicationContext并提供一个真正的servlet环境。嵌入式servlet容器启动并在随机端口上侦听。
+DEFINED_PORT ： 加载一个EmbeddedWebApplicationContext并提供一个真正的servlet环境。嵌入式servlet容器启动并监听定义的端口（即从application.properties或默认端口8080）。
+NONE ： 使用SpringApplication加载ApplicationContext，但不提供任何servlet环境（模拟或其他）。***
+```java
+@RunWith(SpringRunner.class)
+@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
+public class ProductCategoryMapperTest {
+}
+```

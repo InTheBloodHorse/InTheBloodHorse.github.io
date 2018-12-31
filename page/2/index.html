@@ -367,6 +367,67 @@ height:50vh;
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2018/10/17/每日一题-34-codeforces1059C/" >
+            
+                <span>每日一题(34) codeforces1059C</span>
+        </a>
+        <div class="abstract-content">
+            题目地址
+题意给一个数字n，每次从这n中删除一个数字，删除前计算数字里面的gcd，问如何删除，可以使得gcd最大。
+思路因为相邻的两个数字是互质的，所以我们要删除奇数，因为当所有的奇数删完之后，每次计算的gcd肯定是大于等于2的。奇数删完后，把奇数位置的数字当奇数，再筛选，输出，直到没有。AC代码123456789101112131415161718#include&lt;bits/stdc++.h&gt;using namespace std;int main()&#123;	int n;	cin &gt;&gt; n;	int ans=1;	while(n&gt;3)&#123;		...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/10/17</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "构造">构造</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href = "/2018/10/16/Python实现自动注册Vjudge帐号/" >
+            
+                <span>Python实现自动注册Vjudge帐号</span>
+        </a>
+        <div class="abstract-content">
+            学校就要acm新生赛了，今天开会说到帐号的事情，老师说分配帐号。作为一个CS的学生，手动注册四五十个帐号，那也太没有牌面了吧。所以接下来一天里面，有两个工作。1.注册帐号（已完成）2.用Flask（也可能SpringBoot）来实现取号系统。小新生填写表单，取号即可。最后存到数据库，到时候导出Excel即可。新生赛的时候，发🎈，安排位置，找人也来的方便。（预计明天完成）。
+网页抓包vjudge是ajax方式来注册的，当我们注册成功的时候，就直接跳到用户的界面了，所以我们这里先输入错误的验证码，查看信息。我们可以看到网页发送了register请求，F12调试查看。我们可以看到API地址还...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/10/16</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "爬虫">爬虫</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2018/10/16/每日一题-33-codeforces1059B/" >
             
                 <span>每日一题(33) codeforces1059B</span>
@@ -507,9 +568,9 @@ A题目地址
             
             <div class= abstract-tags >
     
-        <a class="post-tag" href="javascript:void(0);" data-tags = "思维">思维</a>
-    
         <a class="post-tag" href="javascript:void(0);" data-tags = "贪心">贪心</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "思维">思维</a>
     
         <a class="post-tag" href="javascript:void(0);" data-tags = "数学">数学</a>
     
@@ -603,72 +664,6 @@ A题目地址
             <div class= abstract-tags >
     
         <a class="post-tag" href="javascript:void(0);" data-tags = "思维">思维</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/10/09/每日一题-26-codeforces-1051C/" >
-            
-                <span>每日一题(26) codeforces 1051C</span>
-        </a>
-        <div class="abstract-content">
-            题目地址
-题意给一个数组，要求将这个数组分成 A，B两个数组，并且拥有相同的nice数（即这个数字在数组里只一个）
-思路
-原数组里面有偶数个nice数，那么平分这些nice数。
-原数组里有奇数个，那么我们就要额外得到一个，可以从多的数字里拆出来，但是那个数字的数量要大于2，因为假如是两个的话，拆出来两个nice数了。大于2的话，拆成 1，x（总数-1）。AC代码：123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960#in...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/10/09</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "思维">思维</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "构造">构造</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/10/08/每日一题-25-codeforces-1051B/" >
-            
-                <span>每日一题(25) codeforces 1051B</span>
-        </a>
-        <div class="abstract-content">
-            题目地址
-题意给两个数字 n，m，将[n，m]区间拆成 长度/2 个 pair，每个pair包含两个数字，要求两个数字互质，如果不能拆成 长度/2个，则输出NO
-思路一开始还以为是找素数。想复杂了，因为任意相邻的两个数，都是互质的！AC代码：1234567891011#include&lt;bits/stdc++.h&gt;using namespace std;int main()&#123;	long long x,y;		cin &gt;&gt; x &gt;&gt; y;	cout &lt;&lt; "YES" &lt;&lt; endl;	for(long long i = x...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/10/08</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "数论">数论</a>
     
 </div>
             
@@ -1674,9 +1669,53 @@ A题目地址
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 57
+        Total : 59
         </div>
         <!-- search  -->
         
@@ -1693,6 +1732,16 @@ A题目地址
     
     <div class="archive-year"> 2018 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/31</span><a class="archive-post-title" href= "/2018/12/31/每日一题-42-hud1213/" >每日一题(42) hud1213</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/31</span><a class="archive-post-title" href= "/2018/12/31/数据结构与算法-8-并查集/" >数据结构与算法(8) 并查集</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -1984,27 +2033,29 @@ A题目地址
         <div class="sidebar-panel-tags">
     <div class="sidebar-tags-name">
     
-        <span class="sidebar-tag-name" data-tags="爬虫"><span class="iconfont-archer">&#xe606;</span>爬虫</span>
-    
-        <span class="sidebar-tag-name" data-tags="Springboot"><span class="iconfont-archer">&#xe606;</span>Springboot</span>
-    
         <span class="sidebar-tag-name" data-tags="Maven"><span class="iconfont-archer">&#xe606;</span>Maven</span>
     
         <span class="sidebar-tag-name" data-tags="树"><span class="iconfont-archer">&#xe606;</span>树</span>
     
+        <span class="sidebar-tag-name" data-tags="爬虫"><span class="iconfont-archer">&#xe606;</span>爬虫</span>
+    
+        <span class="sidebar-tag-name" data-tags="Springboot"><span class="iconfont-archer">&#xe606;</span>Springboot</span>
+    
         <span class="sidebar-tag-name" data-tags="排序"><span class="iconfont-archer">&#xe606;</span>排序</span>
+    
+        <span class="sidebar-tag-name" data-tags="图"><span class="iconfont-archer">&#xe606;</span>图</span>
     
         <span class="sidebar-tag-name" data-tags="树状数组"><span class="iconfont-archer">&#xe606;</span>树状数组</span>
     
-        <span class="sidebar-tag-name" data-tags="思维"><span class="iconfont-archer">&#xe606;</span>思维</span>
-    
         <span class="sidebar-tag-name" data-tags="数位dp"><span class="iconfont-archer">&#xe606;</span>数位dp</span>
-    
-        <span class="sidebar-tag-name" data-tags="贪心"><span class="iconfont-archer">&#xe606;</span>贪心</span>
     
         <span class="sidebar-tag-name" data-tags="gcd"><span class="iconfont-archer">&#xe606;</span>gcd</span>
     
+        <span class="sidebar-tag-name" data-tags="贪心"><span class="iconfont-archer">&#xe606;</span>贪心</span>
+    
         <span class="sidebar-tag-name" data-tags="优先队列"><span class="iconfont-archer">&#xe606;</span>优先队列</span>
+    
+        <span class="sidebar-tag-name" data-tags="思维"><span class="iconfont-archer">&#xe606;</span>思维</span>
     
         <span class="sidebar-tag-name" data-tags="素数"><span class="iconfont-archer">&#xe606;</span>素数</span>
     
@@ -2014,17 +2065,19 @@ A题目地址
     
         <span class="sidebar-tag-name" data-tags="Map"><span class="iconfont-archer">&#xe606;</span>Map</span>
     
+        <span class="sidebar-tag-name" data-tags="数论"><span class="iconfont-archer">&#xe606;</span>数论</span>
+    
         <span class="sidebar-tag-name" data-tags="构造"><span class="iconfont-archer">&#xe606;</span>构造</span>
     
         <span class="sidebar-tag-name" data-tags="数学"><span class="iconfont-archer">&#xe606;</span>数学</span>
     
-        <span class="sidebar-tag-name" data-tags="数论"><span class="iconfont-archer">&#xe606;</span>数论</span>
-    
         <span class="sidebar-tag-name" data-tags="模拟"><span class="iconfont-archer">&#xe606;</span>模拟</span>
+    
+        <span class="sidebar-tag-name" data-tags="二进制"><span class="iconfont-archer">&#xe606;</span>二进制</span>
     
         <span class="sidebar-tag-name" data-tags="暴力"><span class="iconfont-archer">&#xe606;</span>暴力</span>
     
-        <span class="sidebar-tag-name" data-tags="二进制"><span class="iconfont-archer">&#xe606;</span>二进制</span>
+        <span class="sidebar-tag-name" data-tags="并查集"><span class="iconfont-archer">&#xe606;</span>并查集</span>
     
         <span class="sidebar-tag-name" data-tags="DFS"><span class="iconfont-archer">&#xe606;</span>DFS</span>
     
@@ -2061,15 +2114,15 @@ jsonContent:
         <div class="sidebar-panel-categories">
     <div class="sidebar-categories-name">
     
-        <span class="sidebar-category-name" data-categories="Flask"><span class="iconfont-archer">&#xe60a;</span>Flask</span>
+        <span class="sidebar-category-name" data-categories="Java"><span class="iconfont-archer">&#xe60a;</span>Java</span>
     
         <span class="sidebar-category-name" data-categories="Redis"><span class="iconfont-archer">&#xe60a;</span>Redis</span>
     
-        <span class="sidebar-category-name" data-categories="Python"><span class="iconfont-archer">&#xe60a;</span>Python</span>
-    
-        <span class="sidebar-category-name" data-categories="Java"><span class="iconfont-archer">&#xe60a;</span>Java</span>
+        <span class="sidebar-category-name" data-categories="Flask"><span class="iconfont-archer">&#xe60a;</span>Flask</span>
     
         <span class="sidebar-category-name" data-categories="数据结构与算法"><span class="iconfont-archer">&#xe60a;</span>数据结构与算法</span>
+    
+        <span class="sidebar-category-name" data-categories="Python"><span class="iconfont-archer">&#xe60a;</span>Python</span>
     
         <span class="sidebar-category-name" data-categories="机器学习"><span class="iconfont-archer">&#xe60a;</span>机器学习</span>
     

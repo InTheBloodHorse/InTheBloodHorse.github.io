@@ -3,6 +3,7 @@ title: 每日一题(46) codeforces 1097B
 date: 2019-01-08 22:03:40
 tags:
 - DFS
+- 二进制枚举
 categories:
 - 每日一题
 ---

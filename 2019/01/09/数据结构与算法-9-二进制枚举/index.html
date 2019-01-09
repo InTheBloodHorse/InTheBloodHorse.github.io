@@ -6,7 +6,7 @@
 
 
 <head>
-    <meta charset="utf-8">
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" >
     <meta name="author" content="InTheBloodHorse">
     <meta name="renderer" content="webkit">
@@ -15,7 +15,7 @@
     <meta name="description" content="">
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-    <title>InTheBloodHorse&#39;blog</title>
+    <title>数据结构与算法(9) 二进制枚举 · InTheBloodHorse&#39;blog</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -206,17 +206,28 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js" defer></script>
     <!-- 百度统计  -->
     
-    <!-- 谷歌统计  -->
+    <!-- 谷歌统计  --><!-- hexo-inject:begin --><!-- hexo-inject:end -->
     
 </head>
 
     
+        <body class="post-body">
     
-<header class="header">
+    
+<!-- hexo-inject:begin --><!-- hexo-inject:end --><header class="header">
 
     <div class="read-progress"></div>
     <div class="header-sidebar-menu">&#xe775;</div>
     <!-- post页的toggle banner  -->
+    
+    <div class="banner">
+            <div class="blog-title">
+                <a href="/" >InTheBloodHorse</a>
+            </div>
+            <div class="post-title">
+                <a href="#" class="post-name">数据结构与算法(9) 二进制枚举</a>
+            </div>
+    </div>
     
     <a class="home-link" href=/>InTheBloodHorse</a>
 </header>
@@ -228,24 +239,74 @@
 
 
 
+
+height:50vh;
 ">
     
     <!-- 主页  -->
+    
+    
+    <!-- 404页  -->
             
     <div class="site-intro-placeholder"></div>
-    <div class="site-intro-img" style="background-image: url(/)"></div>
+    <div class="site-intro-img" style="background-image: url(/intro/bg.jpg)"></div>
     <div class="site-intro-meta">
         <!-- 标题  -->
         <h1 class="intro-title">
             <!-- 主页  -->
+            
+            数据结构与算法(9) 二进制枚举
+            <!-- 404 -->
             
         </h1>
         <!-- 副标题 -->
         <p class="intro-subtitle">
             <!-- 主页副标题  -->
             
+            
+            <!-- 404 -->
+            
         </p>
         <!-- 文章页meta -->
+        
+            <div class="post-intros">
+                <!-- 文章页标签  -->
+                
+                    <div class= post-intro-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "二进制">二进制</a>
+    
+</div>
+                
+                
+                    <div class="post-intro-read">
+                        <span>字数统计: <span class="post-count word-count">338</span>阅读时长: <span class="post-count reading-time">1 min</span></span>
+                    </div>
+                
+                <div class="post-intro-meta">
+                    <span class="post-intro-calander iconfont-archer">&#xe676;</span>
+                    <span class="post-intro-time">2019/01/09</span>
+                    
+                    <span id="busuanzi_container_page_pv" class="busuanzi-pv">
+                        <span class="iconfont-archer">&#xe602;</span>
+                        <span id="busuanzi_value_page_pv"></span>
+                    </span>
+                    
+                    <span class="shareWrapper">
+                        <span class="iconfont-archer shareIcon">&#xe71d;</span>
+                        <span class="shareText">Share</span>
+                        <ul class="shareList">
+                            <li class="iconfont-archer share-qr" data-type="qr">&#xe75b;
+                                <div class="share-qrcode"></div>
+                            </li>
+                            <li class="iconfont-archer" data-type="weibo">&#xe619;</li>
+                            <li class="iconfont-archer" data-type="qzone">&#xe62e;</li>
+                            <li class="iconfont-archer" data-type="twitter">&#xe634;</li>
+                            <li class="iconfont-archer" data-type="facebook">&#xe67a;</li>
+                        </ul>
+                    </span>
+                </div>
+            </div>
         
     </div>
 </div>
@@ -346,308 +407,53 @@
 </script>        
         <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
         <div class="container container-unloaded">
-            <main class="main index-page">
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/09/23/每日一题-12-BZOJ1833/" >
-            
-                <span>每日一题(12) BZOJ1833</span>
-        </a>
-        <div class="abstract-content">
-            题目地址题意：给定两个正整数a和b，求在[a,b]中的所有整数中，每个数码(digit)各出现了多少次。思路：数位dp模版题，用dp[pos][sum][num]来表示在第pos位，目标是num，个数是sum时的值，但是有几个注意点1：0 的时候要注意，因为 0000 没有意义，和之前二进制数位dp题一样2：爆int了，这个有点不应该3：传入0的时候，要特殊判断，只有0位，计算0的位数才有意义。(说不明白)AC代码：123456789101112131415161718192021222324252627282930313233343536373839#include&lt;bits/s...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/09/23</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "数位dp">数位dp</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/09/22/机器学习-2-决策树-ID3算法实现/" >
-            
-                <span>机器学习(2) 决策树(ID3算法实现)</span>
-        </a>
-        <div class="abstract-content">
-            决策树简介概念决策树，顾名思义就是选择，通过问答的形式，针对每一次问答，来推断分解，逐步缩小待猜测事物的范围。即：问问题，回答，每回答一次，根据答案走到下一层，当没得走了，就是得到了结果了。下图为决策树的流程。
-决策树的构造优点：计算复杂度不高，输出结果易于理解，对中间值的缺失不敏感，可以处理不相关特征数据缺点：可能会产生过度匹配问题使用数据类型：数值型和标称型
-构造细节在构造决策树时，我们需要解决的第一个问题就是，当前数据集上哪个特征在划分数据分类时起决定性作用。为了寻找决定性的特征，划分出最好的结果，我们就必须评估每个特征。然后对数据进行划分，直到某个分支下的数据属于同一个类型，表明...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/09/22</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/09/21/每日一题-11-HDU4734/" >
-            
-                <span>每日一题(11) HDU4734</span>
-        </a>
-        <div class="abstract-content">
-            题目地址题意：找出i在[0,b]的f(i)小于等于f(a)的数的个数。思路：还是数位dp。关键点1：用dp[pos][sta]来保存位数为pos，f(number)为sta的个数思考：为什么只需要初始化一次dp数组答案：因为dp[pos][sta]和f(a)没有任何关系
-关键点2：尝试用 f(a) 减去 f(number)来判断比如：pos : n-1位数字是由n位数字推出来的,所以减去2的n次方
-有点绕了AC代码：12345678910111213141516171819202122232425262728293031323334353637383940414243#include&l...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/09/21</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "数位dp">数位dp</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/09/20/每日一题-10-POJ3252/" >
-            
-                <span>每日一题(10) POJ3252</span>
-        </a>
-        <div class="abstract-content">
-            题目地址题意：问区间内[a,b]中满足二进制数的 数字0个数 &gt;= 数字1个数的 数字个数思路：还是数位dp模版题!就是二进制的,所以位数拆出来是二进制的 要 %2 了pos 位数zero 0的个数one 1的个数done 代表是否有1，因为二进制里头 00000 00001的前导0是没意义的,所以要判断一下假如done为0的话，zero和one的个数都是0AC代码：1234567891011121314151617181920212223242526272829303132#include&lt;stdio.h&gt; #include&lt;string.h&gt;int a[...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/09/20</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "数位dp">数位dp</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/09/20/数据结构与算法-4-堆-优先队列/" >
-            
-                <span>数据结构与算法(4) 堆(优先队列)</span>
-        </a>
-        <div class="abstract-content">
-            今天看到堆（Heap）这个概念，可以用来实现优先队列。之前写过一篇关于二叉堆的)数据结构与算法(1)-二叉堆那个二叉堆已经写的很详细了。对于优先队列的删除，插入操作都是O(logN)的复杂度向堆中插入数据，首先将数据项存放到叶节点中（即存到数组的最后一项），然后从该节点开始，逐级向上调整，直到满足堆中节点关键字的条件为止。
-从堆中删除数据与插入不同，删除时永远删除根节点的数据，因为根节点的数据最大，删除完后，将最后一个叶节点移到根的位置，然后从根开始，逐级向下调整，直到满足堆中节点关键字的条件为止。关于代码实现的话，在二叉堆里面已经实现了，只是删除的优先队列肯定是删除最大或者最小的节点，...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/09/20</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "树">树</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/09/19/每日一题-9-HDU3652/" >
-            
-                <span>每日一题(9) HDU3652</span>
-        </a>
-        <div class="abstract-content">
-            题目地址题意：输入n，问在区间[1,n]里面有数字13且能被13整除的数字有多少个。思路：数位dp模版题，pos代表位数，mod 代表当前数字对13取余数，done表示是否已经有数字13，pre代表上一个数字AC代码：12345678910111213141516171819202122232425262728293031#include&lt;bits/stdc++.h&gt;using namespace std;int a[20];int dp[20][20][3][15];		//	位数   %13    是否有13  上一位  int dfs(int pos,int mod,i...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/09/19</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "数位dp">数位dp</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/09/18/每日一题-8-HDU2089/" >
-            
-                <span>每日一题(8) HDU2089不要62</span>
-        </a>
-        <div class="abstract-content">
-            题目地址题意：给一个区间 [a,b],问这个区间里面不包含 (4)(62)的数字有几个。思路：用简单的思想也可以写，这里用数位dp方法来写。简单的模版题目。AC代码：1234567891011121314151617181920212223242526272829303132#include&lt;bits/stdc++.h&gt;using namespace std;int a[10]; // 存储位数 int dp[20][2];int dfs(int pos,int sta,bool lim)&#123;	if(pos&lt;0) return 1;	if(!lim &amp;&...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/09/18</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "数位dp">数位dp</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/09/18/数据结构与算法-3-稳定排序与非稳定排序/" >
-            
-                <span>数据结构与算法(3) 稳定排序与非稳定排序</span>
-        </a>
-        <div class="abstract-content">
-            图解
-解释顾名思义，稳定排序是稳定的，具体什么是稳定的，那就是index，也就是位置的是稳定，比如在两个值相同的情况下，排序之后的顺序还是不变
-哪些是稳定的？哪些不是稳定排序冒泡排序和归并排序是稳定的
-非稳定排序快速排序和选择排序是非稳定的
-应用，什么时候需要在乎是否稳定在排序学生成绩的时候，假如两个学生成绩相同，那么肯定是学号小的在前面，这就是一个经典的应用。还有就是之前提到的加权随机算法假如我们选择排序的方案，先进行排序，假如成员A,B权重相同，那么顺序就很重要了，所以我们可以让注册时间早的排在前面(当然这个第二关键字很多，这里不一一举例)
+            <main class="main post-page">
+    <article class="article-entry">
+        <h2 id="什么是二进制枚举"><a href="#什么是二进制枚举" class="headerlink" title="什么是二进制枚举"></a>什么是二进制枚举</h2><p>二进制枚举是用来枚举子集的。即把问题转化成二进制的思想，根据转化后的二进制每位的数字（0 | 1）来确定状态。<br>例：<br>现在要记录5名学生的期末成绩，1表示通过，0表示不通过，结果会有 2^n 次可能，用二进制表示的话就是从00000 ~ 11111（十进制下为数字 0~31）<br><img src="/2019/01/09/数据结构与算法-9-二进制枚举/TIM截图20190109142924.jpg" alt="TIM截图20190109142924.jpg"></p>
+<h2 id="复杂度"><a href="#复杂度" class="headerlink" title="复杂度"></a>复杂度</h2><p>在例子的5名学生中，运算了 32 <em> 5，所以复杂度为 N</em>2^N<br>同样的，DFS也可以解决类似问题，复杂度差不多</p>
+<h2 id="位运算"><a href="#位运算" class="headerlink" title="位运算"></a>位运算</h2><p>在c语言中 &lt;&lt; 代表左移 比如 1&lt;<1 就由="" 1(十进制1)="" -=""> 10(十进制2)，&gt;&gt; 右移同理</1></p>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2> <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> n;</span><br><span class="line">	<span class="built_in">cin</span> &gt;&gt; n; <span class="comment">//n代表几个人</span></span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt; (<span class="number">1</span>&lt;&lt;n) ;i++)&#123; <span class="comment">// 1&lt;&lt;n 代表有多少种情况 </span></span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;n;j++)&#123; <span class="comment">//i表示当前状态 </span></span><br><span class="line">			<span class="comment">// i &amp;  1&lt;&lt;j  j代表第几位</span></span><br><span class="line">			<span class="comment">// 结果得到 第j位的状态 </span></span><br><span class="line">			<span class="keyword">if</span>(i &amp; <span class="number">1</span>&lt;&lt;j)&#123;  <span class="comment">// 假如第j位为 1 </span></span><br><span class="line">				<span class="built_in">cout</span> &lt;&lt; <span class="number">1</span> &lt;&lt; <span class="string">" "</span>;</span><br><span class="line">			&#125;<span class="keyword">else</span>&#123; <span class="comment">//假如第J位为 0 </span></span><br><span class="line">				<span class="built_in">cout</span> &lt;&lt; <span class="number">0</span> &lt;&lt; <span class="string">" "</span>;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p>二进制枚举经常用来解决ACM题目。<a href="http://pyking.cn/2019/01/08/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-46-codeforces-1097B/">二进制枚举例题</a> </p>
 
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/09/18</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "排序">排序</a>
-    
-</div>
-            
-        </div>
     </article>
+    <!-- license  -->
     
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/09/17/数据结构与算法-2-加权随机算法的Python实现/" >
-            
-                <span>数据结构与算法(2) 加权随机算法的Python实现</span>
-        </a>
-        <div class="abstract-content">
-            随机抽奖算法1.随机抽取一个或者多个12345678import randomname = ['a', 'b', 'c', 'd', 'e', 'f']random_name = random.choice(name)print(random_name)random_names = random.sample(name, 3)print(random_names)
-结果：12d['a', 'b', 'f']
-考虑权重后随机抽取一个元素如果不同的成员有不用的权重，比如某个成员是会员，某个成员贡献度高等，可以自定义一个抽取函数，用来抽取一个元素算法的思路就是
-1. 拿到 0 ~ 权重之和之间...
+        <div class="license-wrapper">
+            <p>原文作者：<a href="http://pyking.cn">InTheBloodHorse</a>
+            <p>原文链接：<a href="http://pyking.cn/2019/01/09/数据结构与算法-9-二进制枚举/">http://pyking.cn/2019/01/09/数据结构与算法-9-二进制枚举/</a>
+            <p>发表日期：<a href="http://pyking.cn/2019/01/09/数据结构与算法-9-二进制枚举/">January 9th 2019, 2:15:40 pm</a>
+            <p>更新日期：<a href="http://pyking.cn/2019/01/09/数据结构与算法-9-二进制枚举/">January 9th 2019, 2:44:15 pm</a>
+            <p>版权声明：请随意转载！</p>
         </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/09/17</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/09/17/每日一题-7-codeforces-1036C/" >
-            
-                <span>每日一题(7) codeforces 1036C</span>
-        </a>
-        <div class="abstract-content">
-            题目地址题意：找出区间 [A,B]内 非0的数字 不超过3的数字的个数。4，200000，10203     满足条件4231，102306，7277420000 不满足条件
-思路：dfs可以用数位dp来做，我这里是用 dfs，找到的符合条件的数字 推到 vector里面，最后用差分的思想，用二分找到位置，相减就可以了。AC代码：1234567891011121314151617181920212223242526272829303132#include&lt;bits/stdc++.h&gt;using namespace std;vector&lt;long long&gt;v;		...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/09/17</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "数位dp">数位dp</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "DFS">DFS</a>
-    
-</div>
-            
-        </div>
-    </article>
     
     <!-- paginator  -->
+    <ul class="post-paginator">
+        <li class="next">
+            
+        </li>
+        <li class="previous">
+            
+                <div class="prevSlogan">Previous Post</div>
+                <a href= "/2019/01/08/每日一题-46-codeforces-1097B/" title= "每日一题(46) codeforces 1097B">
+                    <div class="prevTitle">每日一题(46) codeforces 1097B</div>
+                </a>
+            
+        </li>
+    </ul>
+    <!-- 评论插件 -->
+    <!-- 来必力City版安装代码 -->
+
+<!-- City版安装代码已完成 -->
     
-    <nav class="page-nav">
-        <a class="extend prev" rel="prev" href="/archives/2018/09/">&#60; PREV</a><a class="page-number" href="/archives/2018/09/">1</a><span class="page-number current">2</span><a class="page-number" href="/archives/2018/09/page/3/">3</a><a class="extend next" rel="next" href="/archives/2018/09/page/3/">NEXT &#62;</a>
-    </nav>
     
+    <!-- partial('_partial/comment/changyan') -->
+    <!--PC版-->
+
+
+    
+    
+
+    <!-- 评论 -->
 </main>
             <!-- profile -->
             
@@ -728,6 +534,24 @@
 </footer>
     </div>
     <!-- toc -->
+    
+    <div class="toc-wrapper" style=
+    
+
+
+
+
+
+
+
+top:50vh;
+
+    >
+        <div class="toc-catalog">
+            <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
+        </div>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#什么是二进制枚举"><span class="toc-number">1.</span> <span class="toc-text">什么是二进制枚举</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#复杂度"><span class="toc-number">2.</span> <span class="toc-text">复杂度</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#位运算"><span class="toc-number">3.</span> <span class="toc-text">位运算</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#代码"><span class="toc-number">4.</span> <span class="toc-text">代码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#题目"><span class="toc-number">5.</span> <span class="toc-text">题目</span></a></li></ol>
+    </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
     <div class="sidebar sidebar-hide">
@@ -2215,6 +2039,25 @@ jsonContent:
     
     </div>
     <!-- async load share.js -->
+    
+        <script src="/scripts/share.js" async></script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js">
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end -->    
      
     </body>
 </html>

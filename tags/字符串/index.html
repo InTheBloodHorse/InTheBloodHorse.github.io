@@ -354,28 +354,37 @@
     
     
     <article class="index-post">
-        <a class="abstract-title" href = "/2018/10/04/数据结构与算法-7-树状数组/" >
+        <a class="abstract-title" href = "/2019/01/09/每日一题-47-codeforces-1097C/" >
             
-                <span>数据结构与算法(7) 树状数组</span>
+                <span>每日一题(47) codeforces 1097C</span>
         </a>
         <div class="abstract-content">
-            什么是树状数组树状数组(Binary Indexed Tree)——解决动态前缀和问题的数据结构。看到这个英文名就能知道他其中的奥秘了，Binary，思想就在于二进制。
-前缀和询问 a[1] + a[2] + a[3] + a[4] + …… + a[n]对于修改 a[i] 为O(1)，查询为O(n)
-原理先看图：我们用 a代表原始数组，用t代表树状数组。12t[6] = a[5] + a[6]110(二进制下) 2^1=2
-12t[8] = a[1] + a[2] + …… + a[8]1000(二进制下) 2^3=8
-同理我们就可以得到如下的算式（来自百度百科）
-这样可能有点太生硬，...
+            题目地址
+题意给你n个字符串，由()组成，要求把这些字符串两两拼接起来，使得满足()的规则数量最多。
+思路先预处理字符串，先把原字符串内符合条件的删除，最后会得到四种结果：
+
+(这是个空字符串)
+…))))) （n个右括号）
+…(((((  (n个左括号)
+…))))((((…..第一种情况的话，只能和第一种情况合并，也就是第一种情况的数量/2第二种情况只能和第三种情况中拥有相同数量的括号合并第三种情况同理第四种不可能拼接成符合规格的，可以忽略
+
+其实这题难点不在实现，想法也不难，就是卡超时，空间换时间。
+AC代码：123456789101112131415161718192021222...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
             <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/10/04</span>
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/01/09</span>
             </div>
             <!-- tags  -->
             
             <div class= abstract-tags >
     
-        <a class="post-tag" href="javascript:void(0);" data-tags = "树状数组">树状数组</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags = "思维">思维</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "字符串">字符串</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "栈">栈</a>
     
 </div>
             

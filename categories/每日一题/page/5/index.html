@@ -354,6 +354,35 @@
     
     
     <article class="index-post">
+        <a class="abstract-title" href = "/2018/09/23/每日一题-12-BZOJ1833/" >
+            
+                <span>每日一题(12) BZOJ1833</span>
+        </a>
+        <div class="abstract-content">
+            题目地址题意：给定两个正整数a和b，求在[a,b]中的所有整数中，每个数码(digit)各出现了多少次。思路：数位dp模版题，用dp[pos][sum][num]来表示在第pos位，目标是num，个数是sum时的值，但是有几个注意点1：0 的时候要注意，因为 0000 没有意义，和之前二进制数位dp题一样2：爆int了，这个有点不应该3：传入0的时候，要特殊判断，只有0位，计算0的位数才有意义。(说不明白)AC代码：123456789101112131415161718192021222324252627282930313233343536373839#include&lt;bits/s...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/09/23</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "数位dp">数位dp</a>
+    
+</div>
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href = "/2018/09/21/每日一题-11-HDU4734/" >
             
                 <span>每日一题(11) HDU4734</span>
@@ -614,37 +643,6 @@
         <a class="post-tag" href="javascript:void(0);" data-tags = "贪心">贪心</a>
     
         <a class="post-tag" href="javascript:void(0);" data-tags = "模拟">模拟</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/09/10/每日一题-2-codefroces-1038B/" >
-            
-                <span>每日一题(2) codefroces 1038B</span>
-        </a>
-        <div class="abstract-content">
-            题目地址今天的题目倒是很友好。题意：输入一个n，将1~n 分为两个集合，每个数字只能用一次，问能否找到两个区间，s1,s2gcd(sum(s1),sum(s2)) &gt; 1 ，换句话说就是 两个集合的总和 不能互质。解题思路：我是先打表，看到 sum 是有规律的，比如 1，3（1+2），6（1+2+3），10（1+2+3+4），15（1+2+3+4+5），四个一组，奇奇偶偶，这样子，偶数就很简单了，偶数-偶数，还是偶数，所有偶数的情况只要取出一个2，其他的是2的补集，就OK了。奇数的话，其实只要判断是不是素数就可以了，但是我这个素数的板子用反了，应该是用判断这个数是不是素数的板子，不...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/09/10</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "素数">素数</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "规律">规律</a>
     
 </div>
             
@@ -1821,12 +1819,9 @@
     
     
     
-    
-    
-    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 70
+        Total : 71
         </div>
         <!-- search  -->
         
@@ -1843,6 +1838,11 @@
     
     <div class="archive-year"> 2019 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/17</span><a class="archive-post-title" href= "/2019/01/17/每日一题-52-hud3746/" >每日一题(52) hud3746</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -2208,10 +2208,6 @@
         <div class="sidebar-panel-tags">
     <div class="sidebar-tags-name">
     
-        <span class="sidebar-tag-name" data-tags="爬虫"><span class="iconfont-archer">&#xe606;</span>爬虫</span>
-    
-        <span class="sidebar-tag-name" data-tags="Springboot"><span class="iconfont-archer">&#xe606;</span>Springboot</span>
-    
         <span class="sidebar-tag-name" data-tags="树"><span class="iconfont-archer">&#xe606;</span>树</span>
     
         <span class="sidebar-tag-name" data-tags="Maven"><span class="iconfont-archer">&#xe606;</span>Maven</span>
@@ -2222,37 +2218,41 @@
     
         <span class="sidebar-tag-name" data-tags="排序"><span class="iconfont-archer">&#xe606;</span>排序</span>
     
+        <span class="sidebar-tag-name" data-tags="爬虫"><span class="iconfont-archer">&#xe606;</span>爬虫</span>
+    
+        <span class="sidebar-tag-name" data-tags="Springboot"><span class="iconfont-archer">&#xe606;</span>Springboot</span>
+    
         <span class="sidebar-tag-name" data-tags="图"><span class="iconfont-archer">&#xe606;</span>图</span>
     
         <span class="sidebar-tag-name" data-tags="二进制"><span class="iconfont-archer">&#xe606;</span>二进制</span>
     
-        <span class="sidebar-tag-name" data-tags="树状数组"><span class="iconfont-archer">&#xe606;</span>树状数组</span>
-    
-        <span class="sidebar-tag-name" data-tags="gcd"><span class="iconfont-archer">&#xe606;</span>gcd</span>
-    
         <span class="sidebar-tag-name" data-tags="数位dp"><span class="iconfont-archer">&#xe606;</span>数位dp</span>
     
+        <span class="sidebar-tag-name" data-tags="树状数组"><span class="iconfont-archer">&#xe606;</span>树状数组</span>
+    
         <span class="sidebar-tag-name" data-tags="贪心"><span class="iconfont-archer">&#xe606;</span>贪心</span>
+    
+        <span class="sidebar-tag-name" data-tags="gcd"><span class="iconfont-archer">&#xe606;</span>gcd</span>
     
         <span class="sidebar-tag-name" data-tags="优先队列"><span class="iconfont-archer">&#xe606;</span>优先队列</span>
     
         <span class="sidebar-tag-name" data-tags="思维"><span class="iconfont-archer">&#xe606;</span>思维</span>
     
-        <span class="sidebar-tag-name" data-tags="STL"><span class="iconfont-archer">&#xe606;</span>STL</span>
-    
-        <span class="sidebar-tag-name" data-tags="Map"><span class="iconfont-archer">&#xe606;</span>Map</span>
-    
         <span class="sidebar-tag-name" data-tags="素数"><span class="iconfont-archer">&#xe606;</span>素数</span>
     
         <span class="sidebar-tag-name" data-tags="规律"><span class="iconfont-archer">&#xe606;</span>规律</span>
+    
+        <span class="sidebar-tag-name" data-tags="STL"><span class="iconfont-archer">&#xe606;</span>STL</span>
+    
+        <span class="sidebar-tag-name" data-tags="Map"><span class="iconfont-archer">&#xe606;</span>Map</span>
     
         <span class="sidebar-tag-name" data-tags="数论"><span class="iconfont-archer">&#xe606;</span>数论</span>
     
         <span class="sidebar-tag-name" data-tags="构造"><span class="iconfont-archer">&#xe606;</span>构造</span>
     
-        <span class="sidebar-tag-name" data-tags="数学"><span class="iconfont-archer">&#xe606;</span>数学</span>
-    
         <span class="sidebar-tag-name" data-tags="模拟"><span class="iconfont-archer">&#xe606;</span>模拟</span>
+    
+        <span class="sidebar-tag-name" data-tags="数学"><span class="iconfont-archer">&#xe606;</span>数学</span>
     
         <span class="sidebar-tag-name" data-tags="暴力"><span class="iconfont-archer">&#xe606;</span>暴力</span>
     
@@ -2265,6 +2265,8 @@
         <span class="sidebar-tag-name" data-tags="二进制枚举"><span class="iconfont-archer">&#xe606;</span>二进制枚举</span>
     
         <span class="sidebar-tag-name" data-tags="栈"><span class="iconfont-archer">&#xe606;</span>栈</span>
+    
+        <span class="sidebar-tag-name" data-tags="前后缀"><span class="iconfont-archer">&#xe606;</span>前后缀</span>
     
         <span class="sidebar-tag-name" data-tags="线段相交"><span class="iconfont-archer">&#xe606;</span>线段相交</span>
     
@@ -2301,15 +2303,15 @@ jsonContent:
         <div class="sidebar-panel-categories">
     <div class="sidebar-categories-name">
     
+        <span class="sidebar-category-name" data-categories="Flask"><span class="iconfont-archer">&#xe60a;</span>Flask</span>
+    
         <span class="sidebar-category-name" data-categories="Redis"><span class="iconfont-archer">&#xe60a;</span>Redis</span>
     
         <span class="sidebar-category-name" data-categories="Java"><span class="iconfont-archer">&#xe60a;</span>Java</span>
     
-        <span class="sidebar-category-name" data-categories="Flask"><span class="iconfont-archer">&#xe60a;</span>Flask</span>
+        <span class="sidebar-category-name" data-categories="数据结构与算法"><span class="iconfont-archer">&#xe60a;</span>数据结构与算法</span>
     
         <span class="sidebar-category-name" data-categories="Python"><span class="iconfont-archer">&#xe60a;</span>Python</span>
-    
-        <span class="sidebar-category-name" data-categories="数据结构与算法"><span class="iconfont-archer">&#xe60a;</span>数据结构与算法</span>
     
         <span class="sidebar-category-name" data-categories="机器学习"><span class="iconfont-archer">&#xe60a;</span>机器学习</span>
     

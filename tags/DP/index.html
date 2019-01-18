@@ -354,288 +354,28 @@
     
     
     <article class="index-post">
-        <a class="abstract-title" href = "/2018/09/25/每日一题-14-codeforces1036D/" >
+        <a class="abstract-title" href = "/2019/01/18/每日一题-53-hud3336/" >
             
-                <span>每日一题(14) codeforces1036D</span>
+                <span>每日一题(53) hud3336</span>
         </a>
         <div class="abstract-content">
-            题目地址题意：给两串数字，每个数字可以和相邻的合并，问合并到最后，两串数字相同时候的最大长度为多少思路：从左到右匹配就好了，没有想的那么难，因为假如两串数字的sum不同的话 肯定是-1，所以答案最少为1，即所有加起来。AC代码：1234567891011121314151617181920212223242526272829303132333435363738#include&lt;bits/stdc++.h&gt;using namespace std;long long a[300005],b[300005];int main()&#123;	int n,m;	long long s...
+            题目地址
+题意求出以字符串为主串，以字符串的前缀为模式串的匹配个数总和
+思路KMP前缀和思想，将字符串所有的前缀0-i在i+1-n出现的次数+1（因为自身也是）相加得到 sum
+AC代码：1234567891011121314151617181920212223242526272829303132333435363738#include&lt;bits/stdc++.h&gt;using namespace std;int nextval[200005];char s[200005];int dp[200005];void gen_next()&#123;	int ll = strlen...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
             <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/09/25</span>
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/01/18</span>
             </div>
             <!-- tags  -->
             
             <div class= abstract-tags >
     
-        <a class="post-tag" href="javascript:void(0);" data-tags = "贪心">贪心</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags = "KMP">KMP</a>
     
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/09/24/每日一题-13-BZOJ1026/" >
-            
-                <span>每日一题(13) BZOJ1026</span>
-        </a>
-        <div class="abstract-content">
-            题目地址题意：windy定义了一种windy数。不含前导零且相邻两个数字之差至少为2的正整数被称为windy数。 windy想知道，在A和B之间，包括A和B，总共有多少个windy数？思路：数位dp，但是前导0让人很不舒服dp[pos][num]表示位数为pos，上一位为num，满足条件的个数。前导0的时候，要注意，这里传入-2，因为1，2，3，等一位数是满足条件的，所以他们与-2的差值都满足条件，所以可以dfs下去，不然就直接GG了。原本用sta来记录是否全为0，但是结果不理想，所以用-2来代表全是前导0。AC代码：12345678910111213141516171819202122...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/09/24</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "数位dp">数位dp</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/09/23/每日一题-12-BZOJ1833/" >
-            
-                <span>每日一题(12) BZOJ1833</span>
-        </a>
-        <div class="abstract-content">
-            题目地址题意：给定两个正整数a和b，求在[a,b]中的所有整数中，每个数码(digit)各出现了多少次。思路：数位dp模版题，用dp[pos][sum][num]来表示在第pos位，目标是num，个数是sum时的值，但是有几个注意点1：0 的时候要注意，因为 0000 没有意义，和之前二进制数位dp题一样2：爆int了，这个有点不应该3：传入0的时候，要特殊判断，只有0位，计算0的位数才有意义。(说不明白)AC代码：123456789101112131415161718192021222324252627282930313233343536373839#include&lt;bits/s...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/09/23</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "数位dp">数位dp</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/09/22/机器学习-2-决策树-ID3算法实现/" >
-            
-                <span>机器学习(2) 决策树(ID3算法实现)</span>
-        </a>
-        <div class="abstract-content">
-            决策树简介概念决策树，顾名思义就是选择，通过问答的形式，针对每一次问答，来推断分解，逐步缩小待猜测事物的范围。即：问问题，回答，每回答一次，根据答案走到下一层，当没得走了，就是得到了结果了。下图为决策树的流程。
-决策树的构造优点：计算复杂度不高，输出结果易于理解，对中间值的缺失不敏感，可以处理不相关特征数据缺点：可能会产生过度匹配问题使用数据类型：数值型和标称型
-构造细节在构造决策树时，我们需要解决的第一个问题就是，当前数据集上哪个特征在划分数据分类时起决定性作用。为了寻找决定性的特征，划分出最好的结果，我们就必须评估每个特征。然后对数据进行划分，直到某个分支下的数据属于同一个类型，表明...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/09/22</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/09/21/每日一题-11-HDU4734/" >
-            
-                <span>每日一题(11) HDU4734</span>
-        </a>
-        <div class="abstract-content">
-            题目地址题意：找出i在[0,b]的f(i)小于等于f(a)的数的个数。思路：还是数位dp。关键点1：用dp[pos][sta]来保存位数为pos，f(number)为sta的个数思考：为什么只需要初始化一次dp数组答案：因为dp[pos][sta]和f(a)没有任何关系
-关键点2：尝试用 f(a) 减去 f(number)来判断比如：pos : n-1位数字是由n位数字推出来的,所以减去2的n次方
-有点绕了AC代码：12345678910111213141516171819202122232425262728293031323334353637383940414243#include&l...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/09/21</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "数位dp">数位dp</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/09/20/每日一题-10-POJ3252/" >
-            
-                <span>每日一题(10) POJ3252</span>
-        </a>
-        <div class="abstract-content">
-            题目地址题意：问区间内[a,b]中满足二进制数的 数字0个数 &gt;= 数字1个数的 数字个数思路：还是数位dp模版题!就是二进制的,所以位数拆出来是二进制的 要 %2 了pos 位数zero 0的个数one 1的个数done 代表是否有1，因为二进制里头 00000 00001的前导0是没意义的,所以要判断一下假如done为0的话，zero和one的个数都是0AC代码：1234567891011121314151617181920212223242526272829303132#include&lt;stdio.h&gt; #include&lt;string.h&gt;int a[...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/09/20</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "数位dp">数位dp</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/09/20/数据结构与算法-4-堆-优先队列/" >
-            
-                <span>数据结构与算法(4) 堆(优先队列)</span>
-        </a>
-        <div class="abstract-content">
-            今天看到堆（Heap）这个概念，可以用来实现优先队列。之前写过一篇关于二叉堆的)数据结构与算法(1)-二叉堆那个二叉堆已经写的很详细了。对于优先队列的删除，插入操作都是O(logN)的复杂度向堆中插入数据，首先将数据项存放到叶节点中（即存到数组的最后一项），然后从该节点开始，逐级向上调整，直到满足堆中节点关键字的条件为止。
-从堆中删除数据与插入不同，删除时永远删除根节点的数据，因为根节点的数据最大，删除完后，将最后一个叶节点移到根的位置，然后从根开始，逐级向下调整，直到满足堆中节点关键字的条件为止。关于代码实现的话，在二叉堆里面已经实现了，只是删除的优先队列肯定是删除最大或者最小的节点，...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/09/20</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "树">树</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/09/19/每日一题-9-HDU3652/" >
-            
-                <span>每日一题(9) HDU3652</span>
-        </a>
-        <div class="abstract-content">
-            题目地址题意：输入n，问在区间[1,n]里面有数字13且能被13整除的数字有多少个。思路：数位dp模版题，pos代表位数，mod 代表当前数字对13取余数，done表示是否已经有数字13，pre代表上一个数字AC代码：12345678910111213141516171819202122232425262728293031#include&lt;bits/stdc++.h&gt;using namespace std;int a[20];int dp[20][20][3][15];		//	位数   %13    是否有13  上一位  int dfs(int pos,int mod,i...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/09/19</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "数位dp">数位dp</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/09/18/每日一题-8-HDU2089/" >
-            
-                <span>每日一题(8) HDU2089不要62</span>
-        </a>
-        <div class="abstract-content">
-            题目地址题意：给一个区间 [a,b],问这个区间里面不包含 (4)(62)的数字有几个。思路：用简单的思想也可以写，这里用数位dp方法来写。简单的模版题目。AC代码：1234567891011121314151617181920212223242526272829303132#include&lt;bits/stdc++.h&gt;using namespace std;int a[10]; // 存储位数 int dp[20][2];int dfs(int pos,int sta,bool lim)&#123;	if(pos&lt;0) return 1;	if(!lim &amp;&...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/09/18</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "数位dp">数位dp</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/09/18/数据结构与算法-3-稳定排序与非稳定排序/" >
-            
-                <span>数据结构与算法(3) 稳定排序与非稳定排序</span>
-        </a>
-        <div class="abstract-content">
-            图解
-解释顾名思义，稳定排序是稳定的，具体什么是稳定的，那就是index，也就是位置的是稳定，比如在两个值相同的情况下，排序之后的顺序还是不变
-哪些是稳定的？哪些不是稳定排序冒泡排序和归并排序是稳定的
-非稳定排序快速排序和选择排序是非稳定的
-应用，什么时候需要在乎是否稳定在排序学生成绩的时候，假如两个学生成绩相同，那么肯定是学号小的在前面，这就是一个经典的应用。还有就是之前提到的加权随机算法假如我们选择排序的方案，先进行排序，假如成员A,B权重相同，那么顺序就很重要了，所以我们可以让注册时间早的排在前面(当然这个第二关键字很多，这里不一一举例)
-
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/09/18</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "排序">排序</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags = "DP">DP</a>
     
 </div>
             
@@ -643,10 +383,6 @@
     </article>
     
     <!-- paginator  -->
-    
-    <nav class="page-nav">
-        <a class="extend prev" rel="prev" href="/archives/page/5/">&#60; PREV</a><a class="page-number" href="/archives/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/4/">4</a><a class="page-number" href="/archives/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/archives/page/7/">7</a><a class="page-number" href="/archives/page/8/">8</a><a class="extend next" rel="next" href="/archives/page/7/">NEXT &#62;</a>
-    </nav>
     
 </main>
             <!-- profile -->

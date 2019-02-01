@@ -14,66 +14,85 @@ public interface MeetingRoomRepository extends JpaRepository<MeetingRoom, Intege
 }
 ```
 
-## 常规方法
+JapSpecificationExecutor接口实现如下（需要传入Specification对象）
 ```Java
-public List<MeetingRoom> findByManyConditions(MeetingRoomQueryForm meetingRoomQueryForm) {
-        List<MeetingRoom> meetingRoomList = new ArrayList<>();
+
+public interface JpaSpecificationExecutor<T> {
+    Optional<T> findOne(@Nullable Specification<T> var1);
+
+    List<T> findAll(@Nullable Specification<T> var1);
+
+    Page<T> findAll(@Nullable Specification<T> var1, Pageable var2);
+
+    List<T> findAll(@Nullable Specification<T> var1, Sort var2);
+
+    long count(@Nullable Specification<T> var1);
+}
+
+```
+
+写自己的Specification
+```Java
+public class MeetingConditions {
+
+    public static Specification getMeetingSpecitication(MeetingRoomQueryForm meetingRoomQueryForm) {
         Specification specification = new Specification() {
             @Override
             public Predicate toPredicate(Root root, CriteriaQuery criteriaQuery, CriteriaBuilder criteriaBuilder) {
                 //and 条件
                 List<Predicate> predicateListAnd = new ArrayList<>();
-                //or 条件
-                List<Predicate> predicateListOr = new ArrayList<>();
-                if (meetingRoomQueryForm.getBuildingId() != null) {
-                    predicateListAnd.add(criteriaBuilder.equal(root.get("buildingId"), meetingRoomQueryForm.getBuildingId()));
+                //楼层
+                Integer buildingId = meetingRoomQueryForm.getBuildingId();
+                if (buildingId != null) {
+                    predicateListAnd.add(criteriaBuilder.equal(root.get("buildingId"), buildingId));
                 }
-                if (meetingRoomQueryForm.getMinVolume() != null) {
-                    predicateListOr.add(criteriaBuilder.greaterThanOrEqualTo(root.get("volume"), meetingRoomQueryForm.getMinVolume()));
+                //容量
+                Integer minVolume = meetingRoomQueryForm.getMinVolume();
+                if (minVolume != null) {
+                    predicateListAnd.add(criteriaBuilder.greaterThanOrEqualTo(root.get("volume"), minVolume));
                 }
-                if (meetingRoomQueryForm.getMaxVolume() != null) {
-                    predicateListOr.add(criteriaBuilder.lessThanOrEqualTo(root.get("volume"), meetingRoomQueryForm.getMaxVolume()));
+                Integer maxVolume = meetingRoomQueryForm.getMaxVolume();
+                if (maxVolume != null) {
+                    predicateListAnd.add(criteriaBuilder.lessThanOrEqualTo(root.get("volume"), maxVolume));
                 }
-                if (meetingRoomQueryForm.getIsUsing() != null) {
-                    predicateListAnd.add(criteriaBuilder.equal(root.get("isUsing"), meetingRoomQueryForm.getIsUsing()));
+                //价格
+                Integer minPrice = meetingRoomQueryForm.getMinPrice();
+                if (minPrice != null) {
+                    predicateListAnd.add(criteriaBuilder.greaterThanOrEqualTo(root.get("price"), minPrice));
+                }
+                Integer maxPrice = meetingRoomQueryForm.getMaxPrice();
+                if (maxPrice != null) {
+                    predicateListAnd.add(criteriaBuilder.lessThanOrEqualTo(root.get("price"), maxPrice));
+                }
+                //是否使用
+                Integer isUsing = meetingRoomQueryForm.getIsUsing();
+                if (isUsing != null) {
+                    predicateListAnd.add(criteriaBuilder.equal(root.get("isUsing"), isUsing));
+                }
+                //标签
+                String tagStr = meetingRoomQueryForm.getTags();
+                if (tagStr != null) {
+                    List<String> tags = Arrays.asList(tagStr.split(","));
+                    for (String tag : tags) {
+                        if (tag.length() != KeyUtil.preLen + KeyUtil.sufLen) continue;
+                        predicateListAnd.add(criteriaBuilder.like(root.get("tags").as(String.class), "%" + tag + "%"));
+                    }
                 }
                 Predicate queryAnd = criteriaBuilder.and(predicateListAnd.toArray(new Predicate[predicateListAnd.size()]));
-                Predicate queryOr = criteriaBuilder.or(predicateListOr.toArray(new Predicate[predicateListOr.size()]));
-                return criteriaQuery.where(queryAnd, queryOr).getRestriction();
+                return criteriaQuery.where(queryAnd).getRestriction();
             }
         };
-        meetingRoomList = meetingRoomRepository.findAll(specification);
-        return meetingRoomList;
+        return specification;
+    }
+}
+```
+
+Service层调用
+```Java
+    @Override
+    public List<MeetingRoomDTO> findByManyConditions(MeetingRoomQueryForm meetingRoomQueryForm) {
+        Specification specification = MeetingConditions.getMeetingSpecitication(meetingRoomQueryForm);
+        List<MeetingRoom> meetingRoomList = meetingRoomRepository.findAll(specification);
+        return MeetingRoom2MeetingRoomDTO.convert(meetingRoomList);
     }
 ```
-
-## lamdba
-```Java
- @Override
-    public List<MeetingRoom> findByManyConditions(MeetingRoomQueryForm meetingRoomQueryForm) {
-        return meetingRoomRepository.findAll((root, cq, cb) -> {
-            //and 条件
-            List<Predicate> predicateListAnd = new ArrayList<>();
-            //or 条件
-            List<Predicate> predicateListOr = new ArrayList<>();
-            if (meetingRoomQueryForm.getBuildingId() != null) {
-                predicateListAnd.add(cb.equal(root.get("buildingId"), meetingRoomQueryForm.getBuildingId()));
-            }
-            if (meetingRoomQueryForm.getMinVolume() != null) {
-                predicateListOr.add(cb.greaterThanOrEqualTo(root.get("volume"), meetingRoomQueryForm.getMinVolume()));
-            }
-            if (meetingRoomQueryForm.getMaxVolume() != null) {
-                predicateListOr.add(cb.lessThanOrEqualTo(root.get("volume"), meetingRoomQueryForm.getMaxVolume()));
-            }
-            if (meetingRoomQueryForm.getIsUsing() != null) {
-                predicateListAnd.add(cb.equal(root.get("isUsing"), meetingRoomQueryForm.getIsUsing()));
-            }
-            Predicate queryAnd = cb.and(predicateListAnd.toArray(new Predicate[predicateListAnd.size()]));
-            Predicate queryOr = cb.or(predicateListOr.toArray(new Predicate[predicateListOr.size()]));
-            return cq.where(queryAnd, queryOr).getRestriction();
-        });
-    }**粗体**
-```
-
-
-

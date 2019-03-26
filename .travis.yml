@@ -1,0 +1,34 @@
+language: node_js   #设置语言
+node_js: stable     #设置相应的版本
+notifications:
+  email: false # 关闭邮件通知
+cache:
+    directories:
+        - node_modules    #据说可以减少travis构建时间
+before_install:
+  - npm install -g hexo
+  - npm install -g hexo-cli
+install:
+  - npm install   #安装hexo及插件
+before_script:
+  - npm install -g mocha
+  - git clone --branch master https://github.com/BestOfDp/BestOfDp.github.io.git public
+script:
+  - hexo cl   #清除
+  - hexo g   #生成
+after_script:
+  - cd ./public
+  - touch CNAME # 因为前面执行了hexo clean所以需要手动添加CNAME文件
+  - echo "pyking.cn" > CNAME # 自己的域名
+  - git init
+  - git config --global user.name "BestOfDp"
+  - git config --global user.email "2495088064@qq.com"
+  - git add .
+  - git commit -m "update by Travis-CI"
+  - git push --force --quiet "https://${Travis_CI}@${GH_REF}" master:master # 注意!!!! 这里的${Travis_CI}就是之前在Travis CI设置的环境变量,名称一定要一致
+branches:
+  only:
+  - source  #只监测这个分支，一有动静就开始构建
+env:
+    global:
+        - GH_REF: github.com/BestOfDp/BestOfDp.github.io.git

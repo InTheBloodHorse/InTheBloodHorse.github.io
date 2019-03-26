@@ -372,9 +372,9 @@ height:50vh;
                 <span>Spring-data-jpa 多条件动态查询</span>
         </a>
         <div class="abstract-content">
-            条件查询155，前端传入的参数并不确定，在sql或者jdbc里，我们可以动态拼接sql来解决这个问题。但是在jpa里我们定义的repository接口需要继承JpaSpecificationExecutor接口。
+            条件查询，前端传入的参数并不确定，在sql或者jdbc里，我们可以动态拼接sql来解决这个问题。但是在jpa里我们定义的repository接口需要继承JpaSpecificationExecutor接口。
 123public interface MeetingRoomRepository extends JpaRepository&lt;MeetingRoom, Integer&gt;, JpaSpecificationExecutor&lt;MeetingRoom&gt; &#123;&#125;
-JapSpecificationExecutor接口实现如下（需要传入Speci...
+JapSpecificationExecutor接口实现如下（需要传入Specific...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->

@@ -6,7 +6,7 @@ tags:
 categories:
 - Java
 ---
-条件查询211，前端传入的参数并不确定，在sql或者jdbc里，我们可以动态拼接sql来解决这个问题。但是在jpa里我们定义的repository接口需要继承JpaSpecificationExecutor接口。
+条件查询fortest，前端传入的参数并不确定，在sql或者jdbc里，我们可以动态拼接sql来解决这个问题。但是在jpa里我们定义的repository接口需要继承JpaSpecificationExecutor接口。
 
 ```Java
 public interface MeetingRoomRepository extends JpaRepository<MeetingRoom, Integer>, JpaSpecificationExecutor<MeetingRoom> {

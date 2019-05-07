@@ -411,3 +411,106 @@ public class Client {
     }
 }
 ```
+
+## 原型模式
+- 通过new产生一个对象需要非常繁琐的数据准备或者权限访问，则可以使用原型模式。
+- 使用java中的克隆技术，以某个对象为原型，复制出新的对象。显然，新的对象具备原型对象的特点
+- 效率高，直接克隆，避免了重新执行构造过程步骤
+- 克隆出的对象的属性值完全和原型对象相同。并且克隆出的新对象改变不会影响原型的对象。然后再修改克隆对象的值。
+
+原型模式的实现:
+- Cloneable接口和clone()方法
+
+### Cloneable(涉及浅拷贝和深拷贝)
+```Java
+package inthebloodhorse.designpatter.prototype;
+
+import java.io.Serializable;
+import java.util.Date;
+
+public class CloneSheep implements Cloneable, Serializable {
+    private String name;
+    private Date date;
+
+    public CloneSheep() {
+
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public Date getDate() {
+        return date;
+    }
+
+    public void setDate(Date date) {
+        this.date = date;
+    }
+
+    @Override
+    protected Object clone() throws CloneNotSupportedException {
+        CloneSheep cloneSheep = (CloneSheep) super.clone();
+
+        // 深拷贝
+        cloneSheep.date = (Date) this.date.clone(); // 浅拷贝的话 去掉本行
+        return cloneSheep;
+    }
+}
+```
+```Java
+package inthebloodhorse.designpatter.prototype;
+
+import java.util.Date;
+
+public class Client {
+    public static void main(String[] args) throws CloneNotSupportedException {
+        Sheep sheep = new Sheep();
+        sheep.setName("多利");
+        sheep.setDate(new Date());
+        Sheep newSheep = (Sheep) sheep.clone();
+        System.out.println(newSheep.getDate());
+        sheep.getDate().setTime(15555);
+        System.out.println(sheep.getDate());
+        System.out.println(newSheep.getDate());
+
+    }
+}
+```
+### 序列化，反序列化
+需要注意，Sheep类要先实现Serializable接口
+```Java
+package inthebloodhorse.designpatter.prototype;
+
+import com.sun.xml.internal.messaging.saaj.util.ByteOutputStream;
+
+import java.io.*;
+import java.util.Date;
+
+public class Client {
+    public static void main(String[] args) throws IOException, ClassNotFoundException {
+        CloneSheep cloneSheep = new CloneSheep();
+        cloneSheep.setName("多利");
+        cloneSheep.setDate(new Date());
+        System.out.println(cloneSheep.getDate());
+        // 序列化，反序列化
+        ByteArrayOutputStream bos = new ByteArrayOutputStream();
+        ObjectOutputStream oos = new ObjectOutputStream(bos);
+        oos.writeObject(cloneSheep);
+        byte[] bytes = bos.toByteArray();
+        ByteArrayInputStream bis = new ByteArrayInputStream(bytes);
+        ObjectInputStream ois = new ObjectInputStream(bis);
+        CloneSheep newSheep = (CloneSheep) ois.readObject();
+        
+
+        newSheep.setDate(new Date(newSheep.getDate().getTime() + 1000000));
+        System.out.println(cloneSheep.getDate());
+        System.out.println(newSheep.getDate());
+
+    }
+}
+```

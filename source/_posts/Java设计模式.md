@@ -514,3 +514,68 @@ public class Client {
     }
 }
 ```
+# 结构型模式
+核心作用：从程序的结构上实现松耦合，从而可以扩大整体的类结构，用来解决更大的问题。
+## 适配器模式
+将一个类的接口转换成客户希望的另一个接口。Adapter模式使得原本由于接口不兼容而不能一起工作的那些类可以在一起工作。
+模式中的角色：
+- 目标接口（Target）：客户所期待的接口。目标可以是具体的或者抽象的类，也可以是接口。
+- 需要适配的；类（Adaptee）：需要适配的类或适配者的类。
+- 适配器（Adapter）:通过包装一个需要适配的对象，把原接口转换成目标接口
+
+先创建被适配的类（即Client无法直接调用该类的方法）
+```Java
+package inthebloodhorse.designpatter.adapter;
+
+// 被适配的类
+public class Adaptee {
+    public void run() {
+        System.out.println("满足基本的需求");
+    }
+}
+```
+定义适配器接口（用于Client与被适配的类进行沟通）
+```Java
+package inthebloodhorse.designpatter.adapter;
+
+public interface Target {
+    void handleRequest();
+}
+```
+定义适配器类，实现Target接口
+```Java
+package inthebloodhorse.designpatter.adapter;
+
+public class Adapter implements Target {
+    private Adaptee adaptee;
+
+    @Override
+    public void handleRequest() {
+        adaptee.run();
+    }
+
+    public Adapter(Adaptee adaptee) {
+        this.adaptee = adaptee;
+    }
+}
+```
+Client端调用被适配的类
+```Java
+package inthebloodhorse.designpatter.adapter;
+
+public class Client {
+    public void test1(Target t) {
+        t.handleRequest();
+    }
+
+    public static void main(String[] args) {
+        Client client = new Client();
+
+        Adaptee adaptee = new Adaptee();
+
+        Adapter adapter = new Adapter(adaptee);
+
+        client.test1(adapter);
+    }
+}
+```

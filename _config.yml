@@ -102,5 +102,5 @@ algolia:
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repo: git@github.com:BestOfDp/BestOfDp.github.io.git
+  repo: git@github.com:InTheBloodHorse/InTheBloodHorse.github.io.git
   branch: master

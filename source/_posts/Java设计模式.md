@@ -579,3 +579,346 @@ public class Client {
     }
 }
 ```
+## 代理模式
+核心作用：
+通过代理，控制对对象的访问。可以详细控制访问某个对象的方法，在调用这个方法前做前置处理，调用这个方法后做后置处理。
+++AOP（面向切面编程）的核心实现机制++
+
+核心角色：
+- 抽象角色：定义代理角色和真实角色的公共对外方法。
+- 真实角色：实现抽象角色，定义真实角色所要实现的业务逻辑，供代理角色调用。++关注真正的业务逻辑++。
+- 代理角色：实现抽象角色，是真实角色的代理，通过真实角色的业务逻辑方法来实现抽象方法，并可以附加自己的操作。++将统一的流程控制放到代理角色中处理++。
+
+应用场景：
+- MyBatis中实现拦截器插件
+- Spring中AOP的实现
+- 数据库连接池关闭处理
+- 切面框架 AspectJ
+
+### 静态代理模式
+创建工作接口
+```Java
+package inthebloodhorse.designpatter.proxy;
+
+public interface Work {
+    void doWork();
+}
+```
+创建工人类实现工作接口
+```Java
+package inthebloodhorse.designpatter.proxy;
+
+public class BadWorker implements Work {
+
+    @Override
+    public void doWork() {
+        System.out.println("Work bad!!!");
+    }
+}
+```
+创建代理类，并添加前置，后置方法
+```Java
+package inthebloodhorse.designpatter.proxy;
+
+public class ProxyWorker implements Work {
+    private Work realWorker;
+
+    public ProxyWorker(Work realWorker) {
+        this.realWorker = realWorker;
+    }
+
+    private void doWorkerBefore() {
+        System.out.println("准备前置工作");
+    }
+
+    private void doWorkerAfter() {
+        System.out.println("工作后续");
+    }
+
+    @Override
+    public void doWork() {
+        doWorkerBefore();
+        this.realWorker.doWork();
+        doWorkerAfter();
+    }
+}
+```
+Client进行测试
+```Java
+package inthebloodhorse.designpatter.proxy;
+
+
+public class Client {
+    public static void main(String[] args) {
+        Work realWorker = new BadWorker();
+        ProxyWorker proxyWorker = new ProxyWorker(realWorker);
+        proxyWorker.doWork();
+    }
+}
+```
+结果
+```Bash
+准备前置工作
+Work bad!!!
+工作后续
+```
+### 动态代理（主要）
+#### JDK自身实现
+定义Work接口和RealWorker实现Work接口
+```Java
+package inthebloodhorse.designpatter.proxy.dynamicproxy;
+
+public interface Work {
+    Integer doWork(Integer type);
+}
+```
+```Java
+package inthebloodhorse.designpatter.proxy.dynamicproxy;
+
+public class RealWorker implements Work {
+
+    @Override
+    public Integer doWork(Integer type) {
+        System.out.println("正在做工作:" + type);
+        return type;
+    }
+}
+```
+定义WorkerHandler类实现InvocationHandler接口，实现invoke()方法
+```Java
+package inthebloodhorse.designpatter.proxy.dynamicproxy;
+
+import java.lang.reflect.InvocationHandler;
+import java.lang.reflect.Method;
+import java.util.Date;
+
+public class WorkerHandler implements InvocationHandler {
+    private Work worker;
+
+    public WorkerHandler(Work worker) {
+        this.worker = worker;
+    }
+
+    @Override
+    public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
+        Long start = new Date().getTime();
+        Object result = method.invoke(this.worker, args);
+        Long end = new Date().getTime();
+        System.out.println(String.format("耗时为:%d", end - start));
+        return result;
+    }
+}
+```
+Client调用
+```Java
+package inthebloodhorse.designpatter.proxy.dynamicproxy;
+
+import java.lang.reflect.Proxy;
+
+public class Client {
+    public static void main(String[] args) {
+        RealWorker realWorker = new RealWorker();
+        WorkerHandler handler = new WorkerHandler(realWorker);
+        // JDK自带动态代理
+        Work work = (Work) Proxy.newProxyInstance(ClassLoader.getSystemClassLoader(), new Class[]{Work.class}, handler);
+        Integer result = work.doWork(2);
+        System.out.println(result);
+    }
+}
+```
+## 桥接模式
+在处理多继承的结构的时候，往往需要处理多维变化的场景，例如电子设备有很多品牌，每种产品又分为台式，笔记本，平板等，假如每个都要设计类的话，则是二维的维度，对于扩展极其不方便。所以我们需要用桥接模式将各个维度设计成独立的继承结构，使各个维度可以独立的扩展在抽象层建立关联。
+
+品牌类
+```Java
+package inthebloodhorse.designpatter.bridge;
+
+// 品牌
+public interface Brand {
+    void sale();
+
+}
+
+class Lenovo implements Brand {
+
+    @Override
+    public void sale() {
+        System.out.println("销售联想");
+    }
+}
+
+class Dell implements Brand {
+
+    @Override
+    public void sale() {
+        System.out.println("销售戴尔");
+    }
+}
+```
+产品类型类
+```Java
+package inthebloodhorse.designpatter.bridge;
+
+public class Computer {
+    protected Brand brand;
+
+    public Computer(Brand brand) {
+        this.brand = brand;
+    }
+
+    public void sale() {
+        brand.sale();
+    }
+}
+
+class Desktop extends Computer {
+    protected Brand brand;
+
+    public Desktop(Brand brand) {
+        super(brand);
+    }
+
+    public void sale() {
+        super.sale();
+        System.out.println("销售台式机");
+    }
+}
+
+class Laptop extends Computer {
+    protected Brand brand;
+
+    public Laptop(Brand brand) {
+        super(brand);
+    }
+
+    public void sale() {
+        super.sale();
+        System.out.println("销售笔记本");
+    }
+}
+```
+Client
+```Java
+package inthebloodhorse.designpatter.bridge;
+
+public class Client {
+    public static void main(String[] args) {
+        // 联想笔记本
+        Brand brand = new Lenovo();
+        Laptop laptop = new Laptop(brand);
+        laptop.sale();
+    }
+}
+```
+总结：
+- 桥接模式可以取代多层继承的方案。多层继承违背了单一职责原则，复用性较差，类的个数也非常多。桥接模式可以极大的减少子类的个数，从而降低管理和维护的成本。
+- 桥接模式极大的提高了系统可扩展性，在两个变化维度中任意扩展一个维度，都不需要修改原有的系统，符合开闭原则。
+
+## 组合模式
+使用场景：
+把部分和整体的关系用树形结构来表示，从而使客户端可以使用统一的方式处理部分对象和整体对象。
+组合模式核心：
+- 抽象构件角色：定义了叶子和父节点构建的共同点
+- 叶子构件角色：无子节点
+- 父节点构件角色：有子节点
+
+使用组合模式，模拟杀毒软件构架设计
+```Java
+package inthebloodhorse.designpatter.composite;
+
+public interface AbstractFile {
+    
+    void kill(int number);
+
+}
+```
+文件类（文件夹，文件）
+```Java
+package inthebloodhorse.designpatter.composite;
+
+
+import java.util.ArrayList;
+
+public class Folder implements AbstractFile {
+    public String name;
+    private ArrayList<AbstractFile> fileList = new ArrayList<>();
+
+    public Folder(String name) {
+        this.name = name;
+    }
+
+    public void add(AbstractFile abstractFile) {
+        this.fileList.add(abstractFile);
+    }
+
+
+    @Override
+    public void kill(int number) {
+        for (int i = 0; i < number; i++) {
+            System.out.print("*** ");
+        }
+        System.out.println(String.format("开始排查文件夹%s", this.name));
+        for (AbstractFile abstractFile : fileList) {
+            if (abstractFile.getClass().equals(Folder.class)) {
+                abstractFile.kill(number + 1);
+            } else {
+                abstractFile.kill(number + 1);
+            }
+        }
+    }
+
+
+}
+
+class TextFile implements AbstractFile {
+
+    public String name;
+
+    public TextFile(String name) {
+        this.name = name;
+    }
+
+    @Override
+    public void kill(int number) {
+        for (int i = 0; i < number; i++) {
+            System.out.print("*** ");
+        }
+        System.out.println(String.format("开始排查文件%s", this.name));
+    }
+
+
+｝
+```
+Client
+```Java
+package inthebloodhorse.designpatter.composite;
+
+import java.io.File;
+
+public class Client {
+    public static void addFile(Folder file, File parent) {
+        for (File f : parent.listFiles()) {
+            if (f.isDirectory()) {
+                Folder childFile = new Folder(f.getName());
+                addFile(childFile, f);
+                file.add(childFile);
+            }
+            if (f.isFile()) {
+                file.add(new TextFile(f.getName()));
+            }
+        }
+    }
+
+    public static void main(String[] args) {
+        String path = "E:\\blog\\BestOfDp.github.io\\source";
+        File file = new File(path);
+        Folder root = new Folder(file.getName());
+        // 读取文件夹目录
+        addFile(root, file);
+
+        root.kill(0);
+
+
+    }
+}
+```

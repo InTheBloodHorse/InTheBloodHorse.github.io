@@ -859,11 +859,7 @@ public class Folder implements AbstractFile {
         }
         System.out.println(String.format("开始排查文件夹%s", this.name));
         for (AbstractFile abstractFile : fileList) {
-            if (abstractFile.getClass().equals(Folder.class)) {
-                abstractFile.kill(number + 1);
-            } else {
-                abstractFile.kill(number + 1);
-            }
+            abstractFile.kill(number + 1);
         }
     }
 
@@ -885,9 +881,7 @@ class TextFile implements AbstractFile {
         }
         System.out.println(String.format("开始排查文件%s", this.name));
     }
-
-
-｝
+}
 ```
 Client
 ```Java
@@ -919,6 +913,544 @@ public class Client {
         root.kill(0);
 
 
+    }
+}
+```
+## 装饰模式
+- 动态的为一个对象增加新的功能
+- 装饰模式就是一种用于代替继承的技术，无须通过继承增加子类就能扩展对象的新功能。使用对象的关联关系代替继承关系，更加灵活，同时避免类型体系的快速膨胀。
+
+实现细节：
+- Component抽象构件角色：真实对象和装饰对象有相同的接口。这样，客户端对象就要能够以与真实对象相同的方式同装饰对象交互。
+- ConcreteComponent具体构件角色（真实对象）
+- Decorator装饰角色：持有一个抽象构件的引用。装饰对象接受所有客户端的请求，并把这些请求转发给真实的对象。这样，就能在真实对象调用前后增加新的功能
+- ConcreteDecorator具体装饰角色：负责给构件对象增加新的责任
+
+```Java
+package inthebloodhorse.designpatter.decorator;
+
+public interface Car {
+    void drive();
+}
+
+
+class MyCar implements Car {
+
+    @Override
+    public void drive() {
+        System.out.println("陆地上行驶");
+    }
+}
+
+class FlyCar implements Car {
+    private Car car;
+
+    public FlyCar(Car car) {
+        this.car = car;
+    }
+
+    public void fly() {
+        System.out.println("飞行");
+    }
+
+    @Override
+    public void drive() {
+        car.drive();
+        fly();
+    }
+}
+
+class AiCar implements Car {
+    private Car car;
+
+    public AiCar(Car car) {
+        this.car = car;
+    }
+
+    public void auto() {
+        System.out.println("自动驾驶");
+    }
+
+    @Override
+    public void drive() {
+        car.drive();
+        auto();
+    }
+}
+```
+Client
+```Java
+package inthebloodhorse.designpatter.decorator;
+
+public class Client {
+    public static void main(String[] args) {
+        MyCar car = new MyCar();
+        // 在Car的基础上 加上 飞行
+        FlyCar flyCar = new FlyCar(car);
+        flyCar.drive();
+
+        System.out.println("----------------");
+        // 在FlyCar的基础上 加上 无人驾驶
+        AiCar aiCar = new AiCar(flyCar);
+        aiCar.drive();
+    }
+}
+```
+
+## 外观模式
+迪米特法则：一个软件实体应当尽可能少的与其他实体发生相互作用。
+外观模式核心：为子系统提供统一的入口。封装子系统的复杂性，便于客户端调用
+本质就是对复杂的关系调用进行封装。
+
+## 享元模式
+场景：内存属于稀缺资源，不要随便浪费。如果有很多个完全相同或相似的对象，我们可以通过享元模式，节省内存。
+核心：享元模式以共享的方式高效地支持大量细粒度对象的重用。
+内部状态：可以共享，不会随环境变化而改变。
+外部状态：不可以共享，会随环境变化而改变。
+
+享元类
+```Java
+package inthebloodhorse.designpatter.flyweight;
+
+// 享元类
+public interface Chess {
+    String getColor();
+
+    void display(Coordinate coordinate);
+}
+
+
+class ColorChess implements Chess {
+
+    private String color;
+
+    public ColorChess(String color) {
+        this.color = color;
+    }
+
+    @Override
+    public String getColor() {
+        return this.color;
+    }
+
+    @Override
+    public void display(Coordinate coordinate) {
+        System.out.println(String.format("颜色为:%s", this.color));
+        System.out.println(String.format("X坐标为:%d,Y坐标为:%d", coordinate.getX(), coordinate.getY()));
+    }
+}
+```
+外部状态
+```Java
+package inthebloodhorse.designpatter.flyweight;
+
+// 外部状态（坐标）
+public class Coordinate {
+    private Integer x, y;
+
+    public Coordinate(Integer x, Integer y) {
+        this.x = x;
+        this.y = y;
+    }
+
+    public Integer getX() {
+        return x;
+    }
+
+    public void setX(Integer x) {
+        this.x = x;
+    }
+
+    public Integer getY() {
+        return y;
+    }
+
+    public void setY(Integer y) {
+        this.y = y;
+    }
+}
+```
+享元工厂
+```Java
+package inthebloodhorse.designpatter.flyweight;
+
+import java.util.HashMap;
+import java.util.Map;
+
+// 享元工厂类
+public class ChessFactory {
+    private static Map<String, Chess> map = new HashMap<>();
+
+    public static Chess getChess(String color) {
+        Chess chess = map.get(color);
+        if (chess == null) {
+            chess = new ColorChess(color);
+            map.put(color, chess);
+        }
+        return chess;
+    }
+}
+```
+Client
+```Java
+package inthebloodhorse.designpatter.flyweight;
+
+public class Client {
+    public static void main(String[] args) {
+        Chess chess1 = ChessFactory.getChess("黑色");
+        Chess chess2 = ChessFactory.getChess("黑色");
+        System.out.println(chess1 == chess2); // true
+
+        // 增加外部状态的处理
+        chess1.display(new Coordinate(20, 20));
+        chess2.display(new Coordinate(10, 10));
+    }
+}
+```
+
+# 行为型模式
+## 责任链模式
+将能够处理同一类请求的对象连成一条链，所提交的请求沿着链传递，链上的对象逐个判断是否有能力处理该请求，如果能，则处理，如果不能，则传递给链上的下一个对象。
+使用场景：
+- Java中，异常机制就是一种责任链模式。一个try可以对应对个catch，当第一个catch不匹配类型，则自动跳到第二个catch。
+- Servlet开发中，过滤器的链式处理。
+
+封装请假对象
+```Java
+package inthebloodhorse.designpatter.responsibilitychain;
+
+// 封装请假基本信息
+public class LeaveRequest {
+    private String name;
+    private Integer day;
+    private String reason;
+
+    public LeaveRequest(String name, Integer day, String reason) {
+        this.name = name;
+        this.day = day;
+        this.reason = reason;
+    }
+
+    public String getName() {
+        return name;
+    }
+    
+
+    public Integer getDay() {
+        return day;
+    }
+
+    public String getReason() {
+        return reason;
+    }
+}
+```
+领导抽象类
+```Java
+package inthebloodhorse.designpatter.responsibilitychain;
+
+// 抽象类
+public abstract class Leader {
+    protected String name;
+    protected Leader nextLeader;
+
+    // 处理请假请求
+    public abstract void handleRequest(LeaveRequest leaveRequest);
+
+    protected void accept(LeaveRequest leaveRequest) {
+        System.out.println(String.format("%s同意该%s的请求:原因 %s ,天数%d",
+                this.name, leaveRequest.getName(), leaveRequest.getReason(),
+                leaveRequest.getDay()));
+    }
+
+    protected void cancel(LeaveRequest leaveRequest) {
+        System.out.println("拒绝请求");
+    }
+
+    public Leader(String name) {
+        this.name = name;
+    }
+    
+
+    public void setNextLeader(Leader nextLeader) {
+        this.nextLeader = nextLeader;
+    }
+}
+```
+具体领导类
+```Java	
+package inthebloodhorse.designpatter.responsibilitychain;
+
+public class LeaderOne extends Leader {
+
+    public LeaderOne(String name) {
+        super(name);
+    }
+
+    @Override
+    public void handleRequest(LeaveRequest leaveRequest) {
+        if (leaveRequest.getDay() < 3) {
+            accept(leaveRequest);
+        } else {
+            if (this.nextLeader != null) {
+                this.nextLeader.handleRequest(leaveRequest);
+            } else {
+                cancel(leaveRequest);
+            }
+        }
+    }
+}
+
+class LeaderTwo extends Leader {
+
+    public LeaderTwo(String name) {
+        super(name);
+    }
+
+    @Override
+    public void handleRequest(LeaveRequest leaveRequest) {
+        if (leaveRequest.getDay() < 10) {
+            accept(leaveRequest);
+        } else {
+            if (this.nextLeader != null) {
+                this.nextLeader.handleRequest(leaveRequest);
+            } else {
+                cancel(leaveRequest);
+            }
+        }
+    }
+}
+```
+Client
+```Java
+package inthebloodhorse.designpatter.responsibilitychain;
+
+public class Client {
+    public static void main(String[] args) {
+        LeaveRequest leaveRequest = new LeaveRequest("1ni", 9, "有事");
+        LeaderOne leaderOne = new LeaderOne("领导1");
+        LeaderTwo leaderTwo = new LeaderTwo("领导2");
+        leaderOne.setNextLeader(leaderTwo);
+
+        leaderOne.handleRequest(leaveRequest);
+    }
+}
+```
+## 迭代器模式
+提供一种可以遍历聚合对象的方式。其实就是自己实现一个迭代器。
+```Java
+package inthebloodhorse.designpatter.iterator;
+
+public interface MyIterator<T> {
+    void first();
+
+    void next();
+
+    boolean hasNext();
+
+    boolean isFirst();
+
+    boolean isLast();
+
+    T getCurrent();
+}
+```
+
+```Java
+package inthebloodhorse.designpatter.iterator;
+
+import java.util.ArrayList;
+
+public class MyCollection<T> {
+    ArrayList<T> list = new ArrayList<>();
+
+    public MyCollection() {
+    }
+
+    public void add(T obj) {
+        list.add(obj);
+    }
+
+    public void remove(T obj) {
+        list.remove(obj);
+    }
+
+    public ArrayList<T> getList() {
+        return list;
+    }
+
+    public void setList(ArrayList<T> list) {
+        this.list = list;
+    }
+
+    public MyIterator getIterator() {
+        return new Iterator();
+    }
+
+    private class Iterator implements MyIterator<T> {
+
+        Integer cursor = 0;
+
+        @Override
+        public void first() {
+            cursor = 0;
+        }
+
+        @Override
+        public void next() {
+            if (cursor < list.size()) {
+                cursor++;
+            }
+        }
+
+        @Override
+        public boolean hasNext() {
+            if(cursor<list.size()){
+                return true;
+            }
+            return false;
+        }
+
+        @Override
+        public boolean isFirst() {
+            return cursor == 0 ? true : false;
+        }
+
+        @Override
+        public boolean isLast() {
+            return cursor == list.size() - 1 ? true : false;
+        }
+
+        @Override
+        public T getCurrent() {
+            return list.get(cursor);
+        }
+    }
+}
+```
+Client
+```Java
+package inthebloodhorse.designpatter.iterator;
+
+public class Client {
+    public static void main(String[] args) {
+        MyCollection<String> myCollection = new MyCollection<>();
+        myCollection.add("Hello");
+        myCollection.add("World");
+        myCollection.add("Pony");
+        MyIterator iterator = myCollection.getIterator();
+        while (iterator.hasNext()) {
+            System.out.println(iterator.getCurrent());
+            iterator.next();
+        }
+    }
+}
+```
+## 中介者模式
+核心：
+- 如果一个系统中对象之间的联系呈现为网状结构，对象之间存在大量多对多关系，将导致关系及其复杂，这些对象称为"同事对象"。
+- 我们可以引入一个中介者对象，使各个同事对象只跟中介者对象打交道，将复杂的网络结构化解为星形结构。
+
+中介者模式的本质：解耦多个对象之间的交互关系。对每个对象都持有中介者对象的引用，只跟中介者对象打交道。我们通过中介者对象统一管理这些交互关系。
+
+开发场景：
+- MVC模式中的Controller层就是中介者对象，View层和Model层都和他打交道
+- Java中的反射，Java.lang.reflect.Method#invoke()
+
+现在需要 假设开发部要求财务部资金支持
+部门类
+```Java
+package inthebloodhorse.designpatter.mediator;
+
+public interface Department {
+    void selfAction(); // 做本部门的事情
+
+    void outAction(); // 向中介者发出申请
+}
+
+class Development implements Department {
+    private Mediator mediator; // 持有中介者对象
+
+    public Development(Mediator mediator) {
+        this.mediator = mediator;
+        mediator.register(this.getClass().getSimpleName(), this);
+    }
+
+    @Override
+    public void selfAction() {
+        System.out.println("开发");
+    }
+
+    @Override
+    public void outAction() {
+        System.out.println("汇报工作,需要资金支持");
+        mediator.command(Finacial.class.getSimpleName());
+    }
+}
+
+class Finacial implements Department {
+    private Mediator mediator; // 持有中介者对象
+
+    public Finacial(Mediator mediator) {
+        this.mediator = mediator;
+        mediator.register(this.getClass().getSimpleName(), this);
+    }
+
+    @Override
+    public void selfAction() {
+        System.out.println("计算财务");
+    }
+
+    @Override
+    public void outAction() {
+        System.out.println("汇报工作,共有资金XXX");
+    }
+}
+```
+中介者类
+```Java
+package inthebloodhorse.designpatter.mediator;
+
+import java.util.HashMap;
+
+public interface Mediator {
+    void register(String dname, Department department);
+
+    void command(String dname);
+}
+
+class Manager implements Mediator {
+
+    private HashMap<String, Department> map = new HashMap<>();
+
+    @Override
+    public void register(String dname, Department department) {
+        map.put(dname, department);
+    }
+
+    @Override
+    public void command(String dname) {
+        Department target = map.get(dname);
+        if (target == null) {
+            throw new RuntimeException("没有该部门");
+        } else {
+            target.selfAction();
+        }
+    }
+}
+```
+Client
+```Java
+package inthebloodhorse.designpatter.mediator;
+
+public class Client {
+    public static void main(String[] args) {
+        // 假设 开发部 要求 财务部 资金支持
+        Mediator manager = new Manager();
+        Department development = new Development(manager);
+        Department finacial = new Finacial(manager);
+
+        development.outAction();
     }
 }
 ```

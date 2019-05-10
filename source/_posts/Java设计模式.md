@@ -582,12 +582,12 @@ public class Client {
 ## 代理模式
 核心作用：
 通过代理，控制对对象的访问。可以详细控制访问某个对象的方法，在调用这个方法前做前置处理，调用这个方法后做后置处理。
-++AOP（面向切面编程）的核心实现机制++
+<u>AOP（面向切面编程）的核心实现机制</u>
 
 核心角色：
 - 抽象角色：定义代理角色和真实角色的公共对外方法。
-- 真实角色：实现抽象角色，定义真实角色所要实现的业务逻辑，供代理角色调用。++关注真正的业务逻辑++。
-- 代理角色：实现抽象角色，是真实角色的代理，通过真实角色的业务逻辑方法来实现抽象方法，并可以附加自己的操作。++将统一的流程控制放到代理角色中处理++。
+- 真实角色：实现抽象角色，定义真实角色所要实现的业务逻辑，供代理角色调用。<u>关注真正的业务逻辑</u>。
+- 代理角色：实现抽象角色，是真实角色的代理，通过真实角色的业务逻辑方法来实现抽象方法，并可以附加自己的操作。<u>将统一的流程控制放到代理角色中处理</u>。
 
 应用场景：
 - MyBatis中实现拦截器插件
@@ -1451,6 +1451,622 @@ public class Client {
         Department finacial = new Finacial(manager);
 
         development.outAction();
+    }
+}
+```
+## 命令模式
+将一个请求封装为一个对象，从而使我们可用不同的请求对客户进行参数化。对请求排队或者记录请求日志，以及支持可撤销的操作。可以操作事务transaction。
+开发场景：
+- 数据库事务机制的底层实现
+- 命令的撤销和恢复
+
+实际执行者类
+```Java
+package inthebloodhorse.designpatter.command;
+
+public class Receiver {
+    private String name;
+
+    public Receiver(String name) {
+        this.name = name;
+    }
+
+    public void action() {
+        System.out.println("调用action方法,Hello:" + this.name);
+    }
+}
+```
+命令者
+```Java
+package inthebloodhorse.designpatter.command;
+
+
+public interface Command {
+    void execute();
+}
+
+class ConcreteCommand implements Command {
+
+    private Receiver receiver;
+
+    public ConcreteCommand(Receiver receiver) {
+        this.receiver = receiver;
+    }
+
+    @Override
+    public void execute() {
+        // 可以进行前置处理
+        receiver.action();
+        // 可以进行后续处理
+    }
+}
+```
+调用者
+```Java
+package inthebloodhorse.designpatter.command;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Invoke {
+    private List<Command> commandList = new ArrayList<>();
+
+    public Invoke() {
+    }
+
+    public void add(Command command) {
+        commandList.add(command);
+    }
+
+    public void call() {
+        for (Command command : commandList) {
+            command.execute();
+        }
+    }
+}
+```
+Client
+```Java
+package inthebloodhorse.designpatter.command;
+
+public class Client {
+    public static void main(String[] args) {
+        Receiver receiver = new Receiver("1ni");
+        Command command = new ConcreteCommand(receiver);
+        Receiver receiver1 = new Receiver("7in");
+        Command command1 = new ConcreteCommand(receiver1);
+        Invoke invoke = new Invoke();
+        invoke.add(command);
+        invoke.add(command1);
+
+        invoke.call();
+
+    }
+}
+```
+## 解释器模式
+用于在描述如何构成一个简单的语言解释器，主要使用面向对象语言开发的编译器和解释器设计。
+当我们需要开发一种新的语言时，可以考虑使用解释器模式。
+但是在实际的开发中，可以用Java的引擎来代替解释器的作用，弥补Java的不足。
+
+常见的场景：
+- EL表达式的处理
+- 正则表达式解释器
+- SQL语法的解释器
+- 数学表达书
+
+## 访问者模式
+对于存储在一个集合中的对象，他们可能具有不同的类型（即使有一个公共的接口），对于该集合中的对象，可以接受一类成为访问者的对象来访问，不同的访问者其访问方式也有所不同。
+定义：表示一个作用于某对象结构中的各元素的操作，它使我们可以在不改变某个元素的类的前提下定义作用于这些元素的新操作。
+
+常见的场景：
+- XML文档解析器设计
+- 编译器的设计
+- 复杂集合对象的处理
+
+## 策略模式
+策略模式对应于解决某一个问题的一个算法族，允许用户从该算法族中任选一个算法解决某一问题，同时可以方便的更换算法或者添加新的算法。并且由客户端决定调用哪个算法。
+策略模式的本质为 分离算法，选择实现
+定义算法族
+```Java
+package inthebloodhorse.designpatter.strategy;
+
+public interface Strategy {
+    Double getPrice(Double price);
+}
+
+class BigDiscount implements Strategy {
+
+    @Override
+    public Double getPrice(Double price) {
+        // 优惠力度很大
+        return price * 0.5;
+    }
+}
+
+class LittleDiscount implements Strategy {
+
+    @Override
+    public Double getPrice(Double price) {
+        // 优惠力度很大
+        return price * 0.9;
+    }
+}
+```
+调用者
+```Java
+package inthebloodhorse.designpatter.strategy;
+
+public class Context {
+    private Strategy strategy;
+
+    public Context(Strategy strategy) {
+        this.strategy = strategy;
+    }
+
+
+    public void setStrategy(Strategy strategy) {
+        this.strategy = strategy;
+    }
+
+    public void getPrice(Double price) {
+        System.out.println("The price is : " + strategy.getPrice(price));
+    }
+}
+```
+Client
+```Java
+package inthebloodhorse.designpatter.strategy;
+
+public class Client {
+    public static void main(String[] args) {
+        Strategy strategy = new BigDiscount();
+        Strategy strategy1 = new LittleDiscount();
+        Context context = new Context(strategy);
+        context.getPrice(new Double(10));
+        context.setStrategy(strategy1);
+        context.getPrice(new Double(10));
+    }
+}
+```
+
+## 模版方法
+它定义了一个操作中的算法骨架，将一些不收延迟到子类中实现。这样，新的子类可以在不改变一个算法结构的前提下重新定义该算法的某些特定步骤。
+核心：处理某个流程的代码已经都具备，但是其中某个节点的代码暂时不能确定。因此，将这个节点的代码实现转移给子类。即，<u>处理步骤父类中定义好，具体实现延迟到子类中定义</u>
+
+常见场景：
+- 数据库访问的封装
+- Junit单元测试
+
+抽象类
+```Java
+package inthebloodhorse.designpatter.templatemethod;
+
+public abstract class Eater {
+
+    public final StringBuilder a = new StringBuilder("55");
+
+    public void order() {
+        System.out.println("点单");
+    }
+
+    // 交给子类实现
+    abstract void eat();
+
+    public void goBack() {
+        System.out.println("回家");
+    }
+
+    public final void doProcess() {
+        order();
+        eat();
+        goBack();
+    }
+}
+```
+Client
+```Java
+package inthebloodhorse.designpatter.templatemethod;
+
+public class Client {
+    public static void main(String[] args) {
+        Eater eater = new Eater() {
+            @Override
+            void eat() {
+                System.out.println("吃汉堡");
+            }
+        };
+
+        eater.doProcess();
+    }
+}
+```
+
+## 状态模式
+核心：用于解决系统中复杂对象的状态转换以及不同状态下行为的封装问题。
+常见的场景：
+- 银行系统中帐号状态的管理
+- 酒店系统中，房间状态的管理
+
+定义状态类
+```Java
+package inthebloodhorse.designpatter.state;
+
+public interface State {
+    void handle();
+
+}
+
+class FreeRoom implements State {
+
+    @Override
+    public void handle() {
+        System.out.println("房间空闲");
+    }
+
+}
+
+class OrderedRoom implements State {
+
+    @Override
+    public void handle() {
+        System.out.println("房间已预定");
+    }
+}
+
+class BusyRoom implements State {
+
+    @Override
+    public void handle() {
+        System.out.println("房间已入住");
+    }
+}
+```
+定义Context环境类
+```Java
+package inthebloodhorse.designpatter.state;
+
+public class RoomContext {
+    private State state;
+
+    public RoomContext() {
+    }
+
+    public void setState(State state) {
+        this.state = state;
+        showState();
+    }
+
+    public void showState() {
+        this.state.handle();
+    }
+}
+```
+Client
+```Java
+package inthebloodhorse.designpatter.state;
+
+public class Client {
+    public static void main(String[] args) {
+        RoomContext context = new RoomContext();
+        context.setState(new FreeRoom());
+        context.setState(new BusyRoom());
+        context.showState();
+    }
+}
+```
+
+## 观察者模式
+核心：当一个对象（目标对象Subject也可以是观察对象）的状态变化时，他需要及时告知一系列对象（观察者），令他们做出响应。
+通知观察者的方式
+- 推：每次都会把通知以广播方式发送给所有观察者，所有观察者只能被动接受。
+- 拉：至于什么时候获得内容，获取什么内容，都自己自主决定。
+
+常见的场景：
+- 聊天室程序，服务器转发给所有客户端
+- 网络游戏，服务器奖客户端的状态进行分发
+- 邮箱订阅
+
+### 自己实现
+创建目标对象
+```Java
+package inthebloodhorse.designpatter.observer;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Subject {
+    protected List<Observer> list = new ArrayList<>();
+
+    public void add(Observer observer) {
+        list.add(observer);
+    }
+
+    public void remove(Observer observer) {
+        list.remove(observer);
+    }
+
+    // 通知所有观察者
+    protected void notifyObserver() {
+        for (Observer observer : list) {
+            observer.update(this);
+        }
+    }
+
+}
+
+class ConcreteSubject extends Subject {
+    private Integer state;
+
+    public Integer getState() {
+        return state;
+    }
+
+    public void setState(Integer state) {
+        this.state = state;
+        // 通知所有观察者
+        this.notifyObserver();
+    }
+}
+```
+观察者对象
+```Java
+package inthebloodhorse.designpatter.observer;
+
+public interface Observer {
+    void update(Subject subject);
+}
+
+class ObserverA implements Observer {
+
+    private Integer myState; // 和目标对象的 state 保持一致
+
+    @Override
+    public void update(Subject subject) {
+        this.myState = ((ConcreteSubject) subject).getState();
+    }
+
+    public Integer getMyState() {
+        return myState;
+    }
+}
+```
+Client
+```Java
+package inthebloodhorse.designpatter.observer;
+
+public class Client {
+    public static void main(String[] args) {
+        // 目标对象
+        ConcreteSubject concreteSubject = new ConcreteSubject();
+
+        // 观察者对象
+        ObserverA observerA1 = new ObserverA();
+        ObserverA observerA2 = new ObserverA();
+        ObserverA observerA3 = new ObserverA();
+
+        // 添加对队列
+        concreteSubject.add(observerA1);
+        concreteSubject.add(observerA2);
+        concreteSubject.add(observerA3);
+
+        // 更改状态
+        concreteSubject.setState(30);
+
+        // 查看观察者的状态
+        System.out.println(observerA1.getMyState());
+        System.out.println(observerA2.getMyState());
+        System.out.println(observerA3.getMyState());
+
+    }
+}
+```
+
+### JavaJDK提供
+JavaJDK已经提供了Observable类和Observer接口
+```Java
+package inthebloodhorse.designpatter.observer.javatool;
+
+import java.util.Observable;
+
+public class ConcreteSubject extends Observable {
+    private Integer state;
+
+    public ConcreteSubject() {
+    }
+
+    public Integer getState() {
+        return state;
+    }
+
+    public void setState(Integer state) {
+        this.state = state;
+        setChanged();
+        notifyObservers(state);
+    }
+}
+```
+```Java
+package inthebloodhorse.designpatter.observer.javatool;
+
+import java.util.Observable;
+
+public class Observer implements java.util.Observer {
+    private Integer myState;
+
+    @Override
+    public void update(Observable o, Object arg) {
+        this.myState = ((ConcreteSubject) o).getState();
+    }
+
+    public Integer getMyState() {
+        return myState;
+    }
+}
+```
+```Java
+package inthebloodhorse.designpatter.observer.javatool;
+
+public class Client {
+    public static void main(String[] args) {
+        // 目标对象
+        ConcreteSubject concreteSubject = new ConcreteSubject();
+
+        // 观察者对象
+        Observer observerA1 = new Observer();
+        Observer observerA2 = new Observer();
+        Observer observerA3 = new Observer();
+
+        // 添加对队列
+        concreteSubject.addObserver(observerA1);
+        concreteSubject.addObserver(observerA2);
+        concreteSubject.addObserver(observerA3);
+
+        // 更改状态
+        concreteSubject.setState(30);
+
+        // 查看观察者的状态
+        System.out.println(observerA1.getMyState());
+        System.out.println(observerA2.getMyState());
+        System.out.println(observerA3.getMyState());
+
+    }
+}
+```
+
+## 备忘录模式
+核心：就是保存某个对象内部状态的拷贝，这样以后就可以将该对象恢复到原先的状态。
+结构：
+- 源发器（目标对象）
+- 备忘录类 Memento
+- 负责人类 CareTake
+
+常见的场景：
+- 棋类游戏中的悔棋
+- 普通软件的撤销操作
+- 数据库事务管理中的回滚操作
+- PS中的历史记录
+
+当备忘点较多时：
+- 将备忘录压栈
+- 将多个备忘录对象，序列化和持久化（载入硬盘）
+
+源发器类
+```Java
+package inthebloodhorse.designpatter.memento;
+
+// 源发器
+public class Emp {
+    private String name;
+    private Integer age;
+
+    // 进行备忘操作，并返回备忘录对象
+    public EmpMemento memento() {
+        return new EmpMemento(this);
+    }
+
+    // 数据恢复
+    public void recover(EmpMemento memento) {
+        this.name = memento.getName();
+        this.age = memento.getAge();
+
+    }
+
+    public Emp(String name, Integer age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public Integer getAge() {
+        return age;
+    }
+
+    public void setAge(Integer age) {
+        this.age = age;
+    }
+
+    @Override
+    public String toString() {
+        return "Emp{" +
+                "name='" + name + '\'' +
+                ", age=" + age +
+                '}';
+    }
+}
+```
+备忘录类 Memento
+```Java
+package inthebloodhorse.designpatter.memento;
+
+// 备忘录类
+public class EmpMemento {
+    private String name;
+    private Integer age;
+
+    public EmpMemento(Emp emp) {
+        this.name = emp.getName();
+        this.age = emp.getAge();
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public Integer getAge() {
+        return age;
+    }
+
+    public void setAge(Integer age) {
+        this.age = age;
+    }
+}
+```
+负责人类
+```Java
+package inthebloodhorse.designpatter.memento;
+
+// 负责人类，管理备忘录对象
+public class CareTaker {
+    // 也可以是list
+    private EmpMemento memento;
+
+    public EmpMemento getMemento() {
+        return memento;
+    }
+
+    public void setMemento(EmpMemento memento) {
+        this.memento = memento;
+    }
+}
+```
+Client
+```Java
+package inthebloodhorse.designpatter.memento;
+
+public class Client {
+    public static void main(String[] args) {
+        CareTaker taker = new CareTaker();
+        Emp emp = new Emp("1ni", 21);
+        System.out.println(emp);
+        taker.setMemento(emp.memento()); // 进行一次备份
+
+        emp.setAge(38);
+        System.out.println(emp);
+
+        emp.recover(taker.getMemento()); // 恢复
+        System.out.println(emp);
     }
 }
 ```

@@ -15,7 +15,7 @@
     <meta name="description" content="">
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-    <title>每日一题(40) codeforces1054B · InTheBloodHorse&#39;blog</title>
+    <title>Java 枚举 · InTheBloodHorse&#39;blog</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -225,7 +225,7 @@
                 <a href="/" >InTheBloodHorse</a>
             </div>
             <div class="post-title">
-                <a href="#" class="post-name">每日一题(40) codeforces1054B</a>
+                <a href="#" class="post-name">Java 枚举</a>
             </div>
     </div>
     
@@ -255,7 +255,7 @@ height:50vh;
         <h1 class="intro-title">
             <!-- 主页  -->
             
-            每日一题(40) codeforces1054B
+            Java 枚举
             <!-- 404 -->
             
         </h1>
@@ -272,20 +272,14 @@ height:50vh;
             <div class="post-intros">
                 <!-- 文章页标签  -->
                 
-                    <div class= post-intro-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "思维">思维</a>
-    
-</div>
-                
                 
                     <div class="post-intro-read">
-                        <span>字数统计: <span class="post-count word-count">461</span>阅读时长: <span class="post-count reading-time">1 min</span></span>
+                        <span>字数统计: <span class="post-count word-count">273</span>阅读时长: <span class="post-count reading-time">1 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
                     <span class="post-intro-calander iconfont-archer">&#xe676;</span>
-                    <span class="post-intro-time">2018/11/12</span>
+                    <span class="post-intro-time">2019/05/13</span>
                     
                     <span id="busuanzi_container_page_pv" class="busuanzi-pv">
                         <span class="iconfont-archer">&#xe602;</span>
@@ -409,18 +403,18 @@ height:50vh;
         <div class="container container-unloaded">
             <main class="main post-page">
     <article class="article-entry">
-        <p><a href="http://codeforces.com/contest/1054/problem/B" target="_blank" rel="noopener">题目地址</a></p>
-<h2 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h2><p>这个Mex一年前才杭电oj写过，我记得我是没写起来，这个Mex是个什么概念？就是在一个序列中找到一个从最小的没有的数字，比如序列[0,1,2,4] Mex下就是3，因为0没有。<br>这道题是意思是给n个数字，接下来是n个数字，问能否在当前的序列找到任意子集，可以得到输入的Mex数字，假如都能找到，就输出-1，找不到就输出一个找不到的index坐标。<br>比如 Examples1<br>4<br>0 1 2 1<br>第一个数字是0，那么我们取空集，Mex一下得到0，当前的序列就是[0]<br>然后要找数字1，直接去当前序列[0]然后我们就可以得到1，组成的序列为[0,1]。<br>同理也可以得到 [0,1,2]<br>第四个也可以得到1，因为我们取0就好了。</p>
-<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>暴力去找肯定不行，因为数据量太大。<br>step1：可以倒过来想，假设当前n个数字。最理想的情况下为0…n，所以可以得到最后一个（或者说当前的，Mex肯定&lt;=n）。<br>step2：Mex(a[i])&lt;=n没错，但是假如 序列为[0,0,1]，当我们计算第三次的时候很显然Mex出来的数字在0~2之间，也就是说，每次Mex出来的数字肯定是 &lt;= 上一次Mex出来的数字 + 1。所以我们每次判断一下就好了<br>AC代码：<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="built_in">map</span>&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt;m;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> n;</span><br><span class="line">	<span class="built_in">cin</span> &gt;&gt; n;</span><br><span class="line">	<span class="keyword">int</span> ans = <span class="number">-1</span>;</span><br><span class="line">	<span class="keyword">int</span> t;</span><br><span class="line">	<span class="keyword">int</span> cur=<span class="number">0</span>; </span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++)&#123;</span><br><span class="line">		<span class="built_in">cin</span> &gt;&gt; t;</span><br><span class="line">		<span class="keyword">if</span>(t&gt;cur)&#123;</span><br><span class="line">			<span class="built_in">cout</span> &lt;&lt; i + <span class="number">1</span>&lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">			<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		m[t]++;</span><br><span class="line">		<span class="keyword">if</span>(m[t]==<span class="number">1</span>) cur++;</span><br><span class="line">	&#125;	</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="number">-1</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+        <p>枚举类型（enum type）的指由一组固定的常量组成合法值的类型。</p>
+<p>下面看一个简单的例子，使用枚举类型来定义数学的四大基本操作（加减乘除）。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">enum</span> Operation &#123;</span><br><span class="line">    PLUS, SUB, MULTI, DIVIDE;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Double <span class="title">operator</span><span class="params">(Double a, Double b)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">switch</span> (<span class="keyword">this</span>) &#123;</span><br><span class="line">            <span class="keyword">case</span> PLUS:</span><br><span class="line">                <span class="keyword">return</span> a + b;</span><br><span class="line">            <span class="keyword">case</span> MULTI:</span><br><span class="line">                <span class="keyword">return</span> a * b;</span><br><span class="line">            <span class="keyword">case</span> DIVIDE:</span><br><span class="line">                <span class="keyword">return</span> a / b;</span><br><span class="line">            <span class="keyword">case</span> SUB:</span><br><span class="line">                <span class="keyword">return</span> a - b;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> RuntimeException(<span class="string">"Invalid operator"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>这个代码已经满足了我们的基本的需求，但是它很脆弱。如果我们添加了新的枚举常量，却没有给switch添加相应的条件，会运行失败。<br>所以我们可以在枚举类中声明一个抽象的operator方法。在每次定义一个新的枚举的时候，实现operator方法。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">enum</span> Operation &#123;</span><br><span class="line">    PLUS &#123;</span><br><span class="line">        <span class="meta">@Override</span></span><br><span class="line">        <span class="function"><span class="keyword">public</span> Double <span class="title">operator</span><span class="params">(Double a, Double b)</span> </span>&#123;</span><br><span class="line">            <span class="keyword">return</span> a + b;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;, SUB &#123;</span><br><span class="line">        <span class="meta">@Override</span></span><br><span class="line">        <span class="function"><span class="keyword">public</span> Double <span class="title">operator</span><span class="params">(Double a, Double b)</span> </span>&#123;</span><br><span class="line">            <span class="keyword">return</span> a - b;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;, MULTI &#123;</span><br><span class="line">        <span class="meta">@Override</span></span><br><span class="line">        <span class="function"><span class="keyword">public</span> Double <span class="title">operator</span><span class="params">(Double a, Double b)</span> </span>&#123;</span><br><span class="line">            <span class="keyword">return</span> a * b;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;, DIVIDE &#123;</span><br><span class="line">        <span class="meta">@Override</span></span><br><span class="line">        <span class="function"><span class="keyword">public</span> Double <span class="title">operator</span><span class="params">(Double a, Double b)</span> </span>&#123;</span><br><span class="line">            <span class="keyword">return</span> a / b;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">abstract</span> Double <span class="title">operator</span><span class="params">(Double a, Double b)</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 
     </article>
     <!-- license  -->
     
         <div class="license-wrapper">
             <p>原文作者：<a href="http://pyking.cn">InTheBloodHorse</a>
-            <p>原文链接：<a href="http://pyking.cn/2018/11/12/每日一题-40-codeforces1054B/">http://pyking.cn/2018/11/12/每日一题-40-codeforces1054B/</a>
-            <p>发表日期：<a href="http://pyking.cn/2018/11/12/每日一题-40-codeforces1054B/">November 12th 2018, 6:09:47 pm</a>
-            <p>更新日期：<a href="http://pyking.cn/2018/11/12/每日一题-40-codeforces1054B/">November 12th 2018, 8:32:46 pm</a>
+            <p>原文链接：<a href="http://pyking.cn/2019/05/13/Java-枚举/">http://pyking.cn/2019/05/13/Java-枚举/</a>
+            <p>发表日期：<a href="http://pyking.cn/2019/05/13/Java-枚举/">May 13th 2019, 7:37:16 pm</a>
+            <p>更新日期：<a href="http://pyking.cn/2019/05/13/Java-枚举/">May 13th 2019, 8:07:19 pm</a>
             <p>版权声明：Have a fun</p>
         </div>
     
@@ -428,17 +422,12 @@ height:50vh;
     <ul class="post-paginator">
         <li class="next">
             
-                <div class="nextSlogan">Next Post</div>
-                <a href= "/2018/11/22/每日一题-41-codeforces-1054C/" title= "每日一题(41) codeforces 1054C">
-                    <div class="nextTitle">每日一题(41) codeforces 1054C</div>
-                </a>
-            
         </li>
         <li class="previous">
             
                 <div class="prevSlogan">Previous Post</div>
-                <a href= "/2018/11/09/每日一题-39-codeforces1054A/" title= "每日一题(39) codeforces1054A">
-                    <div class="prevTitle">每日一题(39) codeforces1054A</div>
+                <a href= "/2019/05/05/Java设计模式/" title= "Java设计模式">
+                    <div class="prevTitle">Java设计模式</div>
                 </a>
             
         </li>
@@ -553,7 +542,7 @@ top:50vh;
         <div class="toc-catalog">
             <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
         </div>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#题意"><span class="toc-number">1.</span> <span class="toc-text">题意</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#思路"><span class="toc-number">2.</span> <span class="toc-text">思路</span></a></li></ol>
+        
     </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>

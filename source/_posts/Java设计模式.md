@@ -405,7 +405,7 @@ package inthebloodhorse.designpatter.builder;
 
 public class Client {
     public static void main(String[] args) {
-        CarDirectorImpl director = new CarDirectorImpl(new BmwBuilder());
+        CarDirectorImpl director = new CarDirectorImpl(new AudiBuilder());
         Car car = director.directorCar();
         System.out.println(car.getEngine().getName());
     }
@@ -1630,7 +1630,7 @@ public class Client {
 }
 ```
 
-## 模版方法
+## 模版模式
 它定义了一个操作中的算法骨架，将一些不收延迟到子类中实现。这样，新的子类可以在不改变一个算法结构的前提下重新定义该算法的某些特定步骤。
 核心：处理某个流程的代码已经都具备，但是其中某个节点的代码暂时不能确定。因此，将这个节点的代码实现转移给子类。即，<u>处理步骤父类中定义好，具体实现延迟到子类中定义</u>
 

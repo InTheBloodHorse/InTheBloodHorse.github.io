@@ -6,7 +6,7 @@
 
 
 <head>
-    <meta charset="utf-8">
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" >
     <meta name="author" content="InTheBloodHorse">
     <meta name="renderer" content="webkit">
@@ -15,7 +15,7 @@
     <meta name="description" content="">
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-    <title>InTheBloodHorse&#39;blog</title>
+    <title>Java总结 · InTheBloodHorse&#39;blog</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -206,17 +206,28 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js" defer></script>
     <!-- 百度统计  -->
     
-    <!-- 谷歌统计  -->
+    <!-- 谷歌统计  --><!-- hexo-inject:begin --><!-- hexo-inject:end -->
     
 </head>
 
     
+        <body class="post-body">
     
-<header class="header">
+    
+<!-- hexo-inject:begin --><!-- hexo-inject:end --><header class="header">
 
     <div class="read-progress"></div>
     <div class="header-sidebar-menu">&#xe775;</div>
     <!-- post页的toggle banner  -->
+    
+    <div class="banner">
+            <div class="blog-title">
+                <a href="/" >InTheBloodHorse</a>
+            </div>
+            <div class="post-title">
+                <a href="#" class="post-name">Java总结</a>
+            </div>
+    </div>
     
     <a class="home-link" href=/>InTheBloodHorse</a>
 </header>
@@ -228,24 +239,68 @@
 
 
 
+
+height:50vh;
 ">
     
     <!-- 主页  -->
+    
+    
+    <!-- 404页  -->
             
     <div class="site-intro-placeholder"></div>
-    <div class="site-intro-img" style="background-image: url(/)"></div>
+    <div class="site-intro-img" style="background-image: url(/intro/bg.jpg)"></div>
     <div class="site-intro-meta">
         <!-- 标题  -->
         <h1 class="intro-title">
             <!-- 主页  -->
+            
+            Java总结
+            <!-- 404 -->
             
         </h1>
         <!-- 副标题 -->
         <p class="intro-subtitle">
             <!-- 主页副标题  -->
             
+            
+            <!-- 404 -->
+            
         </p>
         <!-- 文章页meta -->
+        
+            <div class="post-intros">
+                <!-- 文章页标签  -->
+                
+                
+                    <div class="post-intro-read">
+                        <span>字数统计: <span class="post-count word-count">824</span>阅读时长: <span class="post-count reading-time">3 min</span></span>
+                    </div>
+                
+                <div class="post-intro-meta">
+                    <span class="post-intro-calander iconfont-archer">&#xe676;</span>
+                    <span class="post-intro-time">2019/05/30</span>
+                    
+                    <span id="busuanzi_container_page_pv" class="busuanzi-pv">
+                        <span class="iconfont-archer">&#xe602;</span>
+                        <span id="busuanzi_value_page_pv"></span>
+                    </span>
+                    
+                    <span class="shareWrapper">
+                        <span class="iconfont-archer shareIcon">&#xe71d;</span>
+                        <span class="shareText">Share</span>
+                        <ul class="shareList">
+                            <li class="iconfont-archer share-qr" data-type="qr">&#xe75b;
+                                <div class="share-qrcode"></div>
+                            </li>
+                            <li class="iconfont-archer" data-type="weibo">&#xe619;</li>
+                            <li class="iconfont-archer" data-type="qzone">&#xe62e;</li>
+                            <li class="iconfont-archer" data-type="twitter">&#xe634;</li>
+                            <li class="iconfont-archer" data-type="facebook">&#xe67a;</li>
+                        </ul>
+                    </span>
+                </div>
+            </div>
         
     </div>
 </div>
@@ -346,338 +401,94 @@
 </script>        
         <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
         <div class="container container-unloaded">
-            <main class="main index-page">
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/10/16/每日一题-33-codeforces1059B/" >
-            
-                <span>每日一题(33) codeforces1059B</span>
-        </a>
-        <div class="abstract-content">
-            题目地址
-题意有一个印章的形状为123####.####
-给你一个形状，问能否用这个印章，印成给定的形状。
-思路暴力就可以了，寻找周围都是#的点，说明这里必须要被印，找完之后，和给的形状比较一下，看下是否相同AC代码1234567891011121314151617181920212223242526272829303132333435363738394041424344454647#include&lt;bits/stdc++.h&gt;using namespace std;string ma[1005];int n,m;int my[1005][1005];//判断能否印 int ...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/10/16</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "模拟">模拟</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "暴力">暴力</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/10/15/每日一题-32-codeforces1059A/" >
-            
-                <span>每日一题(32) codeforces1059A</span>
-        </a>
-        <div class="abstract-content">
-            哇，周一太忙了，没午睡，现在困成狗。题目地址
-题意一个人每天工作m分钟，有n个顾客，每个顾客a的时刻来，停留b分钟，然后他要接待每个顾客，他可以休息k分钟为一轮，问他一天可以休息几次。
-思路用数组来维护空闲的时间，我是用二个一组的，即[st,end]，看代码就明白了。AC代码123456789101112131415161718192021#include&lt;bits/stdc++.h&gt;using namespace std;vector&lt;int&gt;v;int main()&#123;	int n,m,k;	int a,b;	cin &gt;&gt; n &gt;&g...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/10/15</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "模拟">模拟</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/10/14/每日一题-31-codeforces-1066B/" >
-            
-                <span>每日一题(31) codeforces 1066B</span>
-        </a>
-        <div class="abstract-content">
-            题目地址比赛的时候，我1Wa了，然后给黄佬切了。今天补回来。
-题意有n个房间，1代表有暖炉，0代表没有。问至少点亮多少暖炉，使得每个房间都温暖，每个暖炉都有范围m。
-思路贪心，找到每次点亮暖炉之后，从最近一个没有点亮的房间跳m，跳到下一个最远的位置，然后从最远的位置从右往左找，找到第一个暖壶，因为这样可以使暖壶的温暖位置尽量不会重叠。假如没找到。真的太难描述了。哭了。AC代码：1234567891011121314151617181920212223242526272829303132333435363738394041424344454647#include&lt;bits/stdc+...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/10/14</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "贪心">贪心</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/10/13/每日一题-30-codeforces-515训练赛/" >
-            
-                <span>每日一题(30) codeforces #515训练赛</span>
-        </a>
-        <div class="abstract-content">
-            我还以为这次的周练会很简单，因为我挑了div3的题目，打完才知道，这个div3写出一题就能加分了，太恐怖了，我觉得比div2还难。哭了。
-A题目地址
-题意给a，b，c，d，代表总路长,速度，[c，d]排除的区间。要求给出从0点出发，b的速度，有几个点(排除区间[c，d])
-思路简单数学题，除一下就好了。1234567891011#include&lt;bits/stdc++.h&gt;using namespace std;int main()&#123;	int t;	cin &gt;&gt;t;	int a,b,c,d;	while(t--)&#123;		cin &gt;&gt;a...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/10/13</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "思维">思维</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "贪心">贪心</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "数学">数学</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/10/12/每日一题-29-codeforces-1058C/" >
-            
-                <span>每日一题(29)codeforces 1058C</span>
-        </a>
-        <div class="abstract-content">
-            题目地址
-题意给n个数字，每个数字只能用一次，并且有序，问你能否拆成 2或更多段，使得每段的位数总和相同。
-思路因为最多100个数字，暴力一下就好了。一开始题目读错了，还以为每次拆出来的数字序列要非递增（瞎了瞎了）。AC代码：123456789101112131415161718192021222324252627282930313233343536373839#include&lt;bits/stdc++.h&gt;using namespace std;int a[10001];int main()&#123;	int n;	cin &gt;&gt; n;	string s;	cin...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/10/12</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "构造">构造</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/10/11/每日一题-28-codeforces1058B/" >
-            
-                <span>每日一题(28) codeforces1058B</span>
-        </a>
-        <div class="abstract-content">
-            题目地址
-题意给n，d，可以得出一个矩形，接下来给出若干个点，问该点是否在这个矩形内。
-思路用线性规划，满足所有条件即可(高中毕业两年了，真的忘了)。AC代码：123456789101112131415#include&lt;bits/stdc++.h&gt;using namespace std;int main()&#123;	int n,d;	int t;	cin &gt;&gt; n &gt;&gt; d;	cin &gt;&gt; t;	int x,y;	for(int i=0;i&lt;t;i++)&#123;		cin &gt;&gt; x &gt;&gt; y;		if(...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/10/11</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "数学">数学</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/10/10/每日一题-27-codeorces-1058A/" >
-            
-                <span>每日一题(27) codeorces 1058A</span>
-        </a>
-        <div class="abstract-content">
-            题目地址太简单了。不说了，写Spring去了。12345678910111213141516#include&lt;bits/stdc++.h&gt;using namespace std;int main()&#123;	int flag=0;	int n;	cin &gt;&gt; n;	int t;	for(int i=0;i&lt;n;i++)	&#123;		cin &gt;&gt; t;		if(t) flag=1;	&#125;	if(flag) cout &lt;&lt; "HARD" &lt;&lt; endl;	else cout &lt;&lt; "EASY" &l...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/10/10</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "思维">思维</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/10/09/每日一题-26-codeforces-1051C/" >
-            
-                <span>每日一题(26) codeforces 1051C</span>
-        </a>
-        <div class="abstract-content">
-            题目地址
-题意给一个数组，要求将这个数组分成 A，B两个数组，并且拥有相同的nice数（即这个数字在数组里只一个）
-思路
-原数组里面有偶数个nice数，那么平分这些nice数。
-原数组里有奇数个，那么我们就要额外得到一个，可以从多的数字里拆出来，但是那个数字的数量要大于2，因为假如是两个的话，拆出来两个nice数了。大于2的话，拆成 1，x（总数-1）。AC代码：123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960#in...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/10/09</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "思维">思维</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "构造">构造</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/10/08/每日一题-25-codeforces-1051B/" >
-            
-                <span>每日一题(25) codeforces 1051B</span>
-        </a>
-        <div class="abstract-content">
-            题目地址
-题意给两个数字 n，m，将[n，m]区间拆成 长度/2 个 pair，每个pair包含两个数字，要求两个数字互质，如果不能拆成 长度/2个，则输出NO
-思路一开始还以为是找素数。想复杂了，因为任意相邻的两个数，都是互质的！AC代码：1234567891011#include&lt;bits/stdc++.h&gt;using namespace std;int main()&#123;	long long x,y;		cin &gt;&gt; x &gt;&gt; y;	cout &lt;&lt; "YES" &lt;&lt; endl;	for(long long i = x...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/10/08</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "数论">数论</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/10/07/每日一题-24-codeforces-1051A/" >
-            
-                <span>每日一题(24) codeforces 1051A</span>
-        </a>
-        <div class="abstract-content">
-            题目地址
-题意给出一个字符串，如何修改某些字符可以达到要求，即这些字符串里必须有大写小写数字。输入也只有大写小写数字。输出修改后的字符串，但是要求修改的位置的长度为最小。例如 从 abcdef-&gt;a7cdEf，的长度为（5-2）+1=4。
-思路：首先只会出现大写，小写，数字，所以只会出现三中情况。
+            <main class="main post-page">
+    <article class="article-entry">
+        <h1 id="Java-API"><a href="#Java-API" class="headerlink" title="Java API"></a>Java API</h1><h1 id="Spring核心功能"><a href="#Spring核心功能" class="headerlink" title="Spring核心功能"></a>Spring核心功能</h1><p><img src="/2019/05/30/Java总结/1.png" alt="1.png"></p>
+<h2 id="Core-Container-核心容器"><a href="#Core-Container-核心容器" class="headerlink" title="Core Container 核心容器"></a>Core Container 核心容器</h2><h3 id="Beans"><a href="#Beans" class="headerlink" title="Beans"></a>Beans</h3><p>负责管理对象</p>
+<h3 id="Core"><a href="#Core" class="headerlink" title="Core"></a>Core</h3><p>核心类</p>
+<h3 id="Context"><a href="#Context" class="headerlink" title="Context"></a>Context</h3><p>上下文参数，获取外部资源，管理注解等</p>
+<h3 id="SpEL"><a href="#SpEL" class="headerlink" title="SpEL"></a>SpEL</h3><p>expression.jar</p>
+<h2 id="IOC-DI-控制反转-依赖注入"><a href="#IOC-DI-控制反转-依赖注入" class="headerlink" title="IOC/DI 控制反转/依赖注入"></a>IOC/DI 控制反转/依赖注入</h2><h3 id="IOC-Inversion-of-Control"><a href="#IOC-Inversion-of-Control" class="headerlink" title="IOC(Inversion of Control)"></a>IOC(Inversion of Control)</h3><p>将对象交给容器控制，而不是传统的在内部直接控制。反转则是由容器来帮忙创建以及注入依赖对象，而不是主动去创建类。降低了类与类之间的耦合，使得程序变得灵活，可扩展。容器内的Bean默认是单例的，其中Bean作用域分为如下几种（Scope）：</p>
+<h4 id="singleton"><a href="#singleton" class="headerlink" title="singleton"></a>singleton</h4><p>IOC容器仅创建一个Bean实例</p>
+<h4 id="prototype"><a href="#prototype" class="headerlink" title="prototype"></a>prototype</h4><p>每次返回都是一个新的实例</p>
+<h4 id="request"><a href="#request" class="headerlink" title="request"></a>request</h4><p>该属性仅对http请求产生作用，每次http请求都会创建一个新的Bean，适用于WebApplicationContext环境</p>
+<h4 id="session"><a href="#session" class="headerlink" title="session"></a>session</h4><p>同一个Session共享一个Bean实例</p>
+<h4 id="global-session"><a href="#global-session" class="headerlink" title="global-session"></a>global-session</h4><p>所有的Session共享一个Bean实例</p>
+<h2 id="AOP-面向切面编程"><a href="#AOP-面向切面编程" class="headerlink" title="AOP 面向切面编程"></a>AOP 面向切面编程</h2><h2 id="声明事务"><a href="#声明事务" class="headerlink" title="声明事务"></a>声明事务</h2><h2 id="创建Spring"><a href="#创建Spring" class="headerlink" title="创建Spring"></a>创建Spring</h2><ol>
+<li><p>在IDEA中创建Spring工程。</p>
+</li>
+<li><p>src目录下面创建ApplicationContext.xml，其中配置的信息最终存储到了Spring的ApplicationContext容器中</p>
+</li>
+<li><p>spring配置文件是基于schema的，<font color="red">schema约束定义了xml文档的结构，内容和语法</font>，schema的文件扩展名为.xsd，每次引入一个xsd文件是一个namespace（xmlns）</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version="1.0" encoding="UTF-8" ?&gt;</span><br><span class="line"><span class="tag">&lt;<span class="name">beans</span> <span class="attr">xmlns</span>=<span class="string">"http://www.springframework.org/schema/beans"</span></span></span><br><span class="line"><span class="tag">       <span class="attr">xmlns:xsi</span>=<span class="string">"http://www.w3.org/2001/XMLSchema-instance"</span></span></span><br><span class="line"><span class="tag">       <span class="attr">xsi:schemaLocation</span>=<span class="string">"http://www.springframework.org/schema/beans</span></span></span><br><span class="line"><span class="tag"><span class="string">            http://www.springframework.org/schema/beans/spring-beans.xsd"</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Test</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        ApplicationContext application = <span class="keyword">new</span> ClassPathXmlApplicationContext(<span class="string">"ApplicationContext.xml"</span>);</span><br><span class="line">        Person person = (Person) application.getBean(<span class="string">"person"</span>);</span><br><span class="line">        Person person1 = (Person) application.getBean(<span class="string">"person"</span>);</span><br><span class="line">        System.out.println(person == person1);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="Spring创建对象的三种方式"><a href="#Spring创建对象的三种方式" class="headerlink" title="Spring创建对象的三种方式"></a>Spring创建对象的三种方式</h2><h3 id="构造方法"><a href="#构造方法" class="headerlink" title="构造方法"></a>构造方法</h3><p>如果设定的条件匹配多个构造方法执行<font color="red">最后的构造方法</font>。</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">"personByNameAndId"</span> <span class="attr">class</span>=<span class="string">"cn.inthebloodhorse.entity.Person"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">constructor-arg</span> <span class="attr">name</span>=<span class="string">"name"</span> <span class="attr">value</span>=<span class="string">"1ni"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">constructor-arg</span> <span class="attr">name</span>=<span class="string">"id"</span> <span class="attr">value</span>=<span class="string">"1"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="实例工厂"><a href="#实例工厂" class="headerlink" title="实例工厂"></a>实例工厂</h3><p>1.定义实例工厂</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">PersonFactory</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> Person <span class="title">getInstance</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> Person(<span class="string">"1ni"</span>,<span class="number">123</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>2.配置xml</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">"personFactory"</span> <span class="attr">class</span>=<span class="string">"cn.inthebloodhorse.factory.PersonFactory"</span>&gt;</span><span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">"person1"</span> <span class="attr">factory-bean</span>=<span class="string">"personFactory"</span> <span class="attr">factory-method</span>=<span class="string">"getInstance"</span>&gt;</span><span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="静态工厂"><a href="#静态工厂" class="headerlink" title="静态工厂"></a>静态工厂</h3><p>1.定义静态工厂</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">StaticPersonFactory</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Person <span class="title">getInstance</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> Person(<span class="string">"2ni"</span>, <span class="number">123456</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>2.配置xml</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">"person2"</span> <span class="attr">class</span>=<span class="string">"cn.inthebloodhorse.factory.StaticPersonFactory"</span> <span class="attr">factory-method</span>=<span class="string">"getInstance"</span>&gt;</span><span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="对Bean设置属性"><a href="#对Bean设置属性" class="headerlink" title="对Bean设置属性"></a>对Bean设置属性</h2><p>1.通过set方法</p>
+<p>使用<b>property</b>标签来设置 </p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">"person"</span> <span class="attr">class</span>=<span class="string">"cn.inthebloodhorse.entity.Person"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"name"</span> <span class="attr">value</span>=<span class="string">"good"</span>&gt;</span><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="DI"><a href="#DI" class="headerlink" title="DI"></a>DI</h2><p>依赖注入（Dependency Injection），当一个类A中需要依赖另一个类B对象时，把B赋值给A的过程称为依赖注入。</p>
+<p>假设现在Person类依赖Teacher类，首先创建Teacher类，属性为id，name，className。</p>
+<p>同样先创建teacher（bean），并且设置属性。</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">"teacher"</span> <span class="attr">class</span>=<span class="string">"cn.inthebloodhorse.entity.Teacher"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"id"</span> <span class="attr">value</span>=<span class="string">"1"</span>&gt;</span><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"name"</span> <span class="attr">value</span>=<span class="string">"yz"</span>&gt;</span><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"className"</span> <span class="attr">value</span>=<span class="string">"acm"</span>&gt;</span><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>接着在person（bean）引用teacher（bean）,使用<font color="red">ref</font>进行属性的注入。</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">"person"</span> <span class="attr">class</span>=<span class="string">"cn.inthebloodhorse.entity.Person"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"name"</span> <span class="attr">value</span>=<span class="string">"good"</span>&gt;</span><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"teacher"</span> <span class="attr">ref</span>=<span class="string">"teacher"</span>&gt;</span><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="MyBatis"><a href="#MyBatis" class="headerlink" title="MyBatis"></a>MyBatis</h2><p>出现</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Exception in thread <span class="string">"main"</span> java.lang.AbstractMethodError:org.mybatis.spring.transaction.SpringManagedTransaction.getTimeout()Ljava/lang/Integer;</span><br></pre></td></tr></table></figure>
+<p>原因是 mybatis-spring ——spring——mybatis jar包版本不一致。</p>
+<p><img src="/2019/05/30/Java总结/2.jpg" alt="2.jpg"></p>
 
-大写，小写，数字都有了，直接输出
-少了一个（大写|小写|数字），只要随便找个不是唯一类别的修改成数字就行了。因为长度永远为1。
-少了两个，说明这个字符串要么全都是数字，要么全都是大写的，或者小写的。只要相邻的一起改了就行了。AC代码123456789101112131415161718...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/10/07</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "构造">构造</a>
-    
-</div>
-            
-        </div>
     </article>
+    <!-- license  -->
+    
+        <div class="license-wrapper">
+            <p>原文作者：<a href="http://pyking.cn">InTheBloodHorse</a>
+            <p>原文链接：<a href="http://pyking.cn/2019/05/30/Java总结/">http://pyking.cn/2019/05/30/Java总结/</a>
+            <p>发表日期：<a href="http://pyking.cn/2019/05/30/Java总结/">May 30th 2019, 9:18:55 pm</a>
+            <p>更新日期：<a href="http://pyking.cn/2019/05/30/Java总结/">May 30th 2019, 9:24:35 pm</a>
+            <p>版权声明：Have a fun</p>
+        </div>
     
     <!-- paginator  -->
+    <ul class="post-paginator">
+        <li class="next">
+            
+        </li>
+        <li class="previous">
+            
+                <div class="prevSlogan">Previous Post</div>
+                <a href= "/2019/05/13/Java-枚举/" title= "Java 枚举">
+                    <div class="prevTitle">Java 枚举</div>
+                </a>
+            
+        </li>
+    </ul>
+    <!-- 评论插件 -->
+    <!-- 来必力City版安装代码 -->
+
+<!-- City版安装代码已完成 -->
     
-    <nav class="page-nav">
-        <a class="extend prev" rel="prev" href="/categories/每日一题/page/2/">&#60; PREV</a><a class="page-number" href="/categories/每日一题/">1</a><a class="page-number" href="/categories/每日一题/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/categories/每日一题/page/4/">4</a><a class="page-number" href="/categories/每日一题/page/5/">5</a><a class="page-number" href="/categories/每日一题/page/6/">6</a><a class="extend next" rel="next" href="/categories/每日一题/page/4/">NEXT &#62;</a>
-    </nav>
     
+    <!-- partial('_partial/comment/changyan') -->
+    <!--PC版-->
+
+
+    
+    
+
+    <!-- 评论 -->
 </main>
             <!-- profile -->
             
@@ -758,6 +569,24 @@ A题目地址
 </footer>
     </div>
     <!-- toc -->
+    
+    <div class="toc-wrapper" style=
+    
+
+
+
+
+
+
+
+top:50vh;
+
+    >
+        <div class="toc-catalog">
+            <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
+        </div>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Java-API"><span class="toc-number">1.</span> <span class="toc-text">Java API</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Spring核心功能"><span class="toc-number">2.</span> <span class="toc-text">Spring核心功能</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Core-Container-核心容器"><span class="toc-number">2.1.</span> <span class="toc-text">Core Container 核心容器</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Beans"><span class="toc-number">2.1.1.</span> <span class="toc-text">Beans</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Core"><span class="toc-number">2.1.2.</span> <span class="toc-text">Core</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Context"><span class="toc-number">2.1.3.</span> <span class="toc-text">Context</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#SpEL"><span class="toc-number">2.1.4.</span> <span class="toc-text">SpEL</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#IOC-DI-控制反转-依赖注入"><span class="toc-number">2.2.</span> <span class="toc-text">IOC/DI 控制反转/依赖注入</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#IOC-Inversion-of-Control"><span class="toc-number">2.2.1.</span> <span class="toc-text">IOC(Inversion of Control)</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#singleton"><span class="toc-number">2.2.1.1.</span> <span class="toc-text">singleton</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#prototype"><span class="toc-number">2.2.1.2.</span> <span class="toc-text">prototype</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#request"><span class="toc-number">2.2.1.3.</span> <span class="toc-text">request</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#session"><span class="toc-number">2.2.1.4.</span> <span class="toc-text">session</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#global-session"><span class="toc-number">2.2.1.5.</span> <span class="toc-text">global-session</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#AOP-面向切面编程"><span class="toc-number">2.3.</span> <span class="toc-text">AOP 面向切面编程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#声明事务"><span class="toc-number">2.4.</span> <span class="toc-text">声明事务</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#创建Spring"><span class="toc-number">2.5.</span> <span class="toc-text">创建Spring</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Spring创建对象的三种方式"><span class="toc-number">2.6.</span> <span class="toc-text">Spring创建对象的三种方式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#构造方法"><span class="toc-number">2.6.1.</span> <span class="toc-text">构造方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#实例工厂"><span class="toc-number">2.6.2.</span> <span class="toc-text">实例工厂</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#静态工厂"><span class="toc-number">2.6.3.</span> <span class="toc-text">静态工厂</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#对Bean设置属性"><span class="toc-number">2.7.</span> <span class="toc-text">对Bean设置属性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#DI"><span class="toc-number">2.8.</span> <span class="toc-text">DI</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#MyBatis"><span class="toc-number">2.9.</span> <span class="toc-text">MyBatis</span></a></li></ol></li></ol>
+    </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
     <div class="sidebar sidebar-hide">
@@ -2579,6 +2408,25 @@ jsonContent:
     
     </div>
     <!-- async load share.js -->
+    
+        <script src="/scripts/share.js" async></script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js">
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end -->    
      
     </body>
 </html>
